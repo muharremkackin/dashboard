@@ -1,0 +1,19 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:collector": "npx tailwind -i ./src/collector/css/tailwind.css -o ./src/collector/css/style.css -c ./tailwind.collector.config.js",
+    "build:collector": "npx tailwind -i ./src/collector/css/tailwind.css -o ./src/collector/css/style.css -c ./tailwind.collector.config.js -m",
+    "watch:collector": "npx tailwind -i ./src/collector/css/tailwind.css -o ./src/collector/css/style.css -c ./tailwind.collector.config.js -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "animate.css": "^4.1.1",
+    "tailwindcss": "^3.1.8"
+  }
+}

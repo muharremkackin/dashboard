@@ -1,0 +1,232 @@
+@tailwind base;
+@layer base {
+    @font-face {
+        font-family: "Open Sans";
+        src: url(/src/collector/fonts/OpenSans-VariableFont.ttf);
+    }
+    html {
+        font-family: "Open Sans", system-ui, sans-serif;
+    }
+
+    .btn {
+        @apply transition rounded;
+    }
+
+    .btn.btn-icon {
+        @apply p-2;
+    }
+
+    .btn.btn-gray {
+        @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300;
+    }
+}
+@tailwind components;
+@layer components {
+    .application {
+        @apply h-screen w-full flex bg-[#FAFBFC] text-[#181C32];
+    }
+
+    .application > aside {
+        @apply w-[262px] h-screen overflow-x-hidden overflow-y-auto bg-white border-r flex-shrink-0 fixed top-0 left-0 z-10 lg:relative ease-in-out duration-150;
+        
+    }
+    .application > aside.closed {
+        @apply hidden lg:block;
+    }
+    .application > aside.minimized {
+        @apply w-[80px];
+        transition: width linear 50ms;
+    }
+    .application > aside > div {
+        @apply h-[66px] w-full pl-8 flex items-center justify-between pr-4;
+    }
+    .application > aside > div > img {
+        @apply h-[28px];
+    }
+    .application > aside.minimized > div {
+        @apply h-[66px] w-full pl-4  flex items-center justify-center ;
+    }
+    .application > aside.minimized > div > img {
+        @apply hidden;
+    }
+    .application > aside.minimized .maximize-icon {
+        @apply block;
+    }
+    .application > aside.minimized .minimize-icon {
+        @apply hidden;
+    }
+    .application > aside .maximize-icon {
+        @apply hidden;
+    }
+    .application > aside .minimize-icon {
+        @apply block;
+    }
+    .application > aside .btn-toggle-aside {
+        @apply hidden lg:block;
+    }
+    .application > main .btn-open-aside,
+    .application > aside .btn-close-aside {
+        @apply block lg:hidden;
+    }
+    .application > aside > section {
+        @apply py-8 px-4 flex flex-col justify-between;
+        height: calc(100vh - 66px);
+    }
+    .application > aside > section nav ul {
+        @apply space-y-2;
+    }
+    .application > aside > section nav ul li {
+        @apply flex;
+    }
+    .application > aside > section nav ul li a {
+        @apply px-4 py-3 bg-white hover:bg-[#EFF2F8] active:bg-[#e6edfa] text-sm rounded-[10px] w-full flex items-center space-x-[18px] transition;
+    }
+    .application > aside > section nav ul li a {
+        @apply py-4;
+    }
+    .application > aside > section nav ul li a.active {
+        @apply bg-[#EFF2F8] text-[#688BE4] font-semibold tracking-wider;
+    }
+    .application > aside > section nav ul li a .icon {
+        @apply w-4 h-4 flex items-center justify-center;
+    }
+    .application > aside.minimized > section nav ul li a .title {
+        @apply hidden;
+    }
+    .application > aside > section > footer > div {
+        @apply flex flex-col items-center justify-center space-y-[4px] text-xl;
+    }
+    .application > aside.minimized > section > footer > div {
+        @apply space-y-[16px];
+    }
+    .application > aside.minimized > section > footer > div {
+        @apply text-base;
+    }
+    .application > aside > section > footer > div img {
+        @apply h-[42px];
+    }
+    .application > aside > section > footer > div a {
+        @apply hover:text-[#688BE4] transition active:underline;
+    }
+    .application > aside.minimized > section > footer > div a {
+        @apply hover:text-[#688BE4] active:no-underline ;
+    }
+    .application > aside > section > footer > div a span.icon {
+        @apply hidden;
+    }
+    .application > aside.minimized > section > footer > div img.logo-icon {
+        @apply hidden;
+    }
+    .application > aside > section > footer > div img.logo-icon-sm {
+        @apply hidden;
+    }
+    .application > aside.minimized > section > footer > div img.logo-icon-sm {
+        @apply block;
+    }
+    .application > aside.minimized > section > footer > div a span.icon {
+        @apply block;
+    }
+    .application > aside.minimized > section > footer > div a span.title {
+        @apply hidden;
+    }
+    .application > aside > section > footer > div a span.title {
+        @apply block;
+    }
+    .application > .main-content {
+        @apply w-full h-full;
+    }
+    .application > .main-content > header {
+        @apply h-[66px] w-full bg-white border-b;
+    }
+    .application > .main-content > header > div {
+        @apply w-full h-full flex items-center justify-between py-4 px-4 lg:px-8;
+    }
+    .application > .main-content > header > h1 {
+        @apply text-lg;
+    }
+    .application > .main-content > header .date-range-picker {
+        @apply bg-[#F5F8FA] py-2 px-3 text-[13px] rounded-[5px] cursor-pointer space-x-2 text-[#8B8F9E];
+    }
+    .application > .main-content > header .date-range-picker input {
+        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none;
+    }
+    .application > .main-content > header > div > div:first-child {
+        @apply flex items-center space-x-4 lg:space-x-0;
+    }
+    .application > .main-content > header > div > div:nth-child(2) {
+        @apply flex items-center space-x-6;
+    }
+
+    .dropdown {
+        @apply relative;
+    }
+
+    .dropdown > button {
+        @apply text-[13px] py-2 px-3 space-x-2 rounded-[5px] border border-dashed;
+    }
+    .dropdown > .dropdown-content {
+        @apply absolute top-10 w-full bg-white rounded-[5px] z-10 shadow py-2 px-3 space-y-4 hidden;
+    }
+    .dropdown > .dropdown-content .dropdown-link {
+        @apply text-[13px] inline-flex items-center justify-between w-full py-2 px-3 bg-[#F5F8FA] hover:bg-[#e4ecf2] transition rounded-[5px];
+    }
+
+    .application .dashboard-content {
+        @apply w-full overflow-y-auto px-4 2xl:px-0 py-8;
+        height: calc(100vh - 66px);
+    }
+
+    .application .dashboard-content-inner {
+        @apply container mx-auto h-10  pb-8;
+    }
+    .application .dashboard-widgets {
+        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-[30px];
+    }
+    .application .widget {
+        @apply rounded-[10px]  bg-white border border-[#EEF0F7] ;
+    }
+    .application .widget.widget-sm {
+        @apply col-span-1 h-[180px] xl:h-[221px];
+    }
+    .application .widget.widget-count {
+        @apply px-8 xl:px-8 py-8 xl:py-12 space-x-4 xl:space-x-6 flex items-center;
+    }
+    .application .widget.widget-count .icon {
+        @apply text-2xl xl:text-[36px] h-16 w-16 xl:h-24 xl:w-24 rounded-full bg-[#E5FDDF] flex items-center justify-center flex-shrink-0;
+    }
+    .application .widget.widget-count .content {
+        @apply flex flex-col leading-9;
+    }
+    .application .widget.widget-count .content > span:first-child {
+        @apply text-[15px];
+    }
+    .application .widget.widget-count .content > span:nth-child(2) {
+        @apply text-4xl xl:text-[54px];
+    }
+    .application .widget.widget-grid {
+        @apply  px-8 py-7;
+    }
+    .application .widget.widget-full {
+        @apply col-span-1 md:col-span-2 xl:col-span-3 row-span-4 h-[800px];
+    }
+    .application .widget.widget-chart {
+        @apply flex flex-col p-2;
+    }
+
+    .application .reseller-select {
+        @apply pb-4;
+    }
+
+    .application > aside.minimized .reseller-select {
+        @apply hidden;
+    }
+
+    .application .k-input-inner {
+        @apply focus:ring-0;
+    }
+}
+@tailwind utilities;
+
+.k-input-inner {
+    outline: none;
+}
