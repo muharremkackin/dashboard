@@ -411,6 +411,70 @@
     .daterangepicker td.active, .daterangepicker td.active:hover {
         @apply bg-[#5c80db]
     }
+
+    .application .reseller-information {
+        @apply grid grid-cols-1 xl:grid-cols-3 gap-8;
+    }
+    .application .reseller-information .card h2 {
+        @apply text-[#181C32] text-lg;
+    }
+    .application .reseller-information .card.information-card {
+        @apply xl:col-span-2 py-6 px-8 bg-white rounded-[10px] space-y-8;
+    }
+    .application .reseller-information .card.information-card .content {
+        @apply space-y-5;
+    }
+    .application .reseller-information .card.information-card .content > div {
+        @apply text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between;
+    }
+    .application .reseller-information .card.information-card .content > div div:first-child {
+        @apply text-[#8B8F9E];
+    }
+    .application .reseller-information .card.collection-card {
+        @apply py-6 px-8 bg-white rounded-[10px];
+    }
+    .application .reseller-information .card.collection-card .content {
+        @apply h-full py-4;
+    }
+    .application .reseller-information .card.collection-card .content .slide-content {
+        @apply flex flex-col justify-between h-full text-[13px] pb-4;
+    }
+    .application .reseller-information .card.collection-card .content .slide-content div:first-child {
+        @apply space-y-4;
+    }
+    .application .reseller-information .card.collection-card .content .slide-content div:first-child > div {
+        @apply text-[13px];
+    }
+    .application .reseller-information .card.collection-card .content .slide-content div:first-child > div > div:first-child {
+        @apply text-[#8B8F9E];
+    }
+    .application .reseller-information .card.account-card {
+        @apply col-span-1 xl:col-span-3 py-6 px-8 bg-white rounded-[10px] space-y-8;
+    }
+    .application .reseller-information .card.account-card header {
+        @apply flex items-start flex-col xl:flex-row space-y-4 xl:space-y-0 xl:items-center xl:justify-between;
+    }
+    .application .reseller-information .card.account-card header h2 {
+        @apply text-[#181C32] text-lg;
+    }
+    .application .reseller-information .card.account-card .content {
+        @apply grid grid-cols-1 xl:grid-cols-2 gap-8 w-full;
+    }
+    .application .reseller-information .card.account-card .content > div {
+        @apply col-span-1 flex;
+    }
+    .application .phone-control {
+        @apply flex space-x-3;
+    }
+    .application .phone-control select {
+        @apply text-[15px] border-[#E1E3EB] rounded-[5px];
+    }
+    .application .phone-control input {
+        @apply text-[15px] border-[#E1E3EB] rounded-[5px] w-full md:w-[236px];
+    }
+    .application .email-control input {
+        @apply text-[15px] border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
+    }
 }
 
 @tailwind utilities;

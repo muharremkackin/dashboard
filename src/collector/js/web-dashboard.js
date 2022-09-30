@@ -65,7 +65,7 @@ $(document).ready(function () {
     $("#grid").kendoGrid({
         dataSource: dataSource,
         columnMenu: {
-            filterable: false
+            filterable: true
         },
         height: "100%",
         editable: "incell",
