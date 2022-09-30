@@ -2299,6 +2299,10 @@ html {
   width: 0.25rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
