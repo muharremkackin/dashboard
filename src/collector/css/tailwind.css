@@ -470,7 +470,7 @@
         @apply flex space-x-3;
     }
     .application .phone-control select {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2;
     }
     .application .phone-control input {
         @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[236px];
