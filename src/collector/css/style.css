@@ -2113,6 +2113,7 @@ html {
 
 .application .phone-control select {
   border-radius: 5px;
+  border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(225 227 235 / var(--tw-border-opacity));
   font-size: 15px;
@@ -2121,6 +2122,7 @@ html {
 .application .phone-control input {
   width: 100%;
   border-radius: 5px;
+  border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(225 227 235 / var(--tw-border-opacity));
   font-size: 15px;
@@ -2135,6 +2137,7 @@ html {
 .application .email-control input {
   width: 100%;
   border-radius: 5px;
+  border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(225 227 235 / var(--tw-border-opacity));
   font-size: 15px;
@@ -2297,10 +2300,6 @@ html {
 
 .w-1 {
   width: 0.25rem;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .flex-1 {

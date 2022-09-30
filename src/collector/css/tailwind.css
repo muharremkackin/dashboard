@@ -470,13 +470,13 @@
         @apply flex space-x-3;
     }
     .application .phone-control select {
-        @apply text-[15px] border-[#E1E3EB] rounded-[5px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px];
     }
     .application .phone-control input {
-        @apply text-[15px] border-[#E1E3EB] rounded-[5px] w-full md:w-[236px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[236px];
     }
     .application .email-control input {
-        @apply text-[15px] border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
     }
 }
 
