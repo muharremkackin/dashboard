@@ -397,6 +397,9 @@
     .application .bank-account-input~label>div:nth-child(2) {
         @apply w-full space-y-5 text-[15px];
     }
+    .application .bank-account-input~label>div:nth-child(3) {
+        @apply absolute top-[6px] right-[6px];
+    }
 
     .application .bank-account-input~label>div:nth-child(2)>div:last-child {
         @apply flex flex-col xl:flex-row space-y-2 xl:space-y-0 items-start xl:items-center  justify-between w-full;
