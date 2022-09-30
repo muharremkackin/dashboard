@@ -404,9 +404,6 @@
     .application .bank-account-input~label>div:nth-child(2)>div:last-child {
         @apply flex flex-col xl:flex-row space-y-2 xl:space-y-0 items-start xl:items-center  justify-between w-full;
     }
-    .application .bank-account-input~label>div:nth-child(2)>div:last-child img {
-        @apply object-scale-down w-[134px] h-[24px];
-    }
 
     .daterangepicker .ranges li.active {
         @apply bg-[#688BE4];
