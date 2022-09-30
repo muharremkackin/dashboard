@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector - Dashboard Template</title>
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css">
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css">
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css">
+
+    <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css">
+    <link rel="stylesheet" href="/src/collector/css/style.css" />
+    <link rel="stylesheet" href="/src/collector/libs/splide/css/splide-core.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <div class="application" data-app="collector">
+        <!-- begin::Navigation -->
+        <aside class="closed">
+            <div>
+                <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik">
+                <button class="btn btn-icon btn-gray btn-toggle-aside" data-click="toggle-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="maximize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="minimize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="btn btn-icon btn-gray btn-close-aside" data-click="close-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                        <path
+                            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                    </svg>
+                </button>
+            </div>
+            <section>
+                <div>
+                    <div class="reseller-select">
+                        <select name="" id="ChooseResellerId"></select>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="active" href="#">
+                                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                    <span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                                    <span class="title">Bayi Bilgileri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                                    <span class="title">Kredi Ödeme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                                    <span class="title">Bayi Hareketleri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                                    <span class="title">Bayi Bakiye</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-users"></i></span>
+                                    <span class="title">Bayi Kullanıcıları</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-comments"></i></span>
+                                    <span class="title">Destek</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <div>
+                        <span>
+                            <img class="logo-icon" src="/src/collector/images/icons/payzee.png" alt="">
+                            <img class="logo-icon-sm" src="/src/collector/images/icons/payzee-md.png" alt="">
+                        </span>
+
+                        <span>
+                            <a href="tel:+908502230767">
+                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                <span class="title">0850 223 0 767</span>
+                            </a>
+                        </span>
+                    </div>
+                </footer>
+            </section>
+        </aside>
+        <!-- end::Navigation -->
+        <!-- begin::MainContent -->
+        <main class="main-content">
+            <!-- begin::Header -->
+            <header>
+                <div>
+                    <div>
+                        <button class="btn btn-icon btn-gray btn-open-aside" data-click="open-aside">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div>
+                        <div class="date-range-picker" id="infoDateRangePicker">
+                            <span>
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            <span>
+                                <input type="text" placeholder="date" id="infoDates" />
+                            </span>
+                            <span>
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown" data-component="dropdown">
+                            <button class="">
+                                <span>Arçelik Merkezler Bayi</span>
+                                <span><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-link" href="#">
+                                    <span>Log out</span>
+                                    <span><i class="fas fa-sign-out-alt"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end::Header -->
+            <!-- begin::Content -->
+            <section class="dashboard-content">
+                <div class="dashboard-content-inner ">
+                    <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                        <div class="xl:col-span-2 py-6 px-8 bg-white rounded-[10px] space-y-8">
+                            <h2 class="text-[#181C32] text-lg">Bayi Detay</h2>
+                            <div class="space-y-5">
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">Bayi Adı</div>
+                                    <div>Arçelik Merkezler Bayi</div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">Bayi Kodu</div>
+                                    <div>8065748392764</div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">Bayi VKN</div>
+                                    <div>1565748392764</div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">Referans Kodu</div>
+                                    <div>RZ0978TSYMN12</div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">Telefon Numarası</div>
+                                    <div>+902162564589</div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">Adres</div>
+                                    <div>Cezivli Mah. Akgedik Sok. No:33 Bostancı / Istanbul</div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">GSM Numarası</div>
+                                    <div class="flex space-x-3">
+                                        <select class="text-[15px] border-[#E1E3EB] rounded-[5px]" name="" id="">
+                                            <option value="90">90</option>
+                                        </select>
+                                        <input class="text-[15px] border-[#E1E3EB] rounded-[5px] w-full md:w-[236px]"
+                                            type="text" />
+                                    </div>
+                                </div>
+                                <div
+                                    class="text-[15px] flex flex-col lg:flex-row space-y-1 lg:space-y-0 lg:items-center justify-between">
+                                    <div class="text-[#8B8F9E]">E-Posta</div>
+                                    <div class="flex space-x-3">
+                                        <input class="text-[15px] border-[#E1E3EB] rounded-[5px] w-full md:w-[320px]"
+                                            type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-6 px-8 bg-white rounded-[10px] ">
+                            <h2 class="text-[#181C32] text-lg">Tahsilat Hesap Bilgisi</h2>
+                            <div class="h-full py-4">
+                                <section class="splide account-information" aria-label="Splide Basic HTML Example">
+                                    <div class="splide__track">
+                                        <ul class="splide__list">
+                                            <li class="splide__slide">
+                                                <div class="flex flex-col justify-between h-full text-[13px] pb-4">
+                                                    <div class="space-y-4">
+                                                        <div class="">
+                                                            <div class="text-[#8B8F9E]">Şirket Adı:</div>
+                                                            <div>Unity Birleşik Ödeme Hizmetleri ve Elektronik Para A.Ş
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-[13px]">
+                                                            <div class="text-[#8B8F9E]">IBAN:</div>
+                                                            <div>TR56001030000000035231950</div>
+                                                        </div>
+                                                        <div class="text-[13px]">
+                                                            <div class="text-[#8B8F9E]">Hesap No:</div>
+                                                            <div>35231950 Şube Kodu: 031</div>
+                                                        </div>
+                                                    </div>
+                                                    <div>ÖNEMLİ!: Tahsilat Tutarlarını Birleşik Ödeme Hesabına ERTESİ İŞ
+                                                        GÜNÜ Ödeme Referans kodunu (OFFUAC1DD56ZJ) EFT/ Havale
+                                                        açıklamasına yazarak göndermeyi unutmayınız.</div>
+                                                </div>
+                                            </li>
+                                            <li class="splide__slide">
+                                                <div class="flex flex-col justify-between h-full text-[13px] pb-4">
+                                                    <div class="space-y-4">
+                                                        <div class="">
+                                                            <div class="text-[#8B8F9E]">Şirket Adı:</div>
+                                                            <div>Unity Birleşik Ödeme Hizmetleri ve Elektronik Para A.Ş
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-[13px]">
+                                                            <div class="text-[#8B8F9E]">IBAN:</div>
+                                                            <div>TR56001030000000035231950</div>
+                                                        </div>
+                                                        <div class="text-[13px]">
+                                                            <div class="text-[#8B8F9E]">Hesap No:</div>
+                                                            <div>35231950 Şube Kodu: 031</div>
+                                                        </div>
+                                                    </div>
+                                                    <div>ÖNEMLİ!: Tahsilat Tutarlarını Birleşik Ödeme Hesabına ERTESİ İŞ
+                                                        GÜNÜ Ödeme Referans kodunu (OFFUAC1DD56ZJ) EFT/ Havale
+                                                        açıklamasına yazarak göndermeyi unutmayınız.</div>
+                                                </div>
+                                            </li>
+                                            <li class="splide__slide">
+                                                <div class="flex flex-col justify-between h-full text-[13px] pb-4">
+                                                    <div class="space-y-4">
+                                                        <div class="">
+                                                            <div class="text-[#8B8F9E]">Şirket Adı:</div>
+                                                            <div>Unity Birleşik Ödeme Hizmetleri ve Elektronik Para A.Ş
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-[13px]">
+                                                            <div class="text-[#8B8F9E]">IBAN:</div>
+                                                            <div>TR56001030000000035231950</div>
+                                                        </div>
+                                                        <div class="text-[13px]">
+                                                            <div class="text-[#8B8F9E]">Hesap No:</div>
+                                                            <div>35231950 Şube Kodu: 031</div>
+                                                        </div>
+                                                    </div>
+                                                    <div>ÖNEMLİ!: Tahsilat Tutarlarını Birleşik Ödeme Hesabına ERTESİ İŞ
+                                                        GÜNÜ Ödeme Referans kodunu (OFFUAC1DD56ZJ) EFT/ Havale
+                                                        açıklamasına yazarak göndermeyi unutmayınız.</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-span-1 xl:col-span-3 py-6 px-8 bg-white rounded-[10px] space-y-8">
+                            <div
+                                class="flex items-start flex-col xl:flex-row space-y-4 xl:space-y-0 xl:items-center xl:justify-between">
+                                <h2 class="text-[#181C32] text-lg">Banka Hesap Bilgileri</h2>
+                                <button class="btn btn-md btn-primary">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                                        </svg>
+                                    </span>
+                                    <span>Hesap Bilgisi Ekle</span>
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full">
+                                <div class="col-span-1 flex">
+                                    <input type="radio" name="BankAccount" id="BankAccount_1"
+                                        class="hidden bank-account-input" />
+                                    <label for="BankAccount_1">
+                                        <!-- begin::RadioDot -->
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                        <!-- end::RadioDot -->
+                                        <div>
+                                            <div>Volkan Dinç Demir</div>
+                                            <div>Garanti BBVA</div>
+                                            <div>
+                                                <div>TR 2000 1234 5678 9101 1121 3141 55</div>
+                                                <div><img src="/src/collector/images/icons/garanti.png" /></div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-span-1 flex">
+                                    <input type="radio" name="BankAccount" id="BankAccount_2"
+                                        class="hidden bank-account-input" />
+                                    <label for="BankAccount_2">
+                                        <!-- begin::RadioDot -->
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                        <!-- end::RadioDot -->
+                                        <div>
+                                            <div>Volkan Dinç Demir</div>
+                                            <div>Garanti BBVA</div>
+                                            <div>
+                                                <div>TR 2000 1234 5678 9101 1121 3141 55</div>
+                                                <div><img src="/src/collector/images/icons/garanti.png" /></div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-span-1 flex">
+                                    <input type="radio" name="BankAccount" id="BankAccount_3"
+                                        class="hidden bank-account-input" />
+                                    <label for="BankAccount_3">
+                                        <!-- begin::RadioDot -->
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                        <!-- end::RadioDot -->
+                                        <div>
+                                            <div>Volkan Dinç Demir</div>
+                                            <div>Garanti BBVA</div>
+                                            <div>
+                                                <div>TR 2000 1234 5678 9101 1121 3141 55</div>
+                                                <div><img src="/src/collector/images/icons/garanti.png" /></div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-span-1 flex">
+                                    <input type="radio" name="BankAccount" id="BankAccount_4"
+                                        class="hidden bank-account-input" />
+                                    <label for="BankAccount_4">
+                                        <!-- begin::RadioDot -->
+                                        <div>
+                                            <div></div>
+                                        </div>
+                                        <!-- end::RadioDot -->
+                                        <div>
+                                            <div>Volkan Dinç Demir</div>
+                                            <div>Garanti BBVA</div>
+                                            <div>
+                                                <div>TR 2000 1234 5678 9101 1121 3141 55</div>
+                                                <div><img src="/src/collector/images/icons/garanti.png" /></div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end::Content -->
+        </main>
+        <!-- end::MainContent -->
+    </div>
+
+
+
+    <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="/src/collector/libs/moment.min.js"></script>
+    <script src="/src/collector/libs/daterangepicker.min.js"></script>
+    <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
+    <script src="/src/collector/libs/splide/js/splide.min.js"></script>
+    <script src="/src/collector/js/app.js"></script>
+    <script src="/src/collector/js/web-reseller-information.js"></script>
+</body>
+
+</html>

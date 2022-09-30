@@ -104,16 +104,9 @@ const ownKeys = Object.keys;
 
 function forOwn(object, iteratee, right) {
   if (object) {
-    let keys = ownKeys(object);
-    keys = right ? keys.reverse() : keys;
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      if (key !== "__proto__") {
-        if (iteratee(object[key], key) === false) {
-          break;
-        }
-      }
-    }
+    (right ? ownKeys(object).reverse() : ownKeys(object)).forEach((key) => {
+      key !== "__proto__" && iteratee(object[key], key);
+    });
   }
   return object;
 }
@@ -143,7 +136,7 @@ function merge(object) {
 }
 
 function omit(object, keys) {
-  toArray(keys || ownKeys(object)).forEach((key) => {
+  forEach(keys || ownKeys(object), (key) => {
     delete object[key];
   });
 }
@@ -273,9 +266,9 @@ function approximatelyEqual(x, y, epsilon) {
   return abs(x - y) < epsilon;
 }
 
-function between(number, minOrMax, maxOrMin, exclusive) {
-  const minimum = min(minOrMax, maxOrMin);
-  const maximum = max(minOrMax, maxOrMin);
+function between(number, x, y, exclusive) {
+  const minimum = min(x, y);
+  const maximum = max(x, y);
   return exclusive ? minimum < number && number < maximum : minimum <= number && number <= maximum;
 }
 

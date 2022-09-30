@@ -44,4 +44,21 @@ $(function () {
     }, cb);
 
     cb(start, end);
+
+    $("#ChooseResellerId").kendoComboBox({
+        dataTextField: "text",
+        dataValueField: "value",
+        dataSource: [
+            { text: "Ender KOC Arcelik", value: "1" },
+            { text: "Polyester", value: "2" },
+            { text: "Cotton/Polyester", value: "3" },
+            { text: "Rib Knit", value: "4" }
+        ],
+        filter: "contains",
+        suggest: true,
+        index: 3,
+        change: function (e) {
+            console.log(e);
+        }
+    });
 });

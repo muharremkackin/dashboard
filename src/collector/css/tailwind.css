@@ -1,159 +1,220 @@
 @tailwind base;
+
 @layer base {
-    @font-face {
-        font-family: "Open Sans";
-        src: url(/src/collector/fonts/OpenSans-VariableFont.ttf);
+    body {
+        @apply text-[#181C32];
     }
+
+    @font-face {
+        font-family:"Open Sans";
+        src:url(/fonts/OpenSansVariable.ttf);
+    }
+
     html {
-        font-family: "Open Sans", system-ui, sans-serif;
+        font-family:"Open Sans", system-ui, sans-serif;
     }
 
     .btn {
-        @apply transition rounded;
+        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border;
     }
 
     .btn.btn-icon {
-        @apply p-2;
+        @apply p-2 space-x-0;
     }
 
     .btn.btn-gray {
-        @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300;
+        @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300 ring-gray-200;
+    }
+    .btn.btn-sm {
+        @apply text-sm py-1 px-2;
+    }
+    .btn.btn-md {
+        @apply text-sm py-2 px-4;
+    } 
+    .btn.btn-primary {
+        @apply bg-[#688BE4] border-[#688BE4]  text-white hover:bg-[#5c80db] ring-[#5476cc]
+    }
+    .btn.btn-default {
+        @apply bg-[#FFFFFF] border-[#8B8F9D] text-[#181C32] hover:bg-gray-100 ring-[#bdc3c7]
     }
 }
+
 @tailwind components;
+
 @layer components {
     .application {
         @apply h-screen w-full flex bg-[#FAFBFC] text-[#181C32];
     }
 
-    .application > aside {
+    .application>aside {
         @apply w-[262px] h-screen overflow-x-hidden overflow-y-auto bg-white border-r flex-shrink-0 fixed top-0 left-0 z-10 lg:relative ease-in-out duration-150;
-        
+
     }
-    .application > aside.closed {
+
+    .application>aside.closed {
         @apply hidden lg:block;
     }
-    .application > aside.minimized {
+
+    .application>aside.minimized {
         @apply w-[80px];
-        transition: width linear 50ms;
+        transition:width linear 50ms;
     }
-    .application > aside > div {
+
+    .application>aside>div {
         @apply h-[66px] w-full pl-8 flex items-center justify-between pr-4;
     }
-    .application > aside > div > img {
+
+    .application>aside>div>img {
         @apply h-[28px];
     }
-    .application > aside.minimized > div {
-        @apply h-[66px] w-full pl-4  flex items-center justify-center ;
+
+    .application>aside.minimized>div {
+        @apply h-[66px] w-full pl-4 flex items-center justify-center;
     }
-    .application > aside.minimized > div > img {
+
+    .application>aside.minimized>div>img {
         @apply hidden;
     }
-    .application > aside.minimized .maximize-icon {
+
+    .application>aside.minimized .maximize-icon {
         @apply block;
     }
-    .application > aside.minimized .minimize-icon {
+
+    .application>aside.minimized .minimize-icon {
         @apply hidden;
     }
-    .application > aside .maximize-icon {
+
+    .application>aside .maximize-icon {
         @apply hidden;
     }
-    .application > aside .minimize-icon {
+
+    .application>aside .minimize-icon {
         @apply block;
     }
-    .application > aside .btn-toggle-aside {
+
+    .application>aside .btn-toggle-aside {
         @apply hidden lg:block;
     }
-    .application > main .btn-open-aside,
-    .application > aside .btn-close-aside {
+
+    .application>main .btn-open-aside,
+    .application>aside .btn-close-aside {
         @apply block lg:hidden;
     }
-    .application > aside > section {
+
+    .application>aside>section {
         @apply py-8 px-4 flex flex-col justify-between;
-        height: calc(100vh - 66px);
+        height:calc(100vh - 66px);
     }
-    .application > aside > section nav ul {
+
+    .application>aside>section nav ul {
         @apply space-y-2;
     }
-    .application > aside > section nav ul li {
+
+    .application>aside>section nav ul li {
         @apply flex;
     }
-    .application > aside > section nav ul li a {
+
+    .application>aside>section nav ul li a {
         @apply px-4 py-3 bg-white hover:bg-[#EFF2F8] active:bg-[#e6edfa] text-sm rounded-[10px] w-full flex items-center space-x-[18px] transition;
     }
-    .application > aside > section nav ul li a {
+
+    .application>aside>section nav ul li a {
         @apply py-4;
     }
-    .application > aside > section nav ul li a.active {
+
+    .application>aside>section nav ul li a.active {
         @apply bg-[#EFF2F8] text-[#688BE4] font-semibold tracking-wider;
     }
-    .application > aside > section nav ul li a .icon {
+
+    .application>aside>section nav ul li a .icon {
         @apply w-4 h-4 flex items-center justify-center;
     }
-    .application > aside.minimized > section nav ul li a .title {
+
+    .application>aside.minimized>section nav ul li a .title {
         @apply hidden;
     }
-    .application > aside > section > footer > div {
+
+    .application>aside>section>footer>div {
         @apply flex flex-col items-center justify-center space-y-[4px] text-xl;
     }
-    .application > aside.minimized > section > footer > div {
+
+    .application>aside.minimized>section>footer>div {
         @apply space-y-[16px];
     }
-    .application > aside.minimized > section > footer > div {
+
+    .application>aside.minimized>section>footer>div {
         @apply text-base;
     }
-    .application > aside > section > footer > div img {
+
+    .application>aside>section>footer>div img {
         @apply h-[42px];
     }
-    .application > aside > section > footer > div a {
+
+    .application>aside>section>footer>div a {
         @apply hover:text-[#688BE4] transition active:underline;
     }
-    .application > aside.minimized > section > footer > div a {
-        @apply hover:text-[#688BE4] active:no-underline ;
+
+    .application>aside.minimized>section>footer>div a {
+        @apply hover:text-[#688BE4] active:no-underline;
     }
-    .application > aside > section > footer > div a span.icon {
+
+    .application>aside>section>footer>div a span.icon {
         @apply hidden;
     }
-    .application > aside.minimized > section > footer > div img.logo-icon {
+
+    .application>aside.minimized>section>footer>div img.logo-icon {
         @apply hidden;
     }
-    .application > aside > section > footer > div img.logo-icon-sm {
+
+    .application>aside>section>footer>div img.logo-icon-sm {
         @apply hidden;
     }
-    .application > aside.minimized > section > footer > div img.logo-icon-sm {
+
+    .application>aside.minimized>section>footer>div img.logo-icon-sm {
         @apply block;
     }
-    .application > aside.minimized > section > footer > div a span.icon {
+
+    .application>aside.minimized>section>footer>div a span.icon {
         @apply block;
     }
-    .application > aside.minimized > section > footer > div a span.title {
+
+    .application>aside.minimized>section>footer>div a span.title {
         @apply hidden;
     }
-    .application > aside > section > footer > div a span.title {
+
+    .application>aside>section>footer>div a span.title {
         @apply block;
     }
-    .application > .main-content {
+
+    .application>.main-content {
         @apply w-full h-full;
     }
-    .application > .main-content > header {
+
+    .application>.main-content>header {
         @apply h-[66px] w-full bg-white border-b;
     }
-    .application > .main-content > header > div {
+
+    .application>.main-content>header>div {
         @apply w-full h-full flex items-center justify-between py-4 px-4 lg:px-8;
     }
-    .application > .main-content > header > h1 {
+
+    .application>.main-content>header>h1 {
         @apply text-lg;
     }
-    .application > .main-content > header .date-range-picker {
+
+    .application>.main-content>header .date-range-picker {
         @apply bg-[#F5F8FA] py-2 px-3 text-[13px] rounded-[5px] cursor-pointer space-x-2 text-[#8B8F9E];
     }
-    .application > .main-content > header .date-range-picker input {
+
+    .application>.main-content>header .date-range-picker input {
         @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none;
     }
-    .application > .main-content > header > div > div:first-child {
+
+    .application>.main-content>header>div>div:first-child {
         @apply flex items-center space-x-4 lg:space-x-0;
     }
-    .application > .main-content > header > div > div:nth-child(2) {
+
+    .application>.main-content>header>div>div:nth-child(2) {
         @apply flex items-center space-x-6;
     }
 
@@ -161,54 +222,110 @@
         @apply relative;
     }
 
-    .dropdown > button {
+    .dropdown>button {
         @apply text-[13px] py-2 px-3 space-x-2 rounded-[5px] border border-dashed;
     }
-    .dropdown > .dropdown-content {
+
+    .dropdown>.dropdown-content {
         @apply absolute top-10 w-full bg-white rounded-[5px] z-10 shadow py-2 px-3 space-y-4 hidden;
     }
-    .dropdown > .dropdown-content .dropdown-link {
+
+    .dropdown>.dropdown-content .dropdown-link {
         @apply text-[13px] inline-flex items-center justify-between w-full py-2 px-3 bg-[#F5F8FA] hover:bg-[#e4ecf2] transition rounded-[5px];
     }
 
     .application .dashboard-content {
         @apply w-full overflow-y-auto px-4 2xl:px-0 py-8;
-        height: calc(100vh - 66px);
+        height:calc(100vh - 66px);
     }
 
     .application .dashboard-content-inner {
-        @apply container mx-auto h-10  pb-8;
+        @apply container mx-auto h-10 pb-8;
     }
+
     .application .dashboard-widgets {
         @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-[30px];
     }
+
     .application .widget {
-        @apply rounded-[10px]  bg-white border border-[#EEF0F7] ;
+        @apply rounded-[10px] bg-white border border-[#EEF0F7];
     }
+
     .application .widget.widget-sm {
         @apply col-span-1 h-[180px] xl:h-[221px];
     }
+
     .application .widget.widget-count {
         @apply px-8 xl:px-8 py-8 xl:py-12 space-x-4 xl:space-x-6 flex items-center;
     }
+
     .application .widget.widget-count .icon {
         @apply text-2xl xl:text-[36px] h-16 w-16 xl:h-24 xl:w-24 rounded-full bg-[#E5FDDF] flex items-center justify-center flex-shrink-0;
     }
+
     .application .widget.widget-count .content {
         @apply flex flex-col leading-9;
     }
-    .application .widget.widget-count .content > span:first-child {
+
+    .application .widget.widget-count .content>span:first-child {
         @apply text-[15px];
     }
-    .application .widget.widget-count .content > span:nth-child(2) {
+
+    .application .widget.widget-count .content>span:nth-child(2) {
         @apply text-4xl xl:text-[54px];
     }
+
     .application .widget.widget-grid {
-        @apply  px-8 py-7;
+        @apply px-8 py-7;
     }
+
+    .application .widget.widget-grid > header {
+        @apply flex flex-col md:flex-row items-start md:items-center md:justify-between mb-7;
+    }
+    .application .widget.widget-grid > header h2 {
+        @apply text-lg;
+    }
+    .application .grid-container {
+        @apply overflow-x-auto relative sm:rounded-lg;
+    }
+    .application .grid-container table {
+        @apply w-full text-sm text-left text-[#4B4B4B] dark:text-gray-400;
+    }
+    .application .grid-container table > tfoot,
+    .application .grid-container table > thead {
+        @apply text-xs text-[#8B8F9E] uppercase bg-[#F5F8FA] dark:bg-gray-700 dark:text-gray-400;
+    }
+
+    .application .grid-container table > tfoot th,
+    .application .grid-container table > thead th {
+        @apply py-3 px-6 font-light;
+    }
+
+    .application .grid-container table > tfoot th.actions,
+    .application .grid-container table > thead th.actions {
+        @apply text-center;
+    }
+    
+    .application .grid-container table > tbody {
+        @apply divide-y divide-[#F0F0F0] dark:divide-gray-700 w-full;
+    }
+    .application .grid-container table > tbody tr {
+        @apply bg-white  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition;
+    }
+    .application .grid-container table > tbody tr td {
+        @apply py-4 px-6 text-gray-900 whitespace-normal dark:text-white;
+    }
+    .application .grid-container table > tbody tr td.actions {
+        @apply text-center;
+    }
+    .application .grid-container table > tbody tr td.actions .action-container {
+        @apply flex items-center space-x-2 justify-center w-full;
+    }
+
     .application .widget.widget-full {
-        @apply col-span-1 md:col-span-2 xl:col-span-3 row-span-4 h-[800px];
+        @apply col-span-1 md:col-span-2 xl:col-span-3 row-span-4;
     }
+
     .application .widget.widget-chart {
         @apply flex flex-col p-2;
     }
@@ -217,16 +334,87 @@
         @apply pb-4;
     }
 
-    .application > aside.minimized .reseller-select {
+    .application>aside.minimized .reseller-select {
         @apply hidden;
     }
 
     .application .k-input-inner {
         @apply focus:ring-0;
     }
+
+    .application .splide.account-information {
+        @apply h-full relative;
+    }
+
+    .application .splide.account-information .splide__pagination {
+        @apply space-x-2;
+    }
+
+    .application .splide.account-information .splide__pagination__page {
+        @apply w-3 h-3 rounded-full bg-gray-200 transition
+    }
+
+    .application .splide.account-information .splide__pagination__page.is-active {
+        @apply bg-[#688BE4]
+    }
+
+    .application .splide.account-information .splide__pagination.splide__pagination--ltr {
+        @apply absolute -bottom-4 py-4 w-full flex justify-center
+    }
+
+    .application .splide.account-information .splide__track.splide__track--slide {
+        @apply py-4 h-full;
+    }
+
+    .application .splide.account-information .splide__track.splide__track--slide ul {
+        @apply h-full;
+    }
+
+    .application .bank-account-input~label {
+        @apply relative p-5 border border-[#E1E3EA] rounded-[5px] w-full cursor-pointer transition flex items-start space-x-5;
+    }
+
+    .application .bank-account-input:checked~label {
+        @apply border-[#6A8DDE]  ;
+    }
+
+    .application .bank-account-input~label>div:first-child {
+        @apply bg-[#F5F8FA] border border-[#E1E3EB] w-5 h-5 rounded-full transition flex items-center justify-center;
+    }
+
+    .application .bank-account-input:checked~label>div:first-child {
+        @apply bg-[#6A8DDE] border-[#6A8DDE] flex-shrink-0;
+    }
+
+    .application .bank-account-input~label>div:first-child>div:first-child {
+        @apply bg-[#F5F8FA] w-3 h-3 rounded-full transition;
+    }
+
+    .application .bank-account-input:checked~label>div:first-child>div:first-child {
+        @apply bg-white;
+    }
+
+    .application .bank-account-input~label>div:nth-child(2) {
+        @apply w-full space-y-5 text-[15px];
+    }
+
+    .application .bank-account-input~label>div:nth-child(2)>div:last-child {
+        @apply flex flex-col xl:flex-row space-y-2 xl:space-y-0 items-start xl:items-center  justify-between w-full;
+    }
+    .application .bank-account-input~label>div:nth-child(2)>div:last-child img {
+        @apply object-scale-down w-[134px] h-[24px];
+    }
+
+    .daterangepicker .ranges li.active {
+        @apply bg-[#688BE4];
+    }
+    .daterangepicker td.active, .daterangepicker td.active:hover {
+        @apply bg-[#5c80db]
+    }
 }
+
 @tailwind utilities;
 
 .k-input-inner {
-    outline: none;
+    outline:none;
 }

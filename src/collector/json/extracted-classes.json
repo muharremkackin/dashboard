@@ -1,3 +1,7 @@
 [
-    "k-input-inner"
+    "k-input-inner",
+    "closed",
+    "splide__pagination",
+    "splide__pagination__page is-active",
+    "splide__pagination__page"
 ]
