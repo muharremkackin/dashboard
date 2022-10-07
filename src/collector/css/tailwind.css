@@ -545,18 +545,26 @@
         @apply text-[15px] text-center;
     }
 
+    .modals > .modals-container > .modal > section > .fail > div:first-child,
     .modals > .modals-container > .modal > section > .approve > div:first-child {
         @apply flex items-center justify-center;
     }
+    .modals > .modals-container > .modal > section > .fail > div:first-child img,
     .modals > .modals-container > .modal > section > .approve > div:first-child img {
         @apply w-[100px] h-[100px] lg:w-[160px] lg:h-[160px];
     }
+    .modals > .modals-container > .modal > section > .fail > div:nth-child(2),
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) {
         @apply text-center pt-7 pb-16 space-y-[12px];
     }
+    .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:first-child,
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) > div:first-child {
         @apply text-[26px];
     }
+    .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:first-child {
+        @apply text-red-500;
+    }
+    .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:nth-child(2),
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) > div:nth-child(2) {
         @apply p-8 text-[15px] border border-dashed border-[#E1E3EA];
     }
