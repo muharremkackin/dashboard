@@ -658,6 +658,33 @@
     .application .user-card > div:nth-child(3) > div > span:first-child {
         @apply text-[#8B8F9E];
     }
+
+    .receipt {
+        @apply text-[15px];
+    }
+    .receipt > header {
+        @apply border-b border-gray-300;
+    }
+    .receipt > section:nth-child(2) {
+        @apply border-b border-dashed border-[#181C32] py-[15px];
+    }
+    .receipt > header, 
+    .receipt > section {
+        @apply space-y-[15px] pb-[15px];
+    }
+    .receipt > header > div, 
+    .receipt > section > div {
+        @apply flex items-end justify-between;
+    }
+    .receipt > header > div > div:first-child, 
+    .receipt > section > div > div:first-child {
+        @apply text-[#8B8F9E];
+    }
+    .receipt > header > div > div:nth-child(2), 
+    .receipt > section > div > div:nth-child(2) {
+        @apply font-bold text-right;
+    }
+
 }
 
 @tailwind utilities;
