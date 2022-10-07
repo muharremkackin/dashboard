@@ -2328,38 +2328,31 @@ html {
 }
 
 .form.form-inline {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form.form-inline > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 
 @media (min-width: 1024px) {
   .form.form-inline {
-    flex-direction: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
 
-  .form.form-inline > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-    margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+@media (min-width: 1280px) {
+  .form.form-inline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 .form.form-inline.form-credit-payment .form-control {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .form.form-inline.form-credit-payment .form-control {
-    width: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .form.form-inline.form-credit-payment .form-control {
-    width: 25%;
-  }
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .form.form-inline.form-credit-payment .form-control input {
@@ -2435,6 +2428,12 @@ html {
   }
 }
 
+@media (min-width: 768px) {
+  .form.form-inline > .actions {
+    justify-content: flex-start;
+  }
+}
+
 .application .credit-payment > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2451,6 +2450,9 @@ html {
 }
 
 .application .grid-card > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   padding-left: 2rem;

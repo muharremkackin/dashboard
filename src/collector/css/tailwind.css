@@ -521,11 +521,11 @@
     }
 
     .form.form-inline {
-        @apply lg:flex-row flex-wrap lg:space-y-0 lg:space-x-5
+        @apply grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-4 gap-4 space-y-0
     }
 
     .form.form-inline.form-credit-payment .form-control {
-        @apply w-full md:w-1/2 lg:w-1/4;
+        @apply grid-cols-1;
     }
 
     .form.form-inline.form-credit-payment .form-control input {
@@ -546,6 +546,10 @@
         @apply flex flex-col lg:flex-row items-center md:justify-center space-y-2 lg:space-y-0 lg:space-x-2;
     }
 
+    .form.form-inline > .actions {
+        @apply md:justify-start
+    }
+
     .application .credit-payment {
         @apply space-y-8;
     }
@@ -554,7 +558,7 @@
     }
 
     .application .grid-card > header {
-        @apply py-5 px-8;
+        @apply py-5 px-8 flex items-center justify-between;
     }
     .application .grid-card > header h2 {
         @apply text-base lg:text-lg;
@@ -610,4 +614,8 @@
 
 .k-input-inner {
     outline:none;
+}
+
+.is-hidden {
+    display: none!important;
 }
