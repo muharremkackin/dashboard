@@ -15,11 +15,11 @@
     }
 
     .btn {
-        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border;
+        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border w-full justify-center md:justify-start md:w-auto;
     }
 
     .btn.btn-icon {
-        @apply p-2 space-x-0;
+        @apply p-2 space-x-0 w-auto;
     }
 
     .btn.btn-gray {
@@ -191,11 +191,11 @@
     }
 
     .application>.main-content>header {
-        @apply h-[66px] w-full bg-white border-b;
+        @apply lg:h-[66px] w-full bg-white border-b;
     }
 
     .application>.main-content>header>div {
-        @apply w-full h-full flex items-center justify-between py-4 px-4 lg:px-8;
+        @apply w-full h-full flex flex-col lg:flex-row lg:items-center lg:justify-between py-4 px-4 lg:px-8 space-y-5 lg:space-y-0;
     }
 
     .application>.main-content>header>h1 {
@@ -203,7 +203,7 @@
     }
 
     .application>.main-content>header .date-range-picker {
-        @apply bg-[#F5F8FA] py-2 px-3 text-[13px] rounded-[5px] cursor-pointer space-x-2 text-[#8B8F9E];
+        @apply bg-[#F5F8FA] py-2 px-3 text-[13px] rounded-[5px] cursor-pointer space-x-2 text-[#8B8F9E] w-fit;
     }
 
     .application>.main-content>header .date-range-picker input {
@@ -215,7 +215,7 @@
     }
 
     .application>.main-content>header>div>div:nth-child(2) {
-        @apply flex items-center space-x-6;
+        @apply flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center lg:space-x-6;
     }
 
     .dropdown {
@@ -504,6 +504,18 @@
         @apply flex flex-col space-y-5;
     }
 
+    .form.form-inline {
+        @apply lg:flex-row flex-wrap lg:space-y-0 lg:space-x-5
+    }
+
+    .form.form-inline.form-credit-payment .form-control {
+        @apply w-full md:w-1/2 lg:w-1/4;
+    }
+
+    .form.form-inline.form-credit-payment .form-control input {
+        @apply w-full
+    }
+
     .form > .form-control {
         @apply flex flex-col space-y-3;
     }
@@ -512,10 +524,52 @@
     }
     .form > .form-control > input,
     .form > .form-control > select {
-        @apply border border-[#E1E3EB] bg-[#FFFFFF] rounded-[5px];
+        @apply border border-[#E1E3EB] bg-[#FFFFFF] rounded-[5px] placeholder-[#8B8F9E];
     }
     .form > .actions {
-        @apply flex flex-col lg:flex-row items-center justify-center space-y-2 lg:space-y-0 lg:space-x-2;
+        @apply flex flex-col lg:flex-row items-center md:justify-center space-y-2 lg:space-y-0 lg:space-x-2;
+    }
+
+    .application .credit-payment > header {
+        @apply px-8 pt-4 pb-6 bg-white border border-[#EEF0F7] rounded-[10px] space-y-5;
+    }
+    .application .credit-payment > header > div:first-child {
+        @apply flex flex-row items-center justify-between w-full;
+    }
+    .application .credit-payment > header > div:first-child h2 {
+        @apply md:text-lg;
+    }
+    .application .credit-payment > header > div:first-child img {
+        @apply h-6 md:h-[54px];
+    }
+    .application .credit-payment > header > div:nth-child(2) {
+        @apply space-y-5;
+    }
+    .application .credit-payment > header > div:nth-child(2) div:first-child {
+        @apply space-y-3 md:space-y-0 md:space-x-2 flex flex-col md:flex-row md:items-center;
+    }
+
+    .application .credit-payment-radio {
+        @apply hidden;
+    }
+
+    .application .credit-payment-radio ~ label {
+        @apply p-[10px] text-[15px] border border-dashed border-[#E1E3EB] flex items-center space-x-[10px] cursor-pointer min-w-[168px] rounded-[5px];
+    }
+    .application .credit-payment-radio:checked ~ label {
+        @apply border-[#688BE4];
+    }
+    .application .credit-payment-radio ~ label > div:first-child {
+        @apply w-5 h-5 rounded-full border border-[#E1E3EB] bg-[#F5F8FA] flex items-center justify-center;
+    }
+    .application .credit-payment-radio:checked ~ label > div:first-child {
+        @apply border-[#688BE4] bg-[#688BE4];
+    }
+    .application .credit-payment-radio ~ label > div:first-child > div {
+        @apply w-[10px] h-[10px] rounded-full bg-transparent;
+    }
+    .application .credit-payment-radio:checked ~ label > div:first-child > div {
+        @apply bg-white;
     }
 }
 

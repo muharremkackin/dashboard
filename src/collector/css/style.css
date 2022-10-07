@@ -596,7 +596,9 @@ html {
 
 .btn {
   display: inline-flex;
+  width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 .btn > :not([hidden]) ~ :not([hidden]) {
@@ -619,6 +621,17 @@ html {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: auto;
+    justify-content: flex-start;
+  }
+}
+
+.btn.btn-icon {
+  width: auto;
 }
 
 .btn.btn-icon > :not([hidden]) ~ :not([hidden]) {
@@ -1167,19 +1180,32 @@ html {
 }
 
 .application>.main-content>header {
-  height: 66px;
   width: 100%;
   border-bottom-width: 1px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+@media (min-width: 1024px) {
+  .application>.main-content>header {
+    height: 66px;
+  }
+}
+
 .application>.main-content>header>div {
   display: flex;
   height: 100%;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+.application>.main-content>header>div > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.application>.main-content>header>div {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -1187,6 +1213,18 @@ html {
 }
 
 @media (min-width: 1024px) {
+  .application>.main-content>header>div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .application>.main-content>header>div > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
   .application>.main-content>header>div {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1199,6 +1237,9 @@ html {
 }
 
 .application>.main-content>header .date-range-picker {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   cursor: pointer;
 }
 
@@ -1257,13 +1298,29 @@ html {
 
 .application>.main-content>header>div>div:nth-child(2) {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .application>.main-content>header>div>div:nth-child(2) > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+@media (min-width: 1024px) {
+  .application>.main-content>header>div>div:nth-child(2) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .application>.main-content>header>div>div:nth-child(2) > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
 }
 
 .dropdown {
@@ -2229,6 +2286,45 @@ html {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
+.form.form-inline {
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) {
+  .form.form-inline {
+    flex-direction: row;
+  }
+
+  .form.form-inline > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+.form.form-inline.form-credit-payment .form-control {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .form.form-inline.form-credit-payment .form-control {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form.form-inline.form-credit-payment .form-control {
+    width: 25%;
+  }
+}
+
+.form.form-inline.form-credit-payment .form-control input {
+  width: 100%;
+}
+
 .form > .form-control {
   display: flex;
   flex-direction: column;
@@ -2254,17 +2350,33 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.form > .form-control > input::-moz-placeholder, .form > .form-control > select::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(139 143 158 / var(--tw-placeholder-opacity));
+}
+
+.form > .form-control > input::placeholder, 
+    .form > .form-control > select::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(139 143 158 / var(--tw-placeholder-opacity));
+}
+
 .form > .actions {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .form > .actions > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+@media (min-width: 768px) {
+  .form > .actions {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2280,6 +2392,148 @@ html {
     margin-right: calc(0.5rem * var(--tw-space-x-reverse));
     margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
+}
+
+.application .credit-payment > header > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.application .credit-payment > header {
+  border-radius: 10px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(238 240 247 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.application .credit-payment > header > div:first-child {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .application .credit-payment > header > div:first-child h2 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.application .credit-payment > header > div:first-child img {
+  height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .application .credit-payment > header > div:first-child img {
+    height: 54px;
+  }
+}
+
+.application .credit-payment > header > div:nth-child(2) > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.application .credit-payment > header > div:nth-child(2) div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.application .credit-payment > header > div:nth-child(2) div:first-child > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+@media (min-width: 768px) {
+  .application .credit-payment > header > div:nth-child(2) div:first-child {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .application .credit-payment > header > div:nth-child(2) div:first-child > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+.application .credit-payment-radio {
+  display: none;
+}
+
+.application .credit-payment-radio ~ label {
+  display: flex;
+  min-width: 168px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.application .credit-payment-radio ~ label > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(10px * var(--tw-space-x-reverse));
+  margin-left: calc(10px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.application .credit-payment-radio ~ label {
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: rgb(225 227 235 / var(--tw-border-opacity));
+  padding: 10px;
+  font-size: 15px;
+}
+
+.application .credit-payment-radio:checked ~ label {
+  --tw-border-opacity: 1;
+  border-color: rgb(104 139 228 / var(--tw-border-opacity));
+}
+
+.application .credit-payment-radio ~ label > div:first-child {
+  display: flex;
+  height: 1.25rem;
+  width: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(225 227 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 248 250 / var(--tw-bg-opacity));
+}
+
+.application .credit-payment-radio:checked ~ label > div:first-child {
+  --tw-border-opacity: 1;
+  border-color: rgb(104 139 228 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 139 228 / var(--tw-bg-opacity));
+}
+
+.application .credit-payment-radio ~ label > div:first-child > div {
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+  background-color: transparent;
+}
+
+.application .credit-payment-radio:checked ~ label > div:first-child > div {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .visible {
