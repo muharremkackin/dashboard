@@ -577,23 +577,36 @@
         @apply grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-4 gap-4 space-y-0
     }
 
+    .form .form-control-phone {
+    
+    }
+
     .form.form-inline.form-credit-payment .form-control {
         @apply grid-cols-1;
+    }
+    .form .form-control-radio {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+    }
+    .form .form-control-radio > label {
+        @apply cursor-pointer flex items-center space-x-1;
     }
 
     .form.form-inline.form-credit-payment .form-control input {
         @apply w-full
     }
 
-    .form > .form-control {
+    .form > .form-control,
+    .form > .form-control-phone {
         @apply flex flex-col space-y-3;
     }
     .form > .form-control > label {
         @apply text-[15px];
     }
     .form > .form-control > input,
-    .form > .form-control > select {
-        @apply border border-[#E1E3EB] bg-[#FFFFFF] rounded-[5px] placeholder-[#8B8F9E];
+    .form > .form-control > select,
+    .form > .form-control-phone input,
+    .form > .form-control-phone select {
+        @apply border border-[#E1E3EB] bg-[#FFFFFF] rounded-[5px] placeholder-[#8B8F9E] w-full;
     }
     .form > .actions {
         @apply flex flex-col lg:flex-row items-center md:justify-center space-y-2 lg:space-y-0 lg:space-x-2;
