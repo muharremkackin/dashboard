@@ -657,3 +657,7 @@
 .k-filter-menu .k-action-buttons .k-button.k-button-solid-primary:hover {
     background-color: #5c80db!important;
 }
+
+.k-checkbox::before {
+    color: #5c80db!important;
+}
