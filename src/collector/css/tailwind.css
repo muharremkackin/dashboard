@@ -37,6 +37,10 @@
     .btn.btn-default {
         @apply bg-[#FFFFFF] border-[#8B8F9D] text-[#181C32] hover:bg-gray-100 ring-[#bdc3c7]
     }
+
+    .btn.btn-center {
+        @apply md:justify-center;
+    }
 }
 
 @tailwind components;
@@ -359,11 +363,11 @@
     }
 
     .application .splide.account-information .splide__pagination.splide__pagination--ltr {
-        @apply absolute -bottom-4 py-4 w-full flex justify-center
+        @apply absolute -bottom-2 py-4 w-full flex justify-center
     }
 
     .application .splide.account-information .splide__track.splide__track--slide {
-        @apply py-4 h-full;
+        @apply py-4 pb-8 h-full;
     }
 
     .application .splide.account-information .splide__track.splide__track--slide ul {
@@ -493,11 +497,23 @@
     .modals > .modals-container > .modal > header {
         @apply pl-8 pr-4 py-5 flex items-center justify-between border-b;
     }
-    .modals > .modals-container > .modal > header > div:first-child {
+    .modals > .modals-container > .modal > header > div:first-child > div:first-child {
         @apply text-[#181C32] text-base md:text-lg;
     }
+    .modals > .modals-container > .modal > header > div:first-child > div:nth-child(2) {
+        @apply text-[#8B8F9E] text-sm;
+    }
     .modals > .modals-container > .modal > section {
-        @apply px-8 py-10;
+        @apply px-8 py-10 space-y-10;
+    }
+    .modals > .modals-container > .modal > section > .actions {
+        @apply grid grid-cols-2 gap-4;
+    }
+    .modals > .modals-container > .modal > section > .marks {
+        @apply flex items-center justify-center space-x-3;
+    }
+    .modals > .modals-container > .modal > section > .marks img {
+        @apply h-[30px];
     }
 
     .form {
@@ -530,6 +546,23 @@
         @apply flex flex-col lg:flex-row items-center md:justify-center space-y-2 lg:space-y-0 lg:space-x-2;
     }
 
+    .application .credit-payment {
+        @apply space-y-8;
+    }
+    .application .grid-card {
+        @apply border border-[#EEF0F7] bg-white rounded-[10px];
+    }
+
+    .application .grid-card > header {
+        @apply py-5 px-8;
+    }
+    .application .grid-card > header h2 {
+        @apply text-base lg:text-lg;
+    }
+    .application .grid-card > .grid-area {
+        @apply px-8;
+    }
+
     .application .credit-payment > header {
         @apply px-8 pt-4 pb-6 bg-white border border-[#EEF0F7] rounded-[10px] space-y-5;
     }
@@ -545,8 +578,8 @@
     .application .credit-payment > header > div:nth-child(2) {
         @apply space-y-5;
     }
-    .application .credit-payment > header > div:nth-child(2) div:first-child {
-        @apply space-y-3 md:space-y-0 md:space-x-2 flex flex-col md:flex-row md:items-center;
+    .application .credit-payment > header > div:nth-child(2) > div:first-child {
+        @apply space-y-3 md:space-y-0 md:space-x-4 flex flex-col md:flex-row md:items-center;
     }
 
     .application .credit-payment-radio {
@@ -554,19 +587,19 @@
     }
 
     .application .credit-payment-radio ~ label {
-        @apply p-[10px] text-[15px] border border-dashed border-[#E1E3EB] flex items-center space-x-[10px] cursor-pointer min-w-[168px] rounded-[5px];
+        @apply p-[10px] text-[15px] border border-dashed border-[#E1E3EB] flex items-center space-x-[10px] cursor-pointer min-w-[168px] rounded-[5px] transition;
     }
     .application .credit-payment-radio:checked ~ label {
-        @apply border-[#688BE4];
+        @apply border-[#688BE4] bg-[#F5F8FA];
     }
     .application .credit-payment-radio ~ label > div:first-child {
-        @apply w-5 h-5 rounded-full border border-[#E1E3EB] bg-[#F5F8FA] flex items-center justify-center;
+        @apply w-5 h-5 rounded-full border border-[#E1E3EB] bg-[#F5F8FA] flex items-center justify-center flex-shrink-0 transition;
     }
     .application .credit-payment-radio:checked ~ label > div:first-child {
         @apply border-[#688BE4] bg-[#688BE4];
     }
     .application .credit-payment-radio ~ label > div:first-child > div {
-        @apply w-[10px] h-[10px] rounded-full bg-transparent;
+        @apply w-[10px] h-[10px] rounded-full bg-transparent flex-shrink-0 transition;
     }
     .application .credit-payment-radio:checked ~ label > div:first-child > div {
         @apply bg-white;

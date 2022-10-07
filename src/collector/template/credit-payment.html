@@ -179,7 +179,7 @@
                             <div>
                                 <div>
                                     <div>
-                                        <input type="checkbox" class="credit-payment-radio" id="itself" name="PaymentType" />
+                                        <input type="radio" class="credit-payment-radio" id="itself" name="PaymentType" />
                                         <label for="itself" class="">
                                             <div>
                                                 <div></div>
@@ -188,7 +188,7 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" class="credit-payment-radio" id="thirdParty" name="PaymentType" />
+                                        <input type="radio" class="credit-payment-radio" id="thirdParty" name="PaymentType" />
                                         <label for="thirdParty" class="">
                                             <div>
                                                 <div></div>
@@ -215,6 +215,16 @@
                                 </div>
                             </div>
                         </header>
+                        <section class="grid-card">
+                            <header>
+                                <h2>Ödenecek Krediler</h2>
+                            </header>
+                            <div class="grid-area">
+                                <div class="grid-container">
+                                    <table></table>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </section>
@@ -227,7 +237,10 @@
         <div class="modals-container">
             <div class="modal">
                 <header>
-                    <div>Banka Hesap Bilgisi</div>
+                    <div>
+                        <div>Banka Hesap Bilgisi</div>
+                        <div>Lorem Ipsum Sit Amet Lorem Ipsum Sit adet</div>
+                    </div>
                     <div>
                         <button class="btn btn-gray btn-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -237,21 +250,30 @@
                     </div>
                 </header>
                 <section>
-                    <div class="form">
-                        <div class="form-control">
-                            <label for="" class="">Ad Soyad</label>
-                            <input type="text" class="" />
+                    <div class="receipt">
+                        <header>
+                            <div>
+                                <div>Kredi Referansı</div>
+                                <div>00031-TK-220127124120</div>
+                            </div>
+                            <div>
+                                <div>Kredi Tutarı</div>
+                                <div>8000</div>
+                            </div>
+                        </header>
+                        <section></section>
+                        <section></section>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-secondary btn-md btn-center">Vazgeç</button>
+                        <button class="btn btn-primary btn-md btn-center">Ödemeyi Tamamla</button>
+                    </div>
+                    <div class="marks">
+                        <div>
+                            <img src="/src/collector/images/icons/fibabanka.png" alt="">
                         </div>
-                        <div class="form-control">
-                            <label for="" class="">Banka Adı</label>
-                            <select type="text" class=""></select>
-                        </div>
-                        <div class="form-control">
-                            <label for="" class="">IBan Numarası</label>
-                            <input type="text" class="" />
-                        </div>
-                        <div class="actions">
-                            <button class="btn btn-primary btn-md">+Hesap Bilgisi Ekle</button>
+                        <div>
+                            <img src="/src/collector/images/icons/payzee.png" alt="">
                         </div>
                     </div>
                 </section>
