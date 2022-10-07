@@ -263,7 +263,7 @@
     }
 
     .application .dashboard-content-inner {
-        @apply container mx-auto h-10 pb-8;
+        @apply container mx-auto h-10 pb-8 space-y-8;
     }
 
     .application .dashboard-widgets {
@@ -638,6 +638,25 @@
     }
     .application .credit-payment-radio:checked ~ label > div:first-child > div {
         @apply bg-white;
+    }
+
+    .application .user-card {
+        @apply w-full px-8 py-4 bg-white border border-[#EEF0F7] rounded-[10px] flex flex-col xl:flex-row items-center;
+    }
+    .application .user-card > div:first-child {
+        @apply text-[#8B8F9E] flex-shrink-0;
+    }
+    .application .user-card > div:nth-child(2) {
+        @apply h-px xl:h-[30px] w-full xl:w-px bg-[#EEF0F7] my-4 xl:mx-4;
+    }
+    .application .user-card > div:nth-child(3) {
+        @apply w-full flex flex-col xl:flex-row items-start space-y-4 xl:space-y-0 xl:items-center xl:justify-between text-[15px];
+    }
+    .application .user-card > div:nth-child(3) > div {
+        @apply flex items-center space-x-[10px];
+    }
+    .application .user-card > div:nth-child(3) > div > span:first-child {
+        @apply text-[#8B8F9E];
     }
 }
 
