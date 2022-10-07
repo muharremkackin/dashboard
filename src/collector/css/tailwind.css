@@ -535,6 +535,10 @@
         @apply h-[30px];
     }
 
+    .modals > .modals-container > .modal > section > .description {
+        @apply text-[15px] text-center;
+    }
+
     .form {
         @apply flex flex-col space-y-5;
     }
@@ -684,6 +688,8 @@
     .receipt > section > div > div:nth-child(2) {
         @apply font-bold text-right;
     }
+
+
 
 }
 
