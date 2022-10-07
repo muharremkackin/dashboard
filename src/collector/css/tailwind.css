@@ -41,6 +41,22 @@
     .btn.btn-center {
         @apply md:justify-center;
     }
+
+    .badge {
+        @apply py-1 px-2 text-[15px] w-fit rounded-full;
+    }
+    .badge.badge-outline-primary {
+        @apply text-[#688BE4];
+    }
+    .badge.badge-primary {
+        @apply bg-[#688BE4] text-white;
+    }
+    .badge.badge-outline-green {
+        @apply text-green-500;
+    }
+    .badge.badge-green {
+        @apply bg-green-500 text-white;
+    }
 }
 
 @tailwind components;

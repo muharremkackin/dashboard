@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector - Dashboard Template</title>
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css">
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css">
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css">
+
+    <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css">
+    <link rel="stylesheet" href="/src/collector/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <div class="application" data-app="collector">
+        <!-- begin::Navigation -->
+        <aside class="closed">
+            <div>
+                <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik">
+                <button class="btn btn-icon btn-gray btn-toggle-aside" data-click="toggle-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="maximize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="minimize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="btn btn-icon btn-gray btn-close-aside" data-click="close-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                        <path
+                            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                    </svg>
+                </button>
+            </div>
+            <section>
+                <div>
+                    <div class="reseller-select">
+                        <select name="" id="ChooseResellerId"></select>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="active" href="#">
+                                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                    <span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                                    <span class="title">Bayi Bilgileri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                                    <span class="title">Kredi Ödeme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                                    <span class="title">Bayi Hareketleri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                                    <span class="title">Bayi Bakiye</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-users"></i></span>
+                                    <span class="title">Bayi Kullanıcıları</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-comments"></i></span>
+                                    <span class="title">Destek</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <div>
+                        <span>
+                            <img class="logo-icon" src="/src/collector/images/icons/payzee.png" alt="">
+                            <img class="logo-icon-sm" src="/src/collector/images/icons/payzee-md.png" alt="">
+                        </span>
+
+                        <span>
+                            <a href="tel:+908502230767">
+                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                <span class="title">0850 223 0 767</span>
+                            </a>
+                        </span>
+                    </div>
+                </footer>
+            </section>
+        </aside>
+        <!-- end::Navigation -->
+        <!-- begin::MainContent -->
+        <main class="main-content">
+            <!-- begin::Header -->
+            <header>
+                <div>
+                    <div>
+                        <button class="btn btn-icon btn-gray btn-open-aside" data-click="open-aside">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div>
+                        <div class="date-range-picker" id="infoDateRangePicker">
+                            <span>
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            <span>
+                                <input type="text" placeholder="date" id="infoDates" />
+                            </span>
+                            <span>
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown" data-component="dropdown">
+                            <button class="">
+                                <span>Arçelik Merkezler Bayi</span>
+                                <span><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-link" href="#">
+                                    <span>Log out</span>
+                                    <span><i class="fas fa-sign-out-alt"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end::Header -->
+            <!-- begin::Content -->
+            <section class="dashboard-content">
+                <div class="dashboard-content-inner ">
+                    <div class="badge badge-outline-primary">
+                        1.600₺
+                    </div>
+                    <div class="badge badge-outline-green">
+                        8.600₺
+                    </div>
+                    <div class="badge badge-primary">
+                        1.600₺
+                    </div>
+                    <div class="badge badge-green">
+                        8.600₺
+                    </div>
+                </div>
+            </section>
+            <!-- end::Content -->
+        </main>
+        <!-- end::MainContent -->
+    </div>
+
+  
+
+    <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="/src/collector/libs/moment.min.js"></script>
+    <script src="/src/collector/libs/daterangepicker.min.js"></script>
+    <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
+    <script src="/src/collector/js/app.js"></script>
+</body>
+
+</html>
