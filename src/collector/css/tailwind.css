@@ -769,10 +769,13 @@
         @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300;
     }
     .input-container > span:first-child {
-        @apply px-3;
+        @apply px-3 border-r border-gray-300;
     }
     .input-container > input {
-        @apply border-0 bg-transparent focus-within:ring-0 pl-0;
+        @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
+    }
+    .input-container > select {
+        @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
     }
 }
 
