@@ -34,6 +34,9 @@
     .btn.btn-primary {
         @apply bg-[#688BE4] border-[#688BE4]  text-white hover:bg-[#5c80db] ring-[#5476cc]
     }
+    .btn.btn-red {
+        @apply bg-red-500 border-red-500 text-white hover:bg-red-500 ring-red-600;
+    }
     .btn.btn-default {
         @apply bg-[#FFFFFF] border-[#8B8F9D] text-[#181C32] hover:bg-gray-100 ring-[#bdc3c7]
     }
@@ -570,7 +573,7 @@
         @apply space-y-8;
     }
     .application .grid-card {
-        @apply border border-[#EEF0F7] bg-white rounded-[10px];
+        @apply border border-[#EEF0F7] bg-white rounded-[10px] shadow-sm;
     }
 
     .application .grid-card > header {
@@ -581,6 +584,18 @@
     }
     .application .grid-card > .grid-area {
         @apply px-8;
+    }
+    .application .grid-counter {
+        @apply flex items-center justify-center md:justify-end;
+    }
+    .application .grid-counter > div {
+        @apply bg-white p-8 divide-y divide-gray-400 text-[15px] min-w-[340px];
+    }
+    .application .grid-counter > div > div {
+        @apply flex items-center justify-between space-x-2;
+    }
+    .application .grid-counter > div > div > span:first-child {
+        @apply text-[#8B8F9E];
     }
 
     .application .credit-payment > header {
@@ -634,4 +649,11 @@
 
 .is-hidden {
     display: none!important;
+}
+
+.k-filter-menu .k-action-buttons .k-button {
+    background-color: #688BE4!important;
+}
+.k-filter-menu .k-action-buttons .k-button:hover {
+    background-color: #5c80db!important;
 }
