@@ -4,7 +4,7 @@ $(function () {
         button.addClass('animate__bounceIn');
         setTimeout(() => {
             button.removeClass('animate__bounceIn');
-        }, 1000);
+        }, 500);
     });
     $('[data-click="toggle-aside"]').on('click', function () {
         $('[data-app="collector"] > aside').toggleClass("minimized").addClass('animate__bounceInLeft')

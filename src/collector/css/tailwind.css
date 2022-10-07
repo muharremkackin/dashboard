@@ -467,13 +467,55 @@
         @apply flex space-x-3;
     }
     .application .phone-control select {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2;
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2 w-full;
     }
     .application .phone-control input {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[236px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[272px];
     }
     .application .email-control input {
         @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
+    }
+
+    .modals {
+        @apply fixed top-0 left-0 w-screen h-screen bg-black/50 z-[100];
+    }
+
+    .modals.is-hidden {
+        @apply hidden;
+    }
+
+    .modals > .modals-container {
+        @apply flex items-center justify-center w-full h-full p-2 md:p-0;
+    }
+    .modals > .modals-container > .modal {
+        @apply w-full md:w-[459px] bg-white rounded-[10px];
+    }
+    .modals > .modals-container > .modal > header {
+        @apply pl-8 pr-4 py-5 flex items-center justify-between border-b;
+    }
+    .modals > .modals-container > .modal > header > div:first-child {
+        @apply text-[#181C32] text-base md:text-lg;
+    }
+    .modals > .modals-container > .modal > section {
+        @apply px-8 py-10;
+    }
+
+    .form {
+        @apply flex flex-col space-y-5;
+    }
+
+    .form > .form-control {
+        @apply flex flex-col space-y-3;
+    }
+    .form > .form-control > label {
+        @apply text-[15px];
+    }
+    .form > .form-control > input,
+    .form > .form-control > select {
+        @apply border border-[#E1E3EB] bg-[#FFFFFF] rounded-[5px];
+    }
+    .form > .actions {
+        @apply flex flex-col lg:flex-row items-center justify-center space-y-2 lg:space-y-0 lg:space-x-2;
     }
 }
 

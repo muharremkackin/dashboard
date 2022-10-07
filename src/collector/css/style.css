@@ -1886,13 +1886,6 @@ html {
   }
 }
 
-.application .bank-account-input~label>div:nth-child(2)>div:last-child img {
-  height: 24px;
-  width: 134px;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
-}
-
 .daterangepicker .ranges li.active {
   --tw-bg-opacity: 1;
   background-color: rgb(104 139 228 / var(--tw-bg-opacity));
@@ -2112,10 +2105,12 @@ html {
 }
 
 .application .phone-control select {
+  width: 100%;
   border-radius: 5px;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(225 227 235 / var(--tw-border-opacity));
+  padding: 0.5rem;
   font-size: 15px;
 }
 
@@ -2130,7 +2125,7 @@ html {
 
 @media (min-width: 768px) {
   .application .phone-control input {
-    width: 236px;
+    width: 272px;
   }
 }
 
@@ -2146,6 +2141,144 @@ html {
 @media (min-width: 768px) {
   .application .email-control input {
     width: 320px;
+  }
+}
+
+.modals {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.modals.is-hidden {
+  display: none;
+}
+
+.modals > .modals-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .modals > .modals-container {
+    padding: 0px;
+  }
+}
+
+.modals > .modals-container > .modal {
+  width: 100%;
+  border-radius: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .modals > .modals-container > .modal {
+    width: 459px;
+  }
+}
+
+.modals > .modals-container > .modal > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
+
+.modals > .modals-container > .modal > header > div:first-child {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(24 28 50 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .modals > .modals-container > .modal > header > div:first-child {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.modals > .modals-container > .modal > section {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.form > .form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > .form-control > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.form > .form-control > label {
+  font-size: 15px;
+}
+
+.form > .form-control > input, 
+    .form > .form-control > select {
+  border-radius: 5px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(225 227 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.form > .actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form > .actions > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+@media (min-width: 1024px) {
+  .form > .actions {
+    flex-direction: row;
+  }
+
+  .form > .actions > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }
 
