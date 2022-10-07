@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector - Dashboard Template</title>
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css">
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css">
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css">
+
+    <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css">
+    <link rel="stylesheet" href="/src/collector/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <div class="application" data-app="collector">
+        <!-- begin::Navigation -->
+        <aside class="closed">
+            <div>
+                <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik">
+                <button class="btn btn-icon btn-gray btn-toggle-aside" data-click="toggle-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="maximize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="minimize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="btn btn-icon btn-gray btn-close-aside" data-click="close-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                        <path
+                            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                    </svg>
+                </button>
+            </div>
+            <section>
+                <div>
+                    <div class="reseller-select">
+                        <select name="" id="ChooseResellerId"></select>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="active" href="#">
+                                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                    <span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                                    <span class="title">Bayi Bilgileri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                                    <span class="title">Kredi Ödeme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                                    <span class="title">Bayi Hareketleri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                                    <span class="title">Bayi Bakiye</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-users"></i></span>
+                                    <span class="title">Bayi Kullanıcıları</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-comments"></i></span>
+                                    <span class="title">Destek</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <div>
+                        <span>
+                            <img class="logo-icon" src="/src/collector/images/icons/payzee.png" alt="">
+                            <img class="logo-icon-sm" src="/src/collector/images/icons/payzee-md.png" alt="">
+                        </span>
+
+                        <span>
+                            <a href="tel:+908502230767">
+                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                <span class="title">0850 223 0 767</span>
+                            </a>
+                        </span>
+                    </div>
+                </footer>
+            </section>
+        </aside>
+        <!-- end::Navigation -->
+        <!-- begin::MainContent -->
+        <main class="main-content">
+            <!-- begin::Header -->
+            <header>
+                <div>
+                    <div>
+                        <button class="btn btn-icon btn-gray btn-open-aside" data-click="open-aside">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div>
+                        <div class="date-range-picker" id="infoDateRangePicker">
+                            <span>
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            <span>
+                                <input type="text" placeholder="date" id="infoDates" />
+                            </span>
+                            <span>
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown" data-component="dropdown">
+                            <button class="">
+                                <span>Arçelik Merkezler Bayi</span>
+                                <span><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-link" href="#">
+                                    <span>Log out</span>
+                                    <span><i class="fas fa-sign-out-alt"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end::Header -->
+            <!-- begin::Content -->
+            <section class="dashboard-content">
+                <div class="dashboard-content-inner ">
+                    <section class="page-card">
+                        <header>
+                            <h2>Destek Taleplerim</h2>
+                            <div>
+                                <a href="#" class="btn btn-primary btn-md btn-center">Destek Talebi</a>
+                            </div>
+                        </header>
+                        <div class="page-content">
+                            <article class="support-card">
+                                <header>
+                                    <div>
+                                        <div>
+                                            <span>21 Şubat 2022</span>
+                                            <span>(11:08)</span>
+                                        </div>
+                                        <div>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                            voluptua. At vero eos et accusam et justo Lorem ipsum dolor sit amet
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btn btn-icon btn-green">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-secondary btn-icon">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </header>
+                                <section>
+                                    <div class="messages">
+                                        <div>
+                                            <!-- begin::UserText -->
+                                            <div class="user-text">
+                                                <div>
+                                                    <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                            class="w-4 h-4">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        </svg>
+                                                    </span>
+                                                    <span>21 Şubat 2022 (11:08)</span>
+                                                </div>
+                                                <div>
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
+                                                    mollitia nulla commodi minus reiciendis eos quisquam dolorum dolorem
+                                                    voluptatum maiores corrupti quas tempora illo dolore, ad, facere
+                                                    vel,
+                                                    quasi nemo.
+                                                </div>
+                                            </div>
+                                            <!-- end::UserText -->
+                                            <!-- begin::SupportText -->
+                                            <div class="support-text">
+                                                <div>
+                                                    <div>
+                                                        <div>Destek Ekibi</div>
+                                                        <div>
+                                                            <span>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                                    class="w-4 h-4">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>21 Şubat 2022 (11:08)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>Lorem ipsum, dolor sit amet
+                                                        consectetur adipisicing elit. Minus debitis doloribus maxime sit
+                                                        obcaecati aliquid ullam ipsa itaque architecto accusamus dolor
+                                                        sunt facilis amet, assumenda saepe iure consequatur odit qui!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end::SupportText -->
+                                        </div>
+                                    </div>
+                                    <div class="message">
+                                        <div>
+                                            <textarea name="" id="" placeholder="Mesajınızı buraya Yazınız…"></textarea>
+                                        </div>
+                                        <div class="actions">
+                                            <button class="btn btn-green btn-md btn-center">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-5 h-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                                                    </svg>
+                                                </span>
+                                                <span>Çözüldü</span>
+                                            </button>
+                                            <button class="btn btn-primary btn-md btn-center">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                                    </svg>
+                                                </span>
+                                                <span>Gönder</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                            <article class="support-card">
+                                <header>
+                                    <div>
+                                        <div>
+                                            <span>21 Şubat 2022</span>
+                                            <span>(11:08)</span>
+                                        </div>
+                                        <div>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                            voluptua. At vero eos et accusam et justo Lorem ipsum dolor sit amet
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-gray btn-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                            </svg>
+                                        </button>
+                                        <div>
+                                            <button class="btn btn-secondary btn-icon">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </header>
+                                <section>
+                                    <div class="messages">
+                                        <div>
+                                            <!-- begin::UserText -->
+                                            <div class="user-text">
+                                                <div>
+                                                    <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                            class="w-4 h-4">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        </svg>
+                                                    </span>
+                                                    <span>21 Şubat 2022 (11:08)</span>
+                                                </div>
+                                                <div>
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
+                                                    mollitia nulla commodi minus reiciendis eos quisquam dolorum dolorem
+                                                    voluptatum maiores corrupti quas tempora illo dolore, ad, facere
+                                                    vel,
+                                                    quasi nemo.
+                                                </div>
+                                            </div>
+                                            <!-- end::UserText -->
+                                            <!-- begin::SupportText -->
+                                            <div class="support-text">
+                                                <div>
+                                                    <div>
+                                                        <div>Destek Ekibi</div>
+                                                        <div>
+                                                            <span>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                                    class="w-4 h-4">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>21 Şubat 2022 (11:08)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>Lorem ipsum, dolor sit amet
+                                                        consectetur adipisicing elit. Minus debitis doloribus maxime sit
+                                                        obcaecati aliquid ullam ipsa itaque architecto accusamus dolor
+                                                        sunt facilis amet, assumenda saepe iure consequatur odit qui!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end::SupportText -->
+                                        </div>
+                                    </div>
+                                    <div class="message">
+                                        <div>
+                                            <textarea name="" id="" placeholder="Mesajınızı buraya Yazınız…"></textarea>
+                                        </div>
+                                        <div class="actions">
+                                            <button class="btn btn-green btn-md btn-center">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-5 h-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                                                    </svg>
+                                                </span>
+                                                <span>Çözüldü</span>
+                                            </button>
+                                            <button class="btn btn-primary btn-md btn-center">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                                    </svg>
+                                                </span>
+                                                <span>Gönder</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
+                      
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <!-- end::Content -->
+        </main>
+        <!-- end::MainContent -->
+    </div>
+    <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="/src/collector/libs/moment.min.js"></script>
+    <script src="/src/collector/libs/daterangepicker.min.js"></script>
+    <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
+    <script src="/src/collector/js/app.js"></script>
+</body>
+
+</html>

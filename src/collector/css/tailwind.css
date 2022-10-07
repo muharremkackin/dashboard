@@ -25,6 +25,9 @@
     .btn.btn-gray {
         @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300 ring-gray-200;
     }
+    .btn.btn-green {
+        @apply bg-green-500 hover:bg-green-600/80 text-white active:bg-green-600 ring-green-700
+    }
     .btn.btn-gray:disabled {
         @apply bg-gray-100/50 cursor-not-allowed;
     }
@@ -650,18 +653,22 @@
     .application .credit-payment {
         @apply space-y-8;
     }
+    .application .page-card,
     .application .grid-card {
         @apply border border-[#EEF0F7] bg-white rounded-[10px] shadow-sm;
     }
 
+    .application .page-card > header,
     .application .grid-card > header {
         @apply py-5 px-8 flex items-center justify-between;
     }
+    .application .page-card > header h2,
     .application .grid-card > header h2 {
         @apply text-base lg:text-lg;
     }
+    .application .page-card > .page-content,
     .application .grid-card > .grid-area {
-        @apply px-8;
+        @apply px-8 space-y-5 pb-8;
     }
     .application .grid-counter {
         @apply flex items-center justify-center md:justify-end;
@@ -798,7 +805,72 @@
     .input-container > select {
         @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
     }
+
+    .application .support-card {
+        @apply border border-[#EEF0F7] shadow-sm rounded-[10px];
+    }
+    .application .support-card > header {
+        @apply space-y-4 md:space-y-0 md:space-x-2 flex flex-col md:flex-row md:items-center md:justify-between px-8 py-7;
+    }
+    .application .support-card > header > div:first-child {
+        @apply flex flex-col md:flex-row md:items-center text-[13px] space-y-2 md:space-y-0;
+    }
+    .application .support-card > header > div:first-child > div:first-child {
+        @apply md:pr-5 md:border-r border-[#EEF0F7] flex space-x-2 md:space-x-0 md:flex-col text-[#688BE4] flex-shrink-0;
+    }
+    .application .support-card > header > div:first-child > div:nth-child(2) {
+        @apply md:pl-5;
+    }
+    .application .support-card > header > div:nth-child(2) {
+        @apply flex space-x-4;
+    }
+    .application .support-card > section {
+        @apply p-8;
+    }
+    .application .support-card > section > .messages {
+        @apply max-h-[600px] overflow-y-auto;
+    }
+    .application .support-card > section > .messages > div {
+        @apply space-y-4 text-sm pr-4;
+    }
+    .application .support-card > section > .messages > div > .user-text {
+        @apply text-left max-w-[380px] lg:max-w-[400px] xl:max-w-[600px] space-y-2;
+    }
+    .application .support-card > section > .messages > div > .user-text > div:nth-child(2) {
+        @apply p-8 rounded-lg bg-gray-100;
+    }
+    .application .support-card > section > .messages > div > .user-text > div:first-child {
+        @apply text-[#688BE4] text-sm flex items-center space-x-2;
+    }
+    .application .support-card > section > .messages > div > .support-text {
+        @apply flex items-center justify-end w-full;
+    }
+    .application .support-card > section > .messages > div > .support-text > div {
+        @apply text-right max-w-[380px] lg:max-w-[400px] xl:max-w-[600px] space-y-2;
+    }
+    .application .support-card > section > .messages > div > .support-text > div > div:first-child {
+        @apply text-[#688BE4] ;
+    }
+    .application .support-card > section > .messages > div > .support-text > div > div:first-child > div:nth-child(2) {
+        @apply flex justify-end items-center space-x-2;
+    }
+    .application .support-card > section > .messages > div > .support-text > div > div:nth-child(2) {
+        @apply p-8 bg-blue-100 rounded-lg;
+    }
+    .application .support-card > section > .message {
+        @apply space-y-5 pt-5;
+    }
+    .application .support-card > section > .message > div:first-child {
+        @apply w-full h-[130px];
+    }
+    .application .support-card > section > .message > div:first-child > textarea {
+        @apply w-full h-full border-[#DDE7E7] rounded-[10px] text-sm;
+    }
+    .application .support-card > section > .message > .actions {
+        @apply flex items-center justify-center md:justify-end space-x-4;
+    }
 }
+
 
 @tailwind utilities;
 
