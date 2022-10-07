@@ -531,6 +531,12 @@
     .modals > .modals-container > .modal > section > .actions {
         @apply grid grid-cols-1 md:grid-cols-2 gap-4;
     }
+    .modals > .modals-container > .modal > section > .actions > .full-button {
+        @apply col-span-1 md:col-span-2;
+    }
+    .modals > .modals-container > .modal > section > .actions > .full-button > button {
+        @apply w-full;
+    }
     .modals > .modals-container > .modal.modal-lg > section > .actions {
         @apply grid grid-cols-1 md:grid-cols-3 gap-4;
     }
@@ -732,7 +738,18 @@
         @apply font-bold text-right;
     }
 
-    
+    .support-success {
+        @apply flex flex-col items-center justify-center text-center;
+    }
+    .support-success > div:first-child {
+        @apply text-[#45DB8A];
+    }
+    .support-success > div:nth-child(2) {
+        @apply text-[15px] pb-8 pt-7 space-y-[6px];
+    }
+    .support-success > div:nth-child(2) > div:first-child {
+        @apply font-bold;
+    }
 
 }
 
