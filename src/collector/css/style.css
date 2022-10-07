@@ -661,6 +661,11 @@ html {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.btn.btn-gray:disabled {
+  cursor: not-allowed;
+  background-color: rgb(243 244 246 / 0.5);
+}
+
 .btn.btn-sm {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -695,6 +700,33 @@ html {
   background-color: rgb(92 128 219 / var(--tw-bg-opacity));
 }
 
+.btn.btn-full {
+  width: 100%;
+}
+
+.btn.btn-outline-primary {
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(104 139 228 / var(--tw-text-opacity));
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(84 118 204 / var(--tw-ring-opacity));
+}
+
+.btn.btn-outline-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(92 128 219 / var(--tw-text-opacity));
+}
+
+.btn.btn-outline-primary:disabled {
+  cursor: not-allowed;
+  color: rgb(104 139 228 / 0.5);
+}
+
+.btn.btn-primary:disabled {
+  cursor: not-allowed;
+  background-color: rgb(104 139 228 / 0.5);
+}
+
 .btn.btn-red {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
@@ -711,6 +743,11 @@ html {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
+.btn.btn-red:disabled {
+  cursor: not-allowed;
+  background-color: rgb(239 68 68 / 0.5);
+}
+
 .btn.btn-default {
   --tw-border-opacity: 1;
   border-color: rgb(139 143 157 / var(--tw-border-opacity));
@@ -725,6 +762,11 @@ html {
 .btn.btn-default:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.btn.btn-default:disabled {
+  cursor: not-allowed;
+  background-color: rgb(255 255 255 / 0.5);
 }
 
 @media (min-width: 768px) {
@@ -3350,6 +3392,10 @@ html {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -3374,6 +3420,12 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
 .rounded-lg {
