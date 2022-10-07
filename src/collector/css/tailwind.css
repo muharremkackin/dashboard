@@ -552,6 +552,7 @@
     }
 
     .modals > .modals-container > .modal > section > .fail > div:first-child,
+    .modals > .modals-container > .modal > section > .warning > div:first-child,
     .modals > .modals-container > .modal > section > .approve > div:first-child {
         @apply flex items-center justify-center;
     }
@@ -569,6 +570,9 @@
     }
     .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:first-child {
         @apply text-red-500;
+    }
+    .modals > .modals-container > .modal > section > .warning > div:first-child {
+        @apply text-yellow-400;
     }
     .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:nth-child(2),
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) > div:nth-child(2) {
@@ -751,6 +755,25 @@
         @apply font-bold;
     }
 
+    .action-form {
+        @apply flex flex-col items-center justify-center space-y-4;
+    }
+
+    .action-form > div {
+        @apply flex flex-col space-y-1;
+    }
+    .action-form > div > label {
+        @apply text-sm;
+    }
+    .input-container {
+        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300;
+    }
+    .input-container > span:first-child {
+        @apply px-3;
+    }
+    .input-container > input {
+        @apply border-0 bg-transparent focus-within:ring-0 pl-0;
+    }
 }
 
 @tailwind utilities;
