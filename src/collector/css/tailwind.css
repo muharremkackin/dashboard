@@ -84,6 +84,21 @@
     .badge.badge-green {
         @apply bg-green-500 text-white;
     }
+
+    .badge.badge-yellow {
+        @apply bg-yellow-400 text-yellow-800;
+    }
+    .badge.badge-outline-yellow {
+        @apply text-yellow-800;
+    }
+
+    input {
+        @apply focus:outline-none px-3 focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4];
+        height: 50px;
+    }
+    select {
+        @apply focus:outline-none focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4];
+    }
 }
 
 @tailwind components;
@@ -254,7 +269,7 @@
     }
 
     .application>.main-content>header .date-range-picker input {
-        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none;
+        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none h-[30px];
     }
 
     .application>.main-content>header>div>div:first-child {
@@ -334,6 +349,9 @@
     }
     .application .grid-container {
         @apply overflow-x-auto relative sm:rounded-lg;
+    }
+    .application .grid-container.kendo {
+        @apply overflow-hidden;
     }
     .application .grid-container table {
         @apply w-full text-sm text-left text-[#4B4B4B] dark:text-gray-400;
@@ -465,6 +483,9 @@
     .application .reseller-information .card h2 {
         @apply text-[#181C32] text-lg;
     }
+    .application .card {
+        @apply shadow-sm;
+    }
     .application .reseller-information .card.information-card {
         @apply xl:col-span-2 py-6 px-8 bg-white rounded-[10px] space-y-8;
     }
@@ -508,16 +529,16 @@
         @apply grid grid-cols-1 xl:grid-cols-2 gap-8 w-full;
     }
     .application .reseller-information .card.account-card .content > div {
-        @apply col-span-1 flex;
+        @apply col-span-1 flex w-auto;
     }
     .application .phone-control {
         @apply flex space-x-3;
     }
     .application .phone-control select {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2 w-full;
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2 w-full md:w-[100px];
     }
     .application .phone-control input {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[272px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[208px];
     }
     .application .email-control input {
         @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
@@ -532,7 +553,7 @@
     }
 
     .modals > .modals-container {
-        @apply flex items-center justify-center w-full h-full p-2;
+        @apply flex items-center justify-center w-full h-full p-2 ;
     }
     .modals > .modals-container > .modal {
         @apply w-full md:w-[459px] bg-white rounded-[10px];
@@ -666,9 +687,55 @@
     .application .grid-card > header h2 {
         @apply text-base lg:text-lg;
     }
+    .application .page-card > header p,
+    .application .grid-card > header p {
+        @apply text-[13px] text-[#8B8F9E];
+    }
     .application .page-card > .page-content,
     .application .grid-card > .grid-area {
         @apply px-8 space-y-5 pb-8;
+    }
+    .application .page-card > .page-content .progress {
+        @apply h-5 w-full rounded-full bg-white border border-[#EEF0F7] flex items-center;
+    }
+    .application .page-card > .page-content .progress .progress-bar {
+        @apply h-full bg-[#45DB8A] rounded-full;
+    }
+    .application .page-card > .page-content .component {
+        @apply space-y-8;
+    }
+    .application .page-card > .page-content .component .support-categories {
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-[26px];
+    }
+    .application .page-card > .page-content .component .support-categories .category {
+        @apply col-span-1 flex;
+    }
+    .application .page-card > .page-content .component .actions {
+        @apply flex items-center justify-center lg:justify-end space-x-4;
+    }
+    .application .page-card > .page-content .component .faq {
+        @apply space-y-6;
+    }
+    .application .page-card > .page-content .component .faq article {
+        @apply bg-white border rounded-[10px] border-[#EEF0F7];
+    }
+    .application .page-card > .page-content .component .faq article > header {
+        @apply flex items-center px-6 py-8 justify-between;
+    }
+    .application .page-card > .page-content .component .faq article > header h2 {
+        @apply text-lg font-bold;
+    }
+    .application .page-card > .page-content .component .faq article > section {
+        @apply px-6 py-8;
+    }
+    .application .page-card > .page-content .component .faq article > section > div {
+        @apply prose;
+    }
+    .application .page-card > .page-content .component .message {
+        @apply space-y-6;
+    }
+    .application .page-card > .page-content .component .message > div:first-child {
+        @apply flex flex-col space-y-1;
     }
     .application .grid-counter {
         @apply flex items-center justify-center md:justify-end;
@@ -869,6 +936,17 @@
     .application .support-card > section > .message > .actions {
         @apply flex items-center justify-center md:justify-end space-x-4;
     }
+
+    .grid-container.kendo .action-container {
+        @apply flex space-x-2 items-center justify-center;
+    }
+
+    .support-category-radio ~ label {
+        @apply py-[30px] px-6 rounded-[10px] text-[15px] hover:bg-[#F5F8FA] transition border border-[#EEF0F7] w-full cursor-pointer;
+    }
+    .support-category-radio:checked ~ label {
+        @apply bg-[#F5F8FA] border-[#6A8DDE] select-none;
+    }
 }
 
 
@@ -891,4 +969,13 @@
 
 .k-checkbox::before {
     color: #5c80db!important;
+}
+
+.account-information .splide__track {
+    height: 95%;
+}
+
+.k-header .k-grid-filter, .k-header .k-header-column-menu {
+    bottom: 6px!important;
+    right: 4px!important;
 }

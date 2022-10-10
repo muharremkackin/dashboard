@@ -3,5 +3,9 @@
     "closed",
     "splide__pagination",
     "splide__pagination__page is-active",
-    "splide__pagination__page"
+    "splide__pagination__page",
+    "grid-container kendo",
+    "action-container",
+    "badge badge-yellow",
+    "badge badge-outline-yellow"
 ]
