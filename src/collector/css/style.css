@@ -594,6 +594,24 @@ html {
   font-family:"Open Sans", system-ui, sans-serif;
 }
 
+a {
+  --tw-text-opacity: 1;
+  color: rgb(104 139 228 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+a:hover {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(104 139 228 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(48 85 180 / var(--tw-text-opacity));
+}
+
 .btn {
   display: inline-flex;
   width: 100%;
@@ -4374,6 +4392,136 @@ select:focus {
   background-color: rgb(245 248 250 / var(--tw-bg-opacity));
 }
 
+.announcement {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 200;
+  height: 100vh;
+  width: 100vw;
+}
+
+.announcement > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.announcement {
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.announcement > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.announcement > section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.announcement > section > div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement > section > div > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.announcement > section > div {
+  border-radius: 10px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(238 240 247 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .announcement > section > div {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .announcement > section > div {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .announcement > section > div {
+    width: 50%;
+  }
+}
+
+.announcement > section > div > img:first-child {
+  height: 100px;
+}
+
+@media (min-width: 1024px) {
+  .announcement > section > div > img:first-child {
+    height: 180px;
+  }
+}
+
+.announcement > section > div article > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.announcement > section > div article > h3 {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .announcement > section > div article > h3 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.announcement > section > div article > p {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(151 163 180 / var(--tw-text-opacity));
+}
+
+.announcement > section > div > p {
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.announcement > section > div > img {
+  height: 42px;
+}
+
 .visible {
   visibility: visible;
 }
@@ -5016,3 +5164,4 @@ select:focus {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+

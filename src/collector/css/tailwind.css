@@ -13,7 +13,9 @@
     html {
         font-family:"Open Sans", system-ui, sans-serif;
     }
-
+    a {
+        @apply hover:border-b transition text-[#688BE4] hover:text-[#3055B4] hover:border-[#688BE4];
+    }
     .btn {
         @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border w-full justify-center md:justify-start md:w-auto;
     }
@@ -947,6 +949,37 @@
     .support-category-radio:checked ~ label {
         @apply bg-[#F5F8FA] border-[#6A8DDE] select-none;
     }
+
+    .announcement {
+        @apply fixed top-0 left-0 w-screen h-screen bg-white/90 z-[200] space-y-8;
+    }
+    .announcement > header {
+        @apply flex items-center justify-between py-4 px-8;
+    }
+    .announcement > section {
+        @apply w-full flex items-center justify-center p-4;
+    }
+    .announcement > section > div {
+        @apply p-4 lg:py-8 lg:px-12 bg-white border border-[#EEF0F7] rounded-[10px] w-full md:w-3/4 xl:w-1/2 flex flex-col items-center justify-center space-y-6;
+    }
+    .announcement > section > div > img:first-child {
+        @apply h-[100px] lg:h-[180px];
+    }
+    .announcement > section > div article {
+        @apply space-y-4;
+    }
+    .announcement > section > div article > h3 {
+        @apply text-base lg:text-lg font-bold text-center;
+    }
+    .announcement > section > div article > p {
+        @apply text-[#97A3B4] text-sm text-center;
+    }
+    .announcement > section > div > p {
+        @apply text-sm text-center;
+    }
+    .announcement > section > div > img {
+        @apply h-[42px];
+    }
 }
 
 
@@ -979,3 +1012,4 @@
     bottom: 6px!important;
     right: 4px!important;
 }
+
