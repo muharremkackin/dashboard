@@ -13,9 +13,7 @@
     html {
         font-family:"Open Sans", system-ui, sans-serif;
     }
-    a {
-        @apply hover:border-b transition text-[#688BE4] hover:text-[#3055B4] hover:border-[#688BE4];
-    }
+   
     .btn {
         @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border w-full justify-center md:justify-start md:w-auto;
     }
@@ -46,7 +44,7 @@
         @apply w-full;
     }
     .btn.btn-outline-primary {
-        @apply text-[#688BE4] bg-transparent hover:text-[#5c80db] ring-[#5476cc]
+        @apply text-[#688BE4] bg-transparent hover:text-[#5c80db] ring-[#5476cc] border-transparent;
     }
     .btn.btn-outline-primary:disabled {
         @apply text-[#688BE4]/50 cursor-not-allowed
@@ -60,6 +58,12 @@
     }
     .btn.btn-red:disabled {
         @apply bg-red-500/50 cursor-not-allowed;
+    }
+    .btn.btn-teal {
+        @apply bg-[#5FC6B8] border-[#5FC6B8] text-white hover:bg-[#53b5a8] ring-[#53b5a8];
+    }
+    .btn.btn-teal:disabled {
+        @apply bg-[#5FC6B8]/50 cursor-not-allowed;
     }
     .btn.btn-default {
         @apply bg-[#FFFFFF] border-[#8B8F9D] text-[#181C32] hover:bg-gray-100 ring-[#bdc3c7]
@@ -99,7 +103,44 @@
         height: 50px;
     }
     select {
-        @apply focus:outline-none focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4];
+        @apply focus:outline-none focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4] h-[50px];
+    }
+    
+    .alert {
+
+    }
+
+    .alert.alert-red {
+        @apply text-red-500;
+    }
+
+    .alert.alert-icon {
+        @apply flex items-center justify-center;
+    }
+
+    .pagination {
+        @apply p-4;
+    }
+
+    .pagination .pagination-container {
+        @apply flex items-center justify-end space-x-4
+    }
+    .pagination .pagination-container .arrow,
+    .pagination .pagination-container .page {
+        @apply w-8 h-8 inline-flex flex-grow-0 items-center justify-center border rounded-[5px] text-gray-800 transition;
+    }
+
+    .pagination .pagination-container span.arrow,
+    .pagination .pagination-container span.page {
+        
+    }
+    .pagination .pagination-container a.arrow,
+    .pagination .pagination-container a.page {
+        @apply hover:bg-gray-100;
+    }
+
+    .pagination .pagination-container span.page.active {
+        @apply bg-[#688BE4] text-white font-bold;
     }
 }
 
@@ -314,6 +355,30 @@
     .application .widget {
         @apply rounded-[10px] bg-white border border-[#EEF0F7];
     }
+    .application .widget-message {
+        @apply col-span-1 h-[180px] xl:h-[270px] bg-white border rounded-[10px];
+    }
+    .application .widget-message header {
+        @apply flex items-center justify-between w-full px-3 py-2;
+    }
+    .application .widget-message header h2 {
+        @apply text-sm font-bold;
+    }
+    .application .widget-message table {
+        @apply w-full rounded-t-[10px] overflow-y-auto h-auto;
+    }
+    .application .widget-message table thead th {
+        @apply bg-gray-100 text-left px-3 py-2 text-sm text-gray-800;
+    }
+    .application .widget-message table tbody {
+        @apply divide-y;
+    }
+    .application .widget-message table tbody tr {
+        @apply hover:bg-gray-50 transition;
+    }
+    .application .widget-message table tbody tr td {
+        @apply px-3 py-2 text-sm;
+    }
 
     .application .widget.widget-sm {
         @apply col-span-1 h-[180px] xl:h-[221px];
@@ -336,7 +401,7 @@
     }
 
     .application .widget.widget-count .content>span:nth-child(2) {
-        @apply text-4xl xl:text-[54px];
+        @apply text-3xl xl:text-[48px];
     }
 
     .application .widget.widget-grid {
@@ -536,11 +601,21 @@
     .application .phone-control {
         @apply flex space-x-3;
     }
+    .modal .phone-control {
+        @apply grid grid-cols-3 gap-2;
+    }
     .application .phone-control select {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2 w-full md:w-[100px];
+        @apply text-[15px] flex-shrink-0 border border-[#E1E3EB] rounded-[5px] p-2 w-full md:w-[100px];
+    }
+    
+    .modal .phone-control select {
+        @apply h-[50px] col-span-1 text-[15px] flex-shrink-0 border border-[#E1E3EB] rounded-[5px] p-2 w-full md:w-[100px];
     }
     .application .phone-control input {
         @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[208px];
+    }
+    .modal .phone-control input {
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] h-[50px] col-span-2;
     }
     .application .email-control input {
         @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
@@ -573,7 +648,7 @@
         @apply text-[#8B8F9E] text-sm;
     }
     .modals > .modals-container > .modal > section {
-        @apply px-8 py-10 space-y-10;
+        @apply px-8 py-8 space-y-10;
     }
     .modals > .modals-container > .modal > section > .actions {
         @apply grid grid-cols-1 md:grid-cols-2 gap-4;
@@ -609,7 +684,7 @@
     }
     .modals > .modals-container > .modal > section > .fail > div:nth-child(2),
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) {
-        @apply text-center pt-7 pb-16 space-y-[12px];
+        @apply text-center pt-7 pb-8 space-y-[12px];
     }
     .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:first-child,
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) > div:first-child {
@@ -857,21 +932,25 @@
     }
 
     .action-form > div {
-        @apply flex flex-col space-y-1;
+        @apply flex flex-col space-y-1 w-full;
     }
     .action-form > div > label {
         @apply text-sm;
     }
     .input-container {
-        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300;
+        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300 w-full;
     }
+    .select-container {
+        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300 flex-shrink-0;
+    }
+    .select-container > span:first-child,
     .input-container > span:first-child {
         @apply px-3 border-r border-gray-300;
     }
     .input-container > input {
         @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
     }
-    .input-container > select {
+    .select-container > select {
         @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
     }
 
@@ -956,6 +1035,9 @@
     .announcement > header {
         @apply flex items-center justify-between py-4 px-8;
     }
+    .announcement > header img {
+        @apply h-[30px]
+    }
     .announcement > section {
         @apply w-full flex items-center justify-center p-4;
     }
@@ -979,6 +1061,30 @@
     }
     .announcement > section > div > img {
         @apply h-[42px];
+    }
+
+    .authentication .authentication-slider .splide__track,
+    .authentication .authentication-slider {
+        @apply h-full;
+    }
+    .authentication .authentication-slider .content-slide {
+        @apply w-full h-full bg-gradient-to-tr from-cyan-500 to-blue-500 flex flex-col space-y-4 p-8 justify-center pb-16;
+    }
+    .authentication .authentication-slider .content-slide h3 {
+        @apply text-white text-xl 2xl:text-[26px] font-bold text-center px-8 2xl:px-16;
+    }
+    .authentication .authentication-slider .content-slide p {
+        @apply text-white text-base text-center px-4 2xl:px-6;
+    }
+
+    .authentication .authentication-slider .splide__pagination {
+        @apply absolute bottom-16 w-full space-x-2;
+    }
+    .authentication .authentication-slider .splide__pagination .splide__pagination__page  {
+        @apply w-4 h-4 bg-[#3055B4] rounded-full;
+    }
+    .authentication .authentication-slider .splide__pagination .splide__pagination__page.is-active  {
+        @apply bg-white;
     }
 }
 
