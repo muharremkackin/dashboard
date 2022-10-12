@@ -110,7 +110,9 @@
     select {
         @apply focus:outline-none focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4] h-[50px];
     }
-    
+    .k-input-inner {
+        @apply h-auto;
+    }
     .alert {
 
     }
@@ -206,6 +208,21 @@
     }
     .page-loader-container content > div:first-child img {
         @apply h-[58px];
+    }
+    .admin-announcement {
+        @apply p-8 bg-white border border-[#EEF0F7] rounded-lg;
+    }
+    .admin-announcement > div {
+        @apply flex items-center divide-x space-x-8;
+    }
+    .admin-announcement > div > div:first-child {
+        @apply text-yellow-500;
+    }
+    .admin-announcement > div > div:nth-child(2) {
+        @apply pl-8 space-y-4;
+    }
+    .admin-announcement > div > div:nth-child(2) > div:first-child {
+        @apply font-bold text-xl;
     }
 }
 
