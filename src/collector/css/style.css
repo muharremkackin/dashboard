@@ -989,6 +989,97 @@ select:focus {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@-webkit-keyframes spinner-alt {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes spinner-alt {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.spinner-alt div {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 8px solid #688be4;
+  border-top-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-alt 1s linear infinite;
+          animation: spinner-alt 1s linear infinite;
+  top: 30px;
+  left: 30px;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.spinner-alt {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-origin: 0 0;
+  /* see note above */
+}
+
+.spinner-alt div {
+  box-sizing: content-box;
+}
+
+.page-loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 200;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.page-loader-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loader-container content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loader-container content > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.page-loader-container content > div:first-child img {
+  height: 58px;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -5339,6 +5430,14 @@ select:focus {
   height: 1rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -5351,14 +5450,6 @@ select:focus {
   height: 3.5rem;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .h-\[130px\] {
   height: 130px;
 }
@@ -5369,6 +5460,10 @@ select:focus {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-1\/2 {
@@ -5389,10 +5484,6 @@ select:focus {
 
 .w-14 {
   width: 3.5rem;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-1 {
@@ -5475,6 +5566,18 @@ select:focus {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2rem * var(--tw-space-x-reverse));
+  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -5520,6 +5623,11 @@ select:focus {
   border-color: rgb(221 231 231 / var(--tw-border-opacity));
 }
 
+.border-\[\#EEF0F7\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(238 240 247 / var(--tw-border-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -5554,6 +5662,10 @@ select:focus {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-2 {

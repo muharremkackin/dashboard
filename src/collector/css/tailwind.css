@@ -147,6 +147,66 @@
     .pagination .pagination-container span.page.active {
         @apply bg-[#688BE4] text-white font-bold;
     }
+
+    @keyframes spinner-alt {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    .spinner-alt div {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 8px solid #688be4;
+        border-top-color: transparent;
+        border-radius: 50%;
+    }
+
+    .spinner-alt div {
+        animation: spinner-alt 1s linear infinite;
+        top: 30px;
+        left: 30px
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    .spinner-alt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0;
+        /* see note above */
+    }
+
+    .spinner-alt div {
+        box-sizing: content-box;
+    }
+
+    .page-loader {
+        @apply fixed top-0 left-0 w-screen h-screen bg-white/90 z-[200];
+    }
+    .page-loader-container {
+        @apply w-full h-full flex items-center justify-center;
+    }
+    .page-loader-container content {
+        @apply flex flex-col items-center justify-center space-y-8;
+    }
+    .page-loader-container content > div:first-child img {
+        @apply h-[58px];
+    }
 }
 
 @tailwind components;
