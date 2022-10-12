@@ -1,11 +1,11 @@
 $(function () {
-    $('body').on('click', 'button', function () {
-        let button = $(this);
-        button.addClass('animate__bounceIn');
-        setTimeout(() => {
-            button.removeClass('animate__bounceIn');
-        }, 500);
-    });
+    // $('body').on('click', 'button', function () {
+    //     let button = $(this);
+    //     button.addClass('animate__bounceIn');
+    //     setTimeout(() => {
+    //         button.removeClass('animate__bounceIn');
+    //     }, 500);
+    // });
     $('[data-click="toggle-aside"]').on('click', function () {
         $('[data-app="collector"] > aside').toggleClass("minimized").addClass('animate__bounceInLeft')
     });
@@ -16,6 +16,19 @@ $(function () {
     $('[data-click="close-aside"]').on('click', function () {
         $('[data-app="collector"] > aside').addClass('closed');
     });
+
+    $('body').on('click', '[data-component="dropdown"] > button', function () {
+        $(this).siblings('.dropdown-content').toggleClass('is-hidden');
+    });
+    $('body').on('click', '.dropdown-content .dropdown-link', function () {
+        $(this).parent().addClass('is-hidden');
+    });
+
+    $('body').on('focusout', '[data-component="dropdown"]', function () {
+        if (!$(this).find('.dropdown-content').hasClass('is-hidden')) {
+            $(this).find('.dropdown-content').addClass('is-hidden');
+        }
+    })
 
 
 
