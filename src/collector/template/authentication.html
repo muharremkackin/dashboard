@@ -22,8 +22,8 @@
 </head>
 
 <body>
-    <div class="authentication flex items-center flex-row min-h-screen overflow-x-hidden w-screen">
-        <div class="hidden xl:block w-1/3 flex-shrink-0 h-screen bg-[#5878C7]">
+    <div class="authentication">
+        <aside>
             <div class="splide authentication-slider" role="group" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
                     <ul class="splide__list">
@@ -57,21 +57,20 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="w-full h-screen overflow-y-auto bg-[#FAFBFC] p-4">
-            <div class="w-full h-full flex flex-col justify-between items-center pt-14 pb-8 md:px-8 space-y-8">
-                <img src="/src/collector/images/icons/arcelik.png" class="h-[30px] lg:h-[59px]" alt="">
+        </aside>
+        <main>
+            <div>
+                <img src="/src/collector/images/icons/arcelik.png" alt="">
 
-                <div
-                    class="hidden p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px]">
-                    <div class="text-center">
-                        <h2 class="text-[26px]">SMS DOĞRULAMA</h2>
-                        <p class="text-[13px] text-[#8B8F9E]">E-posta/Gsm No ve Şifreniz ile Giriş Yapabiliriniz.</p>
-                    </div>
-                    <div class="space-y-[28px]">
-                        <div class="text-2xl font-bold text-center">01:22</div>
+                <div class="authentication-container">
+                    <header>
+                        <h2>SMS DOĞRULAMA</h2>
+                        <p>E-posta/Gsm No ve Şifreniz ile Giriş Yapabiliriniz.</p>
+                    </header>
+                    <div class="verification">
+                        <div>01:22</div>
                         <div>
-                            <input type="text" class="w-full border-[#E1E3EB] rounded-[5px]" />
+                            <input type="text" />
                         </div>
                         <div>
                             <button class="btn btn-primary btn-md btn-center btn-full">
@@ -90,19 +89,18 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="hidden p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px]">
-                    <div class="text-center">
+                <div class="authentication-container">
+                    <header class="text-center">
                         <h2 class="text-[26px]">GİRİŞ EKRANI</h2>
                         <p class="text-[13px] text-[#8B8F9E]">E-posta/Gsm No ve Şifreniz ile Giriş Yapabiliriniz.</p>
-                    </div>
-                    <div class="space-y-[28px]">
+                    </header>
+                    <div class="login">
 
                         <div>
-                            <input type="text" class="w-full border-[#E1E3EB] rounded-[5px]" />
+                            <input type="text" />
                         </div>
                         <div>
-                            <input type="text" class="w-full border-[#E1E3EB] rounded-[5px]" />
+                            <input type="text" />
                         </div>
                         <div>
                             <button class="btn btn-primary btn-md btn-center btn-full">
@@ -117,21 +115,17 @@
                             </button>
                         </div>
                         <div>
-                            <div class="flex items-center justify-between">
-                                <label
-                                    class="flex items-center space-x-2 cursor-pointer text-[#8B8F9E] hover:text-gray-800 transition text-sm"
-                                    for="RememberMe">
-                                    <input class="h-5 w-5 rounded border-gray-300 checked:bg-[#688BE4]" type="checkbox"
-                                        id="RememberMe" />
+                            <div class="options">
+                                <label class="remember-me" for="RememberMe">
+                                    <input class="" type="checkbox" id="RememberMe" />
                                     <span class="">Beni Hatırla</span>
                                 </label>
-                                <a class="text-[#688BE4] hover:text-[#3055B4] transition-all ease-linear duration-100 text-sm"
-                                    href="#">Şifremi Unuttum</a>
+                                <a class="forget-password" href="#">Şifremi Unuttum</a>
                             </div>
                         </div>
                     </div>
-                    <div class="h-px w-full bg-gray-100"></div>
-                    <div class="space-y-4">
+                    <div class="line"></div>
+                    <div class="actions">
                         <button class="btn btn-teal btn-center btn-md btn-full">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -148,20 +142,18 @@
                         </button>
                     </div>
                 </div>
-                <div
-                    class="p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px]">
+                <div class="authentication-container">
 
-                    <div class="flex items-center justify-center">
-                        <div
-                            class="h-[140px] w-[140px] rounded-full bg-[#edf3fd] relative flex items-center justify-center">
-                            <span class="text-white">
+                    <div class="centered">
+                        <div class="verify-icon">
+                            <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
                             </span>
-                            <span class="text-[#45db8a] absolute -bottom-1 -right-3">
+                            <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-14 h-14">
                                     <path fill-rule="evenodd"
@@ -172,30 +164,29 @@
                             </span>
                         </div>
                     </div>
-                    <div class="text-center space-y-5">  
-                        <div class="font-bold text-lg">E-Posta Adresiniz Doğrulandı.</div>
-                        <div><span class="font-bold">00:22</span> Saniye içinde giriş sayfasına yönlendirileceksiniz.</div>
+                    <div class="verify-content">
+                        <div>E-Posta Adresiniz Doğrulandı.</div>
+                        <div><span>00:22</span> Saniye içinde giriş sayfasına yönlendirileceksiniz.</div>
                         <div>
                             <a href="" class="btn btn-outline-primary btn-md btn-center btn-full">Yönlendir</a>
                         </div>
                     </div>
 
                 </div>
-                <div class="flex flex-col justify-center text-center space-y-5">
-                    <div class="flex divide-x">
-                        <div class="px-8">
-                            <img src="/src/collector/images/icons/main-logo.png" class="h-[30px] md:h-[58px]" alt="">
+                <footer>
+                    <div>
+                        <div>
+                            <img src="/src/collector/images/icons/main-logo.png" alt="">
                         </div>
-                        <div class="px-8">
-                            <img src="/src/collector/images/icons/unitedpayment.png" class="h-[30px] md:h-[58px]"
-                                alt="">
+                        <div>
+                            <img src="/src/collector/images/icons/unitedpayment.png" alt="">
                         </div>
                     </div>
-                    <div class="text-[15px]">Soru ve sorunlarınız için Bilgi ve Destek Hattı <a
+                    <div>Soru ve sorunlarınız için Bilgi ve Destek Hattı <a
                             href="tel:+908502230767">0850 223 0 767</a></div>
-                </div>
+                </footer>
             </div>
-        </div>
+        </main>
     </div>
 
     <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>

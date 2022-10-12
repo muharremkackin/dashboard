@@ -14,6 +14,11 @@
         font-family:"Open Sans", system-ui, sans-serif;
     }
    
+
+    .centered {
+        @apply flex items-center justify-center;
+    }
+
     .btn {
         @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border w-full justify-center md:justify-start md:w-auto;
     }
@@ -1086,6 +1091,99 @@
     .authentication .authentication-slider .splide__pagination .splide__pagination__page.is-active  {
         @apply bg-white;
     }
+
+    .authentication {
+        @apply flex items-center flex-row min-h-screen overflow-x-hidden w-screen;
+    }
+    .authentication aside {
+        @apply hidden xl:block w-1/3 flex-shrink-0 h-screen bg-[#5878C7];
+    }
+    .authentication main {
+        @apply w-full h-screen overflow-y-auto bg-[#FAFBFC] p-4;
+    }
+    .authentication main > div {
+        @apply w-full h-full flex flex-col justify-between items-center pt-14 pb-8 md:px-8 space-y-8;
+    }
+    .authentication main > div > img {
+        @apply h-[30px] lg:h-[59px];
+    }
+    .authentication .authentication-container {
+        @apply p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px];
+    }
+    .authentication .authentication-container header {
+        @apply text-center space-y-2;
+    }
+    .authentication .authentication-container header h2 {
+        @apply text-xl lg:text-[26px];
+    }
+    .authentication .authentication-container header p {
+        @apply text-sm text-[#8B8F9E];
+    }
+    .authentication .authentication-container .login,
+    .authentication .authentication-container .verification {
+        @apply space-y-[28px];
+    }
+    .authentication .authentication-container .verification > div:first-child {
+        @apply text-2xl font-bold text-center;
+    }
+    .authentication .authentication-container .verification > div:first-child {
+        @apply text-2xl font-bold text-center;
+    }
+    .authentication .authentication-container input {
+        @apply w-full border-[#E1E3EB] rounded-[5px];
+    }
+    .authentication .authentication-container .login .options {
+        @apply flex items-center justify-between;
+    }
+    .authentication .authentication-container .login .options label.remember-me {
+        @apply flex items-center space-x-2 cursor-pointer text-[#8B8F9E] hover:text-gray-800 transition text-sm;
+    }
+    .authentication .authentication-container .login .options label.remember-me input {
+        @apply h-5 w-5 rounded border-gray-300 checked:bg-[#688BE4];
+    }
+    .authentication .authentication-container .login .options a.forget-password {
+        @apply text-[#688BE4] hover:text-[#3055B4] transition-all ease-linear duration-100 text-sm;
+    }
+    .authentication .authentication-container .line {
+        @apply h-px w-full bg-gray-100;
+    }
+    .authentication .authentication-container .actions {
+        @apply space-y-4;
+    }
+    .authentication .authentication-container .verify-icon {
+        @apply h-[140px] w-[140px] rounded-full bg-[#edf3fd] relative flex items-center justify-center;
+    }
+    .authentication .authentication-container .verify-icon > span:first-child {
+        @apply text-white;
+    }
+    .authentication .authentication-container .verify-icon > span:nth-child(2) {
+        @apply text-[#45db8a] absolute -bottom-1 -right-3;
+    }
+    .authentication .authentication-container .verify-content {
+        @apply text-center space-y-5;
+    }
+    .authentication .authentication-container .verify-content > div:first-child {
+        @apply font-bold text-lg;
+    }
+    .authentication .authentication-container .verify-content > div:nth-child(2) span {
+        @apply font-bold;
+    }
+    .authentication main footer {
+        @apply centered flex-col text-center space-y-5 pb-8;
+    }
+    .authentication main footer > div:first-child {
+        @apply centered divide-x;
+    }
+    .authentication main footer > div:first-child div {
+        @apply px-8;
+    }
+    .authentication main footer > div:first-child div img {
+        @apply h-[30px] md:h-[58px];
+    }
+    .authentication main footer > div:nth-child(2) {
+        @apply text-[15px];
+    }
+
 }
 
 
