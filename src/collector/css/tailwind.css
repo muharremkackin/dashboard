@@ -1187,6 +1187,9 @@
     .authentication .authentication-container {
         @apply p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px];
     }
+    .authentication .authentication-container form {
+        @apply space-y-[48px];
+    }
     .authentication .authentication-container header {
         @apply text-center space-y-2;
     }
