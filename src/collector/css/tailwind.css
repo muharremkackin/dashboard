@@ -203,10 +203,10 @@
     .page-loader-container {
         @apply w-full h-full flex items-center justify-center;
     }
-    .page-loader-container content {
+    .page-loader-container .content {
         @apply flex flex-col items-center justify-center space-y-8;
     }
-    .page-loader-container content > div:first-child img {
+    .page-loader-container .content > div:first-child img {
         @apply h-[58px];
     }
     .admin-announcement {
