@@ -251,6 +251,25 @@
     .application .widgets > .widget.widget-table {
         @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[672px];
     }
+
+    input.toggle-card ~ label {
+        @apply flex cursor-pointer items-center justify-between w-full border py-2 px-3 rounded;
+    }
+    input.toggle-card ~ label > span:first-child {
+        @apply flex items-center space-x-2;
+    }
+    input.toggle-card ~ label > span:nth-child(2) {
+        @apply w-14 h-8 rounded-full bg-gray-200 flex items-center px-1 transition;
+    }
+    input.toggle-card:checked ~ label > span:nth-child(2) {
+        @apply bg-[#688BE4];
+    }
+    input.toggle-card ~ label > span:nth-child(2) > span {
+        @apply w-6 h-6 bg-white rounded-full transition;
+    }
+    input.toggle-card:checked ~ label > span:nth-child(2) > span {
+        @apply translate-x-[24px];
+    }
 }
 
 @tailwind components;
