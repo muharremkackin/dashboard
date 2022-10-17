@@ -115,6 +115,13 @@
                                 <span class="title">0850 223 0 767</span>
                             </a>
                         </span>
+
+                        <span>
+                            <a href="mailto:offlinetahsilat@birlesikodeme.com">
+                                <span class="icon"><i class="fas fa-envelope"></i></span>
+                                <span class="title">offlinetahsilat@birlesikodeme.com</span>
+                            </a>
+                        </span>
                     </div>
                 </footer>
             </section>
@@ -150,11 +157,14 @@
                         </div>
                         <div class="dropdown" data-component="dropdown">
                             <button class="">
-                                <span>Arçelik Merkezler Bayi</span>
+                                <span>ENDER KOC ORT</span>
                                 <span><i class="fas fa-chevron-down"></i></span>
                             </button>
                             <div class="dropdown-content is-hidden">
-                                <button class="dropdown-link" >
+                                <div class="avatar">
+                                    <img src="https://images.unsplash.com/photo-1665586072574-56b4dd11b941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=30" alt="">
+                                </div>
+                                <button class="dropdown-link">
                                     <span>Change Password</span>
                                     <span><i class="fas fa-star-of-life"></i></span>
                                 </button>
@@ -748,7 +758,7 @@
         </section>
     </div>
 
-    <div class="page-loader">
+    <div class="page-loader is-hidden">
         <div class="page-loader-container">
             <div class="content">
                 <div>
@@ -763,6 +773,8 @@
         </div>
     </div>
 
+    <div class="alert-container is-hidden" data-component="alerts">
+    </div>
 
     <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
     <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
@@ -772,6 +784,13 @@
     <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
     <script src="/src/collector/js/app.js"></script>
     <script src="/src/collector/js/web-dashboard.js"></script>
+    <script src="/src/collector/libs/notify.js"></script>
+    <script>
+        $(function () {
+  
+       
+        })
+    </script>
 </body>
 
 </html>

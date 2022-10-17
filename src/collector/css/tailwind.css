@@ -20,7 +20,7 @@
     }
 
     .btn {
-        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border w-full justify-center md:justify-start md:w-auto;
+        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 bg-white border w-full justify-center md:justify-start md:w-auto;
     }
 
     .btn.btn-icon {
@@ -31,7 +31,10 @@
         @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300 ring-gray-200;
     }
     .btn.btn-green {
-        @apply bg-green-500 hover:bg-green-600/80 text-white active:bg-green-600 ring-green-700
+        @apply bg-green-500 hover:bg-green-600/80 text-white active:bg-green-600 ring-green-700 border-green-500
+    }
+    .btn.btn-yellow {
+        @apply bg-yellow-400 hover:bg-yellow-500 text-yellow-800 active:bg-yellow-600 ring-yellow-600 border-yellow-400;
     }
     .btn.btn-gray:disabled {
         @apply bg-gray-100/50 cursor-not-allowed;
@@ -59,7 +62,7 @@
     }
 
     .btn.btn-red {
-        @apply bg-red-500 border-red-500 text-white hover:bg-red-500 ring-red-600;
+        @apply bg-red-400 border-red-400 hover:border-red-500 text-white hover:bg-red-500 ring-red-700;
     }
     .btn.btn-red:disabled {
         @apply bg-red-500/50 cursor-not-allowed;
@@ -234,12 +237,12 @@
     }
 
     .application>aside {
-        @apply w-[262px] h-screen overflow-x-hidden overflow-y-auto bg-white border-r flex-shrink-0 fixed top-0 left-0 z-10 lg:relative ease-in-out duration-150;
+        @apply w-[262px] h-screen overflow-x-hidden overflow-y-auto bg-white border-r flex-shrink-0 fixed top-0 left-0 z-10 3xl:relative ease-in-out duration-150;
 
     }
 
     .application>aside.closed {
-        @apply hidden lg:block;
+        @apply hidden 3xl:block;
     }
 
     .application>aside.minimized {
@@ -280,12 +283,12 @@
     }
 
     .application>aside .btn-toggle-aside {
-        @apply hidden lg:block;
+        @apply hidden 3xl:block;
     }
 
     .application>main .btn-open-aside,
     .application>aside .btn-close-aside {
-        @apply block lg:hidden;
+        @apply block 3xl:hidden;
     }
 
     .application>aside>section {
@@ -322,7 +325,7 @@
     }
 
     .application>aside>section>footer>div {
-        @apply flex flex-col items-center justify-center space-y-[4px] text-xl;
+        @apply flex flex-col items-center justify-center space-y-[12px] text-sm;
     }
 
     .application>aside.minimized>section>footer>div {
@@ -368,6 +371,9 @@
     .application>aside.minimized>section>footer>div a span.title {
         @apply hidden;
     }
+    .application>aside>section>footer>div a:nth-child(2) span.title {
+        @apply text-xl;
+    }
 
     .application>aside>section>footer>div a span.title {
         @apply block;
@@ -378,15 +384,15 @@
     }
 
     .application>.main-content>header {
-        @apply lg:h-[66px] w-full bg-white border-b;
+        @apply lg:h-[66px] w-full bg-white border-b p-2;
     }
 
     .application>.main-content>header>div {
-        @apply w-full h-full flex flex-col lg:flex-row lg:items-center lg:justify-between px-4 lg:px-8 space-y-5 lg:space-y-0;
+        @apply w-full h-full flex flex-col md:flex-row md:items-center md:justify-between px-4 lg:px-8 space-y-5 lg:space-y-0;
     }
 
     .application>.main-content>header>h1 {
-        @apply text-lg;
+        @apply text-lg font-bold;
     }
 
     .application>.main-content>header .date-range-picker {
@@ -398,7 +404,7 @@
     }
 
     .application>.main-content>header>div>div:first-child {
-        @apply flex items-center space-x-4 lg:space-x-0;
+        @apply flex items-center space-x-4;
     }
 
     .application>.main-content>header>div>div:nth-child(2) {
@@ -410,11 +416,19 @@
     }
 
     .dropdown>button {
-        @apply text-[13px] py-2 px-3 space-x-2 rounded-[5px] border border-dashed hover:border-gray-300 hover:bg-gray-100 transition;
+        @apply text-[13px] py-2 px-3 space-x-2 rounded-[5px] border border-dashed hover:border-gray-300 hover:bg-gray-100 transition max-w-[240px];
+    }
+
+    .dropdown> .dropdown-content > .avatar {
+        @apply flex items-center;
+    }
+
+    .dropdown> .dropdown-content > .avatar img {
+        @apply w-20 h-20 object-cover rounded-lg;
     }
 
     .dropdown>.dropdown-content {
-        @apply absolute top-12 w-full bg-white rounded-[5px] z-10 shadow py-2 px-3 space-y-4;
+        @apply absolute top-12 xl:right-0 w-full bg-white rounded-[5px] z-10 shadow-lg py-4 px-4 space-y-4 w-[300px];
     }
 
     .dropdown>.dropdown-content .dropdown-link {
@@ -422,23 +436,23 @@
     }
 
     .application .dashboard-content {
-        @apply w-full overflow-y-auto px-4 2xl:px-0 py-8;
+        @apply w-full overflow-y-auto px-8 py-8;
         height:calc(100vh - 66px);
     }
 
     .application .dashboard-content-inner {
-        @apply container mx-auto h-10 pb-8 space-y-8;
+        @apply container mx-auto pb-8 space-y-8;
     }
 
     .application .dashboard-widgets {
-        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-[30px];
+        @apply grid grid-cols-1 xl:grid-cols-3 w-full gap-[30px];
     }
 
     .application .widget {
-        @apply rounded-[10px] bg-white border border-[#EEF0F7];
+        @apply col-span-1 rounded-[10px] bg-white border border-[#EEF0F7];
     }
     .application .widget-message {
-        @apply col-span-1 h-[180px] xl:h-[270px] bg-white border rounded-[10px];
+        @apply h-[270px] bg-white border rounded-[10px];
     }
     .application .widget-message header {
         @apply flex items-center justify-between w-full px-3 py-2;
@@ -463,7 +477,7 @@
     }
 
     .application .widget.widget-sm {
-        @apply col-span-1 h-[180px] xl:h-[221px];
+        @apply h-[270px];
     }
 
     .application .widget.widget-count {
@@ -483,7 +497,7 @@
     }
 
     .application .widget.widget-count .content>span:nth-child(2) {
-        @apply text-3xl xl:text-[48px];
+        @apply text-2xl xl:text-[42px];
     }
 
     .application .widget.widget-grid {
@@ -681,7 +695,7 @@
         @apply col-span-1 flex w-auto;
     }
     .application .phone-control {
-        @apply flex space-x-3;
+        @apply flex flex-col md:flex-row md:space-x-3  space-y-4 md:space-y-0;
     }
     .modal .phone-control {
         @apply grid grid-cols-3 gap-2;
@@ -811,7 +825,7 @@
 
     .form > .form-control,
     .form > .form-control-phone {
-        @apply flex flex-col space-y-3;
+        @apply flex flex-col space-y-3 relative;
     }
     .form > .form-control > label {
         @apply text-[15px];
@@ -900,7 +914,7 @@
         @apply flex items-center justify-center md:justify-end;
     }
     .application .grid-counter > div {
-        @apply bg-white p-8 divide-y divide-gray-400 text-[15px] min-w-[340px];
+        @apply bg-white p-8 divide-y divide-gray-400 text-[15px] min-w-[340px] shadow-sm;
     }
     .application .grid-counter > div > div {
         @apply flex items-center justify-between space-x-2;
@@ -1302,6 +1316,53 @@
     }
     .landing-page > main section.distributors > a > div > img {
         @apply w-36 h-16 md:w-24 md:h-10 object-scale-down  z-10 transition;
+    }
+
+    .alert-container {
+        @apply fixed top-0 right-0 z-[300] bg-transparent w-fit h-fit space-y-4 p-4;
+    }
+    .alert-container .alert-notify {
+        @apply transition rounded border-b-4 border w-full min-w-[300px] md:max-w-[500px] cursor-pointer bg-white;
+    }
+    .alert-container .alert-notify .notify-container {
+        @apply flex items-start;
+    }
+    .alert-container .alert-notify .notify-container .icon {
+        @apply px-4 py-3;
+    }
+    .alert-container .alert-notify .notify-container .content {
+        @apply pr-4 py-3 space-y-2 w-full;
+    }
+    .alert-container .alert-notify .notify-container .content .header {
+        @apply flex items-center justify-between w-full;
+    }
+    .alert-container .alert-notify .notify-container .content .header .title {
+        @apply font-bold text-lg;
+    }
+    .alert-container .alert-notify .notify-container .content .text {
+        @apply text-base;
+    }
+    .alert-container .alert-notify.success {
+        @apply bg-green-600 hover:bg-green-700 border-green-700 text-white;
+    }
+    .alert-container .alert-notify.warning {
+        @apply bg-yellow-300 hover:bg-yellow-400 border-yellow-400 text-yellow-800;
+    }
+    .alert-container .alert-notify.error {
+        @apply bg-red-500 hover:bg-red-600 border-red-600 text-white;
+    }
+    .show-password {
+        @apply absolute top-[30px] right-3;
+    }
+    .show-password .hide {
+        @apply hidden;
+    }
+
+    .show-password.show .hide {
+        @apply block;
+    }
+    .show-password.show .show {
+        @apply hidden;
     }
 }
 
