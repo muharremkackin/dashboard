@@ -956,6 +956,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('./plugins/muharrem.kackin/tw-flatui-colors')
+    require('./plugins/muharrem.kackin/tw-flatui-colors'),
+    require('tailwind-scrollbar')
   ],
 }

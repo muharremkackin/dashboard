@@ -60,6 +60,9 @@
     .btn.btn-primary:disabled {
         @apply bg-[#688BE4]/50 cursor-not-allowed;
     }
+    .btn.btn-rounded {
+        @apply rounded-full;
+    }
 
     .btn.btn-red {
         @apply bg-red-400 border-red-400 hover:border-red-500 text-white hover:bg-red-500 ring-red-700;
@@ -216,16 +219,37 @@
         @apply p-8 bg-white border border-[#EEF0F7] rounded-lg;
     }
     .admin-announcement > div {
-        @apply flex items-center divide-x space-x-8;
+        @apply flex flex-col md:flex-row items-start md:items-center divide-y md:divide-y-0 md:divide-x md:space-x-8;
     }
     .admin-announcement > div > div:first-child {
-        @apply text-yellow-500;
+        @apply text-yellow-500 pb-4 md:pb-0;
     }
     .admin-announcement > div > div:nth-child(2) {
-        @apply pl-8 space-y-4;
+        @apply p-4 md:pl-8 space-y-4 ;
     }
     .admin-announcement > div > div:nth-child(2) > div:first-child {
-        @apply font-bold text-xl;
+        @apply font-bold md:text-xl;
+    }
+    .application .widgets {
+        @apply grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8;
+    }
+    .application .widgets > .widget {
+        @apply px-4 py-3 border border-[#EEF0F7] rounded-[10px] bg-white hover:shadow-lg shadow-gray-200/40 transition relative;
+    }
+    .application .widgets > .widget.widget-base {
+        @apply col-span-1 row-span-1 h-[320px];
+    }
+    .application .widgets > .widget.widget-bar-chart {
+        @apply md:col-span-2 row-span-2 h-[460px];
+    }
+    .application .widgets > .widget.widget-pie-chart {
+        @apply col-span-1 row-span-1 h-[460px];
+    }
+    .application .widgets > .widget.widget-activity {
+        @apply col-span-1 row-span-2 h-[672px] flex flex-col;
+    }
+    .application .widgets > .widget.widget-table {
+        @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[672px];
     }
 }
 
@@ -440,76 +464,22 @@
         height:calc(100vh - 66px);
     }
 
+    @media screen and (max-width: 1024px) {
+       .application .dashboard-content {
+        height: calc(100vh - 137px);
+       }
+    }
+
+    @media screen and (max-width: 768px) {
+        .application .dashboard-content {
+         height: calc(100vh - 172px);
+        }
+     }
+    
     .application .dashboard-content-inner {
         @apply container mx-auto pb-8 space-y-8;
     }
 
-    .application .dashboard-widgets {
-        @apply grid grid-cols-1 xl:grid-cols-3 w-full gap-[30px];
-    }
-
-    .application .widget {
-        @apply col-span-1 rounded-[10px] bg-white border border-[#EEF0F7];
-    }
-    .application .widget-message {
-        @apply h-[270px] bg-white border rounded-[10px];
-    }
-    .application .widget-message header {
-        @apply flex items-center justify-between w-full px-3 py-2;
-    }
-    .application .widget-message header h2 {
-        @apply text-sm font-bold;
-    }
-    .application .widget-message table {
-        @apply w-full rounded-t-[10px] overflow-y-auto h-auto;
-    }
-    .application .widget-message table thead th {
-        @apply bg-gray-100 text-left px-3 py-2 text-sm text-gray-800;
-    }
-    .application .widget-message table tbody {
-        @apply divide-y;
-    }
-    .application .widget-message table tbody tr {
-        @apply hover:bg-gray-50 transition;
-    }
-    .application .widget-message table tbody tr td {
-        @apply px-3 py-2 text-sm;
-    }
-
-    .application .widget.widget-sm {
-        @apply h-[270px];
-    }
-
-    .application .widget.widget-count {
-        @apply px-8 xl:px-8 py-8 xl:py-12 space-x-4 xl:space-x-6 flex items-center;
-    }
-
-    .application .widget.widget-count .icon {
-        @apply text-2xl xl:text-[36px] h-16 w-16 xl:h-24 xl:w-24 rounded-full bg-[#E5FDDF] flex items-center justify-center flex-shrink-0;
-    }
-
-    .application .widget.widget-count .content {
-        @apply flex flex-col leading-9;
-    }
-
-    .application .widget.widget-count .content>span:first-child {
-        @apply text-[15px];
-    }
-
-    .application .widget.widget-count .content>span:nth-child(2) {
-        @apply text-2xl xl:text-[42px];
-    }
-
-    .application .widget.widget-grid {
-        @apply px-8 py-7;
-    }
-
-    .application .widget.widget-grid > header {
-        @apply flex flex-col md:flex-row items-start md:items-center md:justify-between mb-7;
-    }
-    .application .widget.widget-grid > header h2 {
-        @apply text-lg;
-    }
     .application .grid-container {
         @apply overflow-x-auto relative sm:rounded-lg;
     }
@@ -548,14 +518,6 @@
     }
     .application .grid-container table > tbody tr td.actions .action-container {
         @apply flex items-center space-x-2 justify-center w-full;
-    }
-
-    .application .widget.widget-full {
-        @apply col-span-1 md:col-span-2 xl:col-span-3 row-span-4;
-    }
-
-    .application .widget.widget-chart {
-        @apply flex flex-col p-2;
     }
 
     .application .reseller-select {

@@ -1,780 +1,1430 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Collector - Dashboard Template</title>
-    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css">
-    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css">
-    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css">
+    <link
+      rel="stylesheet"
+      href="/src/collector/libs/kendo/styles/kendo.common.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css"
+    />
+    
 
     <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
-    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css">
+    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css" />
     <link rel="stylesheet" href="/src/collector/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div class="application" data-app="collector">
-        <!-- begin::Navigation -->
-        <aside class="closed">
-            <div>
-                <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik">
-                <button class="btn btn-icon btn-gray btn-toggle-aside" data-click="toggle-aside">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                        class="maximize-icon w-4 h-4">
-                        <path fill-rule="evenodd"
-                            d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                            clip-rule="evenodd" />
-                        <path fill-rule="evenodd"
-                            d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                        class="minimize-icon w-4 h-4">
-                        <path fill-rule="evenodd"
-                            d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
-                <button class="btn btn-icon btn-gray btn-close-aside" data-click="close-aside">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                        <path
-                            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                    </svg>
-                </button>
+      <!-- begin::Navigation -->
+      <aside class="closed">
+        <div>
+          <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik" />
+          <button
+            class="btn btn-icon btn-gray btn-toggle-aside"
+            data-click="toggle-aside"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="maximize-icon w-4 h-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="minimize-icon w-4 h-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            class="btn btn-icon btn-gray btn-close-aside"
+            data-click="close-aside"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
+              />
+            </svg>
+          </button>
+        </div>
+        <section>
+          <div>
+            <div class="reseller-select">
+              <select name="" id="ChooseResellerId"></select>
             </div>
-            <section>
-                <div>
-                    <div class="reseller-select">
-                        <select name="" id="ChooseResellerId"></select>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a class="active" href="#">
-                                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                                    <span class="title">Dashboard</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
-                                    <span class="title">Bayi Bilgileri</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon"><i class="fas fa-wallet"></i></span>
-                                    <span class="title">Kredi Ödeme</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon"><i class="fas fa-tasks"></i></span>
-                                    <span class="title">Bayi Hareketleri</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon"><i class="fas fa-calculator"></i></span>
-                                    <span class="title">Bayi Bakiye</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon"><i class="fas fa-users"></i></span>
-                                    <span class="title">Bayi Kullanıcıları</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon"><i class="fas fa-comments"></i></span>
-                                    <span class="title">Destek</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+            <nav>
+              <ul>
+                <li>
+                  <a class="active" href="#">
+                    <span class="icon"
+                      ><i class="fas fa-tachometer-alt"></i
+                    ></span>
+                    <span class="title">Dashboard</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                    <span class="title">Bayi Bilgileri</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                    <span class="title">Kredi Ödeme</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                    <span class="title">Bayi Hareketleri</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                    <span class="title">Bayi Bakiye</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fas fa-users"></i></span>
+                    <span class="title">Bayi Kullanıcıları</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="icon"><i class="fas fa-comments"></i></span>
+                    <span class="title">Destek</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <footer>
+            <div>
+              <span>
+                <img
+                  class="logo-icon"
+                  src="/src/collector/images/icons/payzee.png"
+                  alt=""
+                />
+                <img
+                  class="logo-icon-sm"
+                  src="/src/collector/images/icons/payzee-md.png"
+                  alt=""
+                />
+              </span>
+
+              <span>
+                <a href="tel:+908502230767">
+                  <span class="icon"><i class="fas fa-phone"></i></span>
+                  <span class="title">0850 223 0 767</span>
+                </a>
+              </span>
+
+              <span>
+                <a href="mailto:offlinetahsilat@birlesikodeme.com">
+                  <span class="icon"><i class="fas fa-envelope"></i></span>
+                  <span class="title">offlinetahsilat@birlesikodeme.com</span>
+                </a>
+              </span>
+            </div>
+          </footer>
+        </section>
+      </aside>
+      <!-- end::Navigation -->
+      <!-- begin::MainContent -->
+      <main class="main-content">
+        <!-- begin::Header -->
+        <header>
+          <div>
+            <div>
+              <button
+                class="btn btn-icon btn-gray btn-open-aside"
+                data-click="open-aside"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <h1>Dashboard</h1>
+            </div>
+            <div>
+              <div class="date-range-picker" id="infoDateRangePicker">
+                <span>
+                  <i class="far fa-calendar-alt"></i>
+                </span>
+                <span>
+                  <input type="text" placeholder="date" id="infoDates" />
+                </span>
+                <span>
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </div>
+              <div class="dropdown" data-component="dropdown">
+                <button class="">
+                  <span>ENDER KOC ORT</span>
+                  <span><i class="fas fa-chevron-down"></i></span>
+                </button>
+                <div class="dropdown-content is-hidden">
+                  <div class="avatar">
+                    <img
+                      src="https://images.unsplash.com/photo-1665586072574-56b4dd11b941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=30"
+                      alt=""
+                    />
+                  </div>
+                  <button class="dropdown-link">
+                    <span>Change Password</span>
+                    <span><i class="fas fa-star-of-life"></i></span>
+                  </button>
+                  <a class="dropdown-link" href="#">
+                    <span>Log out</span>
+                    <span><i class="fas fa-sign-out-alt"></i></span>
+                  </a>
                 </div>
-                <footer>
-                    <div>
-                        <span>
-                            <img class="logo-icon" src="/src/collector/images/icons/payzee.png" alt="">
-                            <img class="logo-icon-sm" src="/src/collector/images/icons/payzee-md.png" alt="">
-                        </span>
-
-                        <span>
-                            <a href="tel:+908502230767">
-                                <span class="icon"><i class="fas fa-phone"></i></span>
-                                <span class="title">0850 223 0 767</span>
-                            </a>
-                        </span>
-
-                        <span>
-                            <a href="mailto:offlinetahsilat@birlesikodeme.com">
-                                <span class="icon"><i class="fas fa-envelope"></i></span>
-                                <span class="title">offlinetahsilat@birlesikodeme.com</span>
-                            </a>
-                        </span>
-                    </div>
-                </footer>
-            </section>
-        </aside>
-        <!-- end::Navigation -->
-        <!-- begin::MainContent -->
-        <main class="main-content">
-            <!-- begin::Header -->
-            <header>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- end::Header -->
+        <!-- begin::Content -->
+        <section class="dashboard-content">
+          <div class="dashboard-content-inner">
+            <div class="admin-announcement">
+              <div>
                 <div>
-                    <div>
-                        <button class="btn btn-icon btn-gray btn-open-aside" data-click="open-aside">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                class="w-4 h-4">
-                                <path fill-rule="evenodd"
-                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-12 h-12"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div>Sevgili Yönetici</div>
+                  <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita, quas laboriosam aperiam vero soluta dolore
+                    consequatur error corporis quos impedit ipsam facilis
+                    dolorum vel perspiciatis eligendi non quisquam saepe cum!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="widgets">
+                <div class="widget widget-base">
+                    <div class="w-full h-full flex items-center space-x-6 p-4">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center rounded-full bg-green-200/80">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                            </svg>                              
+                        </div>
+                        <div class="pl-6 border-l">
+                            <h3>Bakiye</h3>
+                            <p class="text-4xl">5.000.000,45₺</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
                         </button>
-                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+                <div class="widget widget-base">
+                    <div class="w-full h-full flex items-center space-x-6 p-4">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center rounded-full bg-blue-200/80">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                            </svg>                                                          
+                        </div>
+                        <div class="pl-6 border-l">
+                            <h3>İşlem Adedi</h3>
+                            <p class="text-4xl">14.647</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                </div>
+                <div class="widget widget-activity">
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
                     </div>
                     <div>
-                        <div class="date-range-picker" id="infoDateRangePicker">
+                        <h3 class="text-lg font-semibold space-x-2 flex items-center">
                             <span>
-                                <i class="far fa-calendar-alt"></i>
-                            </span>
-                            <span>
-                                <input type="text" placeholder="date" id="infoDates" />
-                            </span>
-                            <span>
-                                <i class="fas fa-chevron-down"></i>
-                            </span>
-                        </div>
-                        <div class="dropdown" data-component="dropdown">
-                            <button class="">
-                                <span>ENDER KOC ORT</span>
-                                <span><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="dropdown-content is-hidden">
-                                <div class="avatar">
-                                    <img src="https://images.unsplash.com/photo-1665586072574-56b4dd11b941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=30" alt="">
-                                </div>
-                                <button class="dropdown-link">
-                                    <span>Change Password</span>
-                                    <span><i class="fas fa-star-of-life"></i></span>
-                                </button>
-                                <a class="dropdown-link" href="#">
-                                    <span>Log out</span>
-                                    <span><i class="fas fa-sign-out-alt"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- end::Header -->
-            <!-- begin::Content -->
-            <section class="dashboard-content">
-                <div class="dashboard-content-inner ">
-                    <div class="admin-announcement">
-                        <div>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
                                 </svg>
-
-
-                            </div>
-                            <div>
-                                <div>Sevgili Yönetici</div>
-                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quas laboriosam
-                                    aperiam vero soluta dolore consequatur error corporis quos impedit ipsam facilis
-                                    dolorum vel perspiciatis eligendi non quisquam saepe cum!</div>
-                            </div>
-                        </div>
+                            </span>
+                            <span>
+                                Activities
+                            </span>
+                        </h3>
                     </div>
-                    <div class="dashboard-widgets">
-                        <div class="widget widget-sm widget-count">
-                            <div class="icon">
-                                <i class="fas fa-money-bill-wave"></i>
+                    <div class="mt-4  h-full relative overflow-y-auto">
+                        <div class="h-16 flex hover:bg-green-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-green-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-green-500 absolute"></span>
                             </div>
-                            <div class="content">
-                                <span>Güncel Bakiye</span>
-                                <span>28500₺</span>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="widget widget-sm widget-count">
-                            <div class="icon">
-                                <i class="fas fa-inbox"></i>
+                        <div class="h-16 flex hover:bg-yellow-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-yellow-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-yellow-500 absolute"></span>
                             </div>
-                            <div class="content">
-                                <span>Toplam İşlem Adedi</span>
-                                <span>13850</span>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="widget row-span-3"></div>
-                        <div class="widget widget-sm widget-chart">
-                            <div></div>
-                            <div id="barChart" class="h-full"></div>
+                        <div class="h-16 flex hover:bg-gray-100/90 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-gray-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-gray-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
                         </div>
-                        <div class="widget widget-sm flex items-center justify-center widget-chart">
-                            <div id="pieChart" class="h-full"></div>
+                        <div class="h-16 flex hover:bg-purple-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-purple-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-purple-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
                         </div>
-                        <div class="widget-message">
-                            <header>
-                                <h2>Mesajlar</h2>
-                                <button class="btn btn-sm btn-icon btn-gray">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
-                                    </svg>
-                                </button>
-                            </header>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Tarih</th>
-                                        <th>Başlık</th>
-                                        <th>Oluşturan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                        <div class="h-16 flex hover:bg-teal-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-teal-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-teal-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
                         </div>
-                        <div class="widget-message">
-                            <header>
-                                <h2>Mesajlar</h2>
-                                <button class="btn btn-sm btn-icon btn-gray">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
-                                    </svg>
-                                </button>
-                            </header>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Tarih</th>
-                                        <th>Başlık</th>
-                                        <th>Oluşturan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9/9/2022 12:29:10</td>
-                                        <td>PM Deneme Mesajı</td>
-                                        <td>Sevilay Karakulak</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                        <div class="h-16 flex hover:bg-red-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-red-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-red-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
                         </div>
-
-
-                        <div class="widget widget-grid widget-full">
-                            <header>
-                                <h2>Bayi Kullanıcıları</h2>
-                                <button class="btn btn-default btn-md">+ Kullanıcı Ekle</button>
-                            </header>
-                            <div class="grid-container">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">
-                                                ADI SOYADI
-                                            </th>
-                                            <th scope="col">
-                                                TC KİMLİK NO
-                                            </th>
-                                            <th scope="col">
-                                                TELEFON NUMARASI
-                                            </th>
-                                            <th scope="col">
-                                                ÜNVAN
-                                            </th>
-                                            <th scope="col">
-                                                DURUM
-                                            </th>
-                                            <th scope="col" class="actions">
-                                                İŞLEM
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td scope="row">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
-                                                possimus aperiam magnam! Rem provident expedita aspernatur alias
-                                                voluptate, earum dolor, assumenda id quidem vitae suscipit praesentium
-                                                cumque repudiandae dolorem tenetur.
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                Volkan Dinç
-                                            </td>
-                                            <td>
-                                                16489876532
-                                            </td>
-                                            <td>
-                                                +905432189431
-                                            </td>
-                                            <td>
-                                                Kullanıcı
-                                            </td>
-                                            <td>
-                                                Aktif
-                                            </td>
-                                            <td class="actions">
-                                                <div class="action-container">
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path
-                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn btn-gray btn-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-4 h-4">
-                                                            <path fill-rule="evenodd"
-                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="h-16 flex hover:bg-red-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-red-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-red-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="h-16 flex hover:bg-red-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-red-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-red-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="h-16 flex hover:bg-red-100/50 transition group cursor-pointer pr-4">
+                            <div class="flex relative h-full flex-shrink-0 w-16 justify-center items-center">
+                                <span class="w-px h-16 bg-gray-200 absolute group-hover:bg-red-200"></span>
+                                <span class="w-4 h-4 rounded-full bg-red-500 absolute"></span>
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Payment</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="widget widget-activity">
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center space-x-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                </svg>                                  
+                            </span>
+                            <span>Messages</span>
+                        </h3>
+                    </div>
+                    <div class="mt-4 h-full divide-y">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- end::Content -->
-        </main>
-        <!-- end::MainContent -->
+                <div class="widget widget-activity">
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center space-x-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                </svg>                                                                   
+                            </span>
+                            <span>Support</span>
+                        </h3>
+                    </div>
+                    <div class="mt-4 h-full divide-y">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
+                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            </div>
+                            <div class="w-full h-full flex flex-col space-y-1 justify-center">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <span class="text-sm flex items-center space-x-2">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>                                              
+                                        </span>
+                                        <span>24/12/2022 16:40:32</span>
+                                    </span>
+                                </div>
+                                <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget-base"></div>
+                <div class="widget widget-pie-chart">
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center space-x-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                </svg>                                                                   
+                            </span>
+                            <span>Support</span>
+                        </h3>
+                    </div>
+                    <div id="pieChart"></div>
+                </div>
+                <div class="widget widget-bar-chart">
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center space-x-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                </svg>                                                                   
+                            </span>
+                            <span>Proccess</span>
+                        </h3>
+                    </div>
+                    <div class="h-[400px]" id="barChart"></div>
+                </div>
+                
+                
+                <div class="widget widget-table flex flex-col">
+                    <div class="absolute top-2 right-2">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center space-x-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                </svg>                                                                                                     
+                            </span>
+                            <span>Users</span>
+                        </h3>
+                    </div>
+                    <div class="overflow-x-auto mt-4 h-full border rounded-lg flex flex-col justify-between">
+                        <table class="table-auto h-auto w-full overflow-y-auto w-full text-sm">
+                            <thead class="">
+                                <tr class="border-b">
+                                    <th class="borde text-left text-xs py-1 px-3 bg-gray-100 rounded-tl-lg max-w-[300px] min-w-[300px] lg:min-w-auto whitespace-nowrap" scope="col">
+                                        ADI SOYADI
+                                    </th>
+                                    <th class="text-left text-xs py-2 px-3 bg-gray-100 max-w-[300px] whitespace-nowrap" scope="col">
+                                        TC KİMLİK NO
+                                    </th>
+                                    <th class="text-left text-xs py-2 px-3 bg-gray-100 max-w-[300px] whitespace-nowrap" scope="col">
+                                        TELEFON NUMARASI
+                                    </th>
+                                    <th class="text-left text-xs py-2 px-3 bg-gray-100 max-w-[300px] whitespace-nowrap" scope="col">
+                                        ÜNVAN
+                                    </th>
+                                    <th class="text-left text-xs py-2 px-3 bg-gray-100 max-w-[300px] whitespace-nowrap" scope="col">
+                                        DURUM
+                                    </th>
+                                    <th class="text-center text-xs py-2 px-3 bg-gray-100 rounded-tr-lg max-w-[300px] whitespace-nowrap" scope="col" class="actions">
+                                        İŞLEM
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-gray-100 transition">
+                                    <td class="py-2 px-3" scope="row">
+                                        Murphy Murdock
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        16489876532
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        +905432189431
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Kullanıcı
+                                    </td>
+                                    <td class="py-2 px-3">
+                                        Aktif
+                                    </td>
+                                    <td class="actions py-2 px-3 flex items-center justify-center">
+                                        <div class="action-container flex items-center space-x-2">
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path
+                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-gray btn-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="w-4 h-4">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="w-full py-2 px-3 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center md:justify-between text-sm">
+                        <div class="space-x-4 flex items-center">
+                            <div>
+                                <select class="text-sm h-[30px] py-1 border-gray-200 rounded-lg" name="" id="">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                    <option value="">50</option>
+                                </select>
+                            </div>
+                            <div>
+                                Total users: 38
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                    <path fill-rule="evenodd" d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
+                                </svg>                                                           
+                            </a>
+                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                    <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                                </svg>                                                                                          
+                            </a>
+                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                1                                                                                        
+                            </a>
+                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                2                                                                                   
+                            </a>
+                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                3                                                                                   
+                            </a>
+                            <span class="font-bold text-xs ">...</span>
+                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                20                                                                                   
+                            </a>
+                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                </svg>                                                                                           
+                            </a>
+                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                    <path fill-rule="evenodd" d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                </svg>                                                                                                                                                         
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <!-- end::Content -->
+      </main>
+      <!-- end::MainContent -->
     </div>
 
     <style type="text/css">
-        .customer-photo {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-size: 32px 35px;
-            background-position: center center;
-            vertical-align: middle;
-            line-height: 32px;
-            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, .2);
-            margin-left: 5px;
-        }
+      .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-left: 5px;
+      }
 
-        .customer-name {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 32px;
-            padding-left: 3px;
-        }
+      .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+      }
 
-        .k-grid tr .checkbox-align {
-            text-align: center;
-            vertical-align: middle;
-        }
+      .k-grid tr .checkbox-align {
+        text-align: center;
+        vertical-align: middle;
+      }
 
-        .product-photo {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-size: 32px 35px;
-            background-position: center center;
-            vertical-align: middle;
-            line-height: 32px;
-            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, .2);
-            margin-right: 5px;
-        }
+      .product-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-right: 5px;
+      }
 
-        .product-name {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 32px;
-            padding-left: 3px;
-        }
+      .product-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+      }
 
-        .k-rating-container .k-rating-item {
-            padding: 4px 0;
-        }
+      .k-rating-container .k-rating-item {
+        padding: 4px 0;
+      }
 
-        .k-rating-container .k-rating-item .k-icon {
-            font-size: 16px;
-        }
+      .k-rating-container .k-rating-item .k-icon {
+        font-size: 16px;
+      }
 
-        .dropdown-country-wrap {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            white-space: nowrap;
-        }
+      .dropdown-country-wrap {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        white-space: nowrap;
+      }
 
-        .dropdown-country-wrap img {
-            margin-right: 10px;
-        }
+      .dropdown-country-wrap img {
+        margin-right: 10px;
+      }
 
-        #grid .k-grid-edit-row>td>.k-rating {
-            margin-left: 0;
-            width: 100%;
-        }
+      #grid .k-grid-edit-row > td > .k-rating {
+        margin-left: 0;
+        width: 100%;
+      }
     </style>
 
     <div class="announcement is-hidden">
-        <header>
-            <img src="/src/collector/images/icons/arcelik.png" alt="">
-            <button class="btn btn-secondary btn-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </header>
-        <section>
-            <div>
-                <img src="/src/collector/images/icons/announcement.svg" alt="">
-                <article>
-                    <h3>Onaylanma Süreciniz devam etmektedir.</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has
-                        been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley
-                        of type and scrambled it to make a type specimen book</p>
-                </article>
-                <p>Soru ve sorunlarınız için Bilgi ve Destek Hattı <a href="tel:+908502230767">0850 223 0 767</a></p>
-                <img src="/src/collector/images/icons/payzee.png" alt="">
-            </div>
-        </section>
+      <header>
+        <img src="/src/collector/images/icons/arcelik.png" alt="" />
+        <button class="btn btn-secondary btn-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </header>
+      <section>
+        <div>
+          <img src="/src/collector/images/icons/announcement.svg" alt="" />
+          <article>
+            <h3>Onaylanma Süreciniz devam etmektedir.</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry’s standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book
+            </p>
+          </article>
+          <p>
+            Soru ve sorunlarınız için Bilgi ve Destek Hattı
+            <a href="tel:+908502230767">0850 223 0 767</a>
+          </p>
+          <img src="/src/collector/images/icons/payzee.png" alt="" />
+        </div>
+      </section>
     </div>
 
     <div class="page-loader is-hidden">
-        <div class="page-loader-container">
-            <div class="content">
-                <div>
-                    <img src="/src/collector/images/icons/unitedpayment.png" alt="Birleşik Ödeme">
-                </div>
-                <div class="spinner">
-                    <div class="spinner-alt">
-                        <div></div>
-                    </div>
-                </div>
+      <div class="page-loader-container">
+        <div class="content">
+          <div>
+            <img
+              src="/src/collector/images/icons/unitedpayment.png"
+              alt="Birleşik Ödeme"
+            />
+          </div>
+          <div class="spinner">
+            <div class="spinner-alt">
+              <div></div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="alert-container is-hidden" data-component="alerts">
-    </div>
+    <div class="alert-container is-hidden" data-component="alerts"></div>
 
     <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
     <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
@@ -786,11 +1436,112 @@
     <script src="/src/collector/js/web-dashboard.js"></script>
     <script src="/src/collector/libs/notify.js"></script>
     <script>
-        $(function () {
-  
-       
-        })
-    </script>
-</body>
+       function createBarChart() {
+            
+            $("#barChart").kendoChart({
+                title: {
+                    text: "Gross domestic product growth /GDP annual %/"
+                },
+                legend: {
+                    position: "top"
+                },
+                seriesDefaults: {
+                    type: "column"
+                },
+                seriesColors: ['#9b59b6', '#3498db', '#34495e', '#16a085', '#f1c40f', '#e74c3c'],
+                series: [{
+                    name: "India",
+                    data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
+                }, {
+                    name: "Russian Federation",
+                    data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3]
+                }, {
+                    name: "Germany",
+                    data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
+                },{
+                    name: "World",
+                    data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
+                }],
+                valueAxis: {
+                    labels: {
+                        format: "{0}%"
+                    },
+                    line: {
+                        visible: false
+                    },
+                    axisCrossingValue: 0
+                },
+                categoryAxis: {
+                    categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                    line: {
+                        visible: false
+                    },
+                    labels: {
+                        padding: {top: 135}
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "{0}%",
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+        $(document).ready(createBarChart);
+        $(document).bind("kendo:skinChange", createBarChart);
 
+        function createPieChart() {
+            $("#pieChart").kendoChart({
+                title: {
+                    position: "bottom",
+                    text: "Share of Internet Population Growth, 2007 - 2012"
+                },
+                legend: {
+                    visible: false
+                },
+                chartArea: {
+                    background: ""
+                },
+                seriesDefaults: {
+                    labels: {
+                        visible: true,
+                        background: "transparent",
+                        template: "#= category #: \n #= value#%"
+                    }
+                },
+                seriesColors: ['#9b59b6', '#3498db', '#34495e', '#16a085', '#f1c40f', '#e74c3c'],
+                series: [{
+                    type: "pie",
+                    startAngle: 150,
+                    data: [{
+                        category: "Asia",
+                        value: 53.8,
+                    },{
+                        category: "Europe",
+                        value: 16.1,
+                    },{
+                        category: "Latin America",
+                        value: 11.3,
+                    },{
+                        category: "Africa",
+                        value: 9.6,
+                    },{
+                        category: "Middle East",
+                        value: 5.2,
+                    },{
+                        category: "North America",
+                        value: 3.6,
+                    }]
+                }],
+                tooltip: {
+                    visible: true,
+                    format: "{0}%"
+                }
+            });
+        }
+
+        $(document).ready(createPieChart);
+        $(document).bind("kendo:skinChange", createPieChart);
+    </script>
+  </body>
 </html>
