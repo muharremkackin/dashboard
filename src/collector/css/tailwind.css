@@ -257,6 +257,9 @@
     .application .widgets > .widget .count-body > div.blue:first-child {
         @apply bg-blue-200/80;
     }
+    .application .widgets > .widget > header > h3 {
+        @apply text-lg font-semibold space-x-2 flex items-center;
+    }
     .application .widgets > .widget.widget-base {
         @apply col-span-1 row-span-1 h-[320px];
     }
@@ -272,6 +275,94 @@
     .application .widgets > .widget.widget-table {
         @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[672px];
     }
+
+    .application .widgets > .widget > .activities {
+        @apply mt-4  h-full relative overflow-y-auto;
+    }
+    .application .widgets > .widget > .activities .activity-container {
+        @apply h-16 flex hover:bg-green-100/50 transition cursor-pointer pr-4;
+    }
+    
+    .application .widgets > .widget > .activities .activity-container > .timeline {
+        @apply flex relative h-full flex-shrink-0 w-16 justify-center items-center;
+    }
+    .application .widgets > .widget > .activities .activity-container > .timeline > span:first-child {
+        @apply w-px h-16 bg-gray-200 absolute;
+    }
+    
+    .application .widgets > .widget > .activities .activity-container > .timeline > span:nth-child(2) {
+        @apply w-4 h-4 rounded-full absolute ;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content {
+        @apply w-full h-full flex flex-col space-y-1 justify-center;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > div:first-child {
+        @apply flex items-center justify-between;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > p {
+        @apply text-sm;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > div:first-child > h4 {
+        @apply text-sm font-semibold;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > div:first-child > span {
+        @apply text-sm flex items-center space-x-2;
+    }
+    .application .widgets > .widget > .activities .activity-container.green {
+        @apply hover:bg-green-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.green > .timeline > span:nth-child(2) {
+        @apply bg-green-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.green:hover > .timeline > span:first-child {
+        @apply bg-green-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.yellow {
+        @apply hover:bg-yellow-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.yellow > .timeline > span:nth-child(2) {
+        @apply bg-yellow-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.yellow:hover > .timeline > span:first-child {
+        @apply bg-yellow-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.gray {
+        @apply hover:bg-gray-100/90;
+    }
+    .application .widgets > .widget > .activities .activity-container.gray > .timeline > span:nth-child(2) {
+        @apply bg-gray-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.gray:hover > .timeline > span:first-child {
+        @apply bg-gray-300;
+    }
+    .application .widgets > .widget > .activities .activity-container.purple {
+        @apply hover:bg-purple-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.purple > .timeline > span:nth-child(2) {
+        @apply bg-purple-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.purple:hover > .timeline > span:first-child {
+        @apply bg-purple-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.teal {
+        @apply hover:bg-teal-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.teal > .timeline > span:nth-child(2) {
+        @apply bg-teal-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.teal:hover > .timeline > span:first-child {
+        @apply bg-teal-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.red {
+        @apply hover:bg-red-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.red > .timeline > span:nth-child(2) {
+        @apply bg-red-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.red:hover > .timeline > span:first-child {
+        @apply bg-red-200;
+    }
+    
 
     input.toggle-card ~ label {
         @apply flex cursor-pointer items-center justify-between w-full border py-2 px-3 rounded;
