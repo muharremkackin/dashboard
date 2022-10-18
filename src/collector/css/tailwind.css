@@ -236,7 +236,7 @@
     .application .widgets > .widget {
         @apply px-4 py-3 border border-[#EEF0F7] rounded-[10px] bg-white hover:shadow-lg shadow-gray-200/40 transition relative;
     }
-    .application .widgets > .widget .actions {
+    .application .widgets > .widget > .actions {
         @apply absolute top-2 right-2 flex items-center space-x-2;
     }
     .application .widgets > .widget .count-body {
@@ -369,7 +369,7 @@
         @apply flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer;
     }
     .application .widgets > .widget > .messages > .message > div:first-child {
-        @apply w-16 h-16 rounded-full bg-gray-200 flex-shrink-0;
+        @apply w-16 h-16 rounded-full flex-shrink-0;
     }
     .application .widgets > .widget > .messages > .message > div:first-child > .avatar {
         @apply rounded-full h-16 w-16 flex items-center justify-center;
@@ -388,6 +388,9 @@
     }
     .application .widgets > .widget > .messages > .message > .content > p {
         @apply text-sm;
+    }
+    .application .widgets > .widget > .messages > .message > .support-icon {
+        @apply w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center;
     }
     
 
