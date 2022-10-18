@@ -278,47 +278,53 @@
             </div>
             <div class="widgets">
                 <div class="widget widget-base" data-component="widget" data-title="BalanceCountWidget">
-                    <div class="w-full h-full flex items-center space-x-6 p-4">
-                        <div class="w-24 h-24 rounded-full flex items-center justify-center rounded-full bg-green-200/80">
+                    <div class="actions">
+                        <button class="btn btn-rounded  btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>                              
+                        </button>
+                    </div>
+                    <div class="count-body">
+                        <div class="green">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
                             </svg>                              
                         </div>
-                        <div class="pl-6 border-l">
+                        <div>
                             <h3>Bakiye</h3>
-                            <p class="text-4xl">5.000.000,45₺</p>
+                            <p>5.000.000,45₺</p>
                         </div>
                     </div>
-                    <div class="absolute top-2 right-2">
+                </div>
+                <div class="widget widget-base" data-component="widget" data-title="ProccessCountWidget">
+                    <div class="actions">
                         <button class="btn btn-rounded  btn-icon btn-default">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                             </svg>                              
                         </button>
                     </div>
-                </div>
-                <div class="widget widget-base" data-component="widget" data-title="ProccessCountWidget">
-                    <div class="w-full h-full flex items-center space-x-6 p-4">
-                        <div class="w-24 h-24 rounded-full flex items-center justify-center rounded-full bg-blue-200/80">
+                    <div class="count-body">
+                        <div class="blue">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
                             </svg>                                                          
                         </div>
-                        <div class="pl-6 border-l">
+                        <div>
                             <h3>İşlem Adedi</h3>
-                            <p class="text-4xl">14.647</p>
+                            <p>14.647</p>
                         </div>
                     </div>
-                    <div class="absolute top-2 right-2">
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                            </svg>                              
-                        </button>
-                    </div>
+                    
                 </div>
                 <div class="widget widget-activity" data-component="widget" data-title="ActivityLogWidget">
-                    <div class="absolute top-2 right-2">
+                    <div class="absolute top-2 right-2 flex items-center space-x-2">
+                        <a href="#" class="btn btn-rounded btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                              </svg>                              
+                        </a>
                         <button class="btn btn-rounded  btn-icon btn-default">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
@@ -522,7 +528,12 @@
                     </div>
                 </div>
                 <div class="widget widget-activity" data-component="widget" data-title="MessagesWidget">
-                    <div class="absolute top-2 right-2">
+                    <div class="absolute top-2 right-2 flex items-center space-x-2">
+                        <a href="#" class="btn btn-rounded btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                              </svg>                              
+                        </a>
                         <button class="btn btn-rounded  btn-icon btn-default">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
@@ -540,13 +551,13 @@
                         </h3>
                     </div>
                     <div class="mt-4 h-full divide-y">
-                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer" data-component="message-box">
                             <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                                <div class="rounded-full h-16 w-16 flex items-center justify-center" data-component="message-avatar"></div>
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold" data-for="message-avatar">Elon Musk</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -559,13 +570,13 @@
                                 <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer" data-component="message-box">
                             <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                                <div class="rounded-full h-16 w-16 flex items-center justify-center" data-component="message-avatar"></div>
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold" data-for="message-avatar">Murphy Murdock</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -578,13 +589,13 @@
                                 <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer" data-component="message-box">
                             <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                                <div class="rounded-full h-16 w-16 flex items-center justify-center" data-component="message-avatar"></div>
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold" data-for="message-avatar">Murphy Murdock</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -597,13 +608,13 @@
                                 <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer" data-component="message-box">
                             <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                                <div class="rounded-full h-16 w-16 flex items-center justify-center" data-component="message-avatar"></div>
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold" data-for="message-avatar">Murphy Murdock</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -616,13 +627,13 @@
                                 <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer" data-component="message-box">
                             <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                                <div class="rounded-full h-16 w-16 flex items-center justify-center" data-component="message-avatar"></div>
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold" data-for="message-avatar">Murphy Murdock</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -635,13 +646,13 @@
                                 <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer" data-component="message-box">
                             <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                                <div class="rounded-full h-16 w-16 flex items-center justify-center" data-component="message-avatar"></div>
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold" data-for="message-avatar">Murphy Murdock</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -657,7 +668,12 @@
                     </div>
                 </div>
                 <div class="widget widget-activity" data-component="widget" data-title="SupportsWidget">
-                    <div class="absolute top-2 right-2">
+                    <div class="absolute top-2 right-2 flex items-center space-x-2">
+                        <a href="#" class="btn btn-rounded btn-icon btn-default">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                              </svg>                              
+                        </a>
                         <button class="btn btn-rounded  btn-icon btn-default">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
@@ -676,12 +692,14 @@
                     </div>
                     <div class="mt-4 h-full divide-y">
                         <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            <div class="w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>                                  
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold">Support Message</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -695,12 +713,14 @@
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            <div class="w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>                                  
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold">Support Message</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -714,12 +734,14 @@
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            <div class="w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>                                  
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold">Support Message</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -733,12 +755,14 @@
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            <div class="w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>                                  
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold">Support Message</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -752,12 +776,14 @@
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            <div class="w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>                                  
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold">Support Message</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -771,12 +797,14 @@
                             </div>
                         </div>
                         <div class="flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0">
-                                <img class="rounded-full" src="https://ui-avatars.com/api/?name=Elon+Musk&font-size=0.33" alt="Elon Musk" />
+                            <div class="w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>                                  
                             </div>
                             <div class="w-full h-full flex flex-col space-y-1 justify-center">
                                 <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-semibold">Elon Musk</h4>
+                                    <h4 class="text-sm font-semibold">Support Message</h4>
                                     <span class="text-sm flex items-center space-x-2">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -789,9 +817,9 @@
                                 <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-                <div class="widget widget-base" data-component="widget" data-title="EmptyWidget"></div>
                 <div class="widget widget-bar-chart" data-component="widget" data-title="BarChartWidget">
                     <div class="absolute top-2 right-2">
                         <button class="btn btn-rounded  btn-icon btn-default">
@@ -812,7 +840,7 @@
                     </div>
                     <div class="h-[400px]" id="barChart"></div>
                 </div>
-                <div class="widget widget-pie-chart" data-component="widget" data-title="PieChartWidget">
+                <div class="widget widget-bar-chart" data-component="widget" data-title="BarChart2Widget">
                     <div class="absolute top-2 right-2">
                         <button class="btn btn-rounded  btn-icon btn-default">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -831,7 +859,7 @@
                             <span>Support</span>
                         </h3>
                     </div>
-                    <div id="pieChart"></div>
+                    <div id="barChart2"></div>
                 </div>
                 <div class="widget widget-table flex flex-col" data-component="widget" data-title="UserGridWidget">
                     <div class="flex items-center justify-between">
@@ -1595,11 +1623,12 @@
     <script src="/src/collector/libs/moment.min.js"></script>
     <script src="/src/collector/libs/daterangepicker.min.js"></script>
     <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
+    <script src="/src/collector/js/avatar-generator.js"></script>
     <script src="/src/collector/js/app.js"></script>
     <script src="/src/collector/js/web-dashboard.js"></script>
     <script src="/src/collector/libs/notify.js"></script>
     <script>
-       function createBarChart() {
+        function createBarChart() {
             
             $("#barChart").kendoChart({
                 title: {
@@ -1652,6 +1681,59 @@
         }
         $(document).ready(createBarChart);
         $(document).bind("kendo:skinChange", createBarChart);
+        function createBarChart2() {
+            
+            $("#barChart2").kendoChart({
+                title: {
+                    text: "Gross domestic product growth /GDP annual %/"
+                },
+                legend: {
+                    position: "top"
+                },
+                seriesDefaults: {
+                    type: "column"
+                },
+                seriesColors: ['#9b59b6', '#3498db', '#34495e', '#16a085', '#f1c40f', '#e74c3c'],
+                series: [{
+                    name: "India",
+                    data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
+                }, {
+                    name: "Russian Federation",
+                    data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3]
+                }, {
+                    name: "Germany",
+                    data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
+                },{
+                    name: "World",
+                    data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
+                }],
+                valueAxis: {
+                    labels: {
+                        format: "{0}%"
+                    },
+                    line: {
+                        visible: false
+                    },
+                    axisCrossingValue: 0
+                },
+                categoryAxis: {
+                    categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                    line: {
+                        visible: false
+                    },
+                    labels: {
+                        padding: {top: 135}
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "{0}%",
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+        $(document).ready(createBarChart2);
+        $(document).bind("kendo:skinChange", createBarChart2);
 
         function createPieChart() {
             $("#pieChart").kendoChart({
@@ -1788,6 +1870,11 @@
             $('[data-click="widget-modals"]').on('click', function () {
                 $(`[data-component="${$(this).attr('data-click')}"]`).removeClass('is-hidden');
                 $(`[data-component="${$(this).attr('data-click')}"]`).find('.modal').removeClass('is-hidden');
+            });
+
+
+            $('[data-component="message-avatar"]').each(function () {
+                generateAvatar(this, $(this).closest('[data-component="message-box"]').find('[data-for="message-avatar"]').text());
             })
         })
     </script>
