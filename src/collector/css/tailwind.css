@@ -278,6 +278,7 @@
     .application .widgets > .widget.widget-activity {
         @apply col-span-1 row-span-2 h-[672px] flex flex-col;
     }
+    .application .widget.widget-grid,
     .application .widgets > .widget.widget-table {
         @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[700px] flex flex-col space-y-4;
     }

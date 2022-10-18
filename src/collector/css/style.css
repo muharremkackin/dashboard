@@ -1363,7 +1363,8 @@ select:focus {
   flex-direction: column;
 }
 
-.application .widgets > .widget.widget-table {
+.application .widgets > .widget.widget-table, 
+    .application .widgets > .widget.widget-table {
   grid-column: span 1 / span 1;
   grid-row: span 2 / span 2;
   display: flex;
@@ -1371,20 +1372,23 @@ select:focus {
   flex-direction: column;
 }
 
-.application .widgets > .widget.widget-table > :not([hidden]) ~ :not([hidden]) {
+.application .widgets > .widget.widget-table > :not([hidden]) ~ :not([hidden]), 
+    .application .widgets > .widget.widget-table > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 @media (min-width: 768px) {
-  .application .widgets > .widget.widget-table {
+  .application .widgets > .widget.widget-table, 
+    .application .widgets > .widget.widget-table {
     grid-column: span 2 / span 2;
   }
 }
 
 @media (min-width: 1536px) {
-  .application .widgets > .widget.widget-table {
+  .application .widgets > .widget.widget-table, 
+    .application .widgets > .widget.widget-table {
     grid-column: span 3 / span 3;
   }
 }
