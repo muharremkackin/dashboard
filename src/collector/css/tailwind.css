@@ -257,6 +257,9 @@
     .application .widgets > .widget .count-body > div.blue:first-child {
         @apply bg-blue-200/80;
     }
+    .application .widgets > .widget > header {
+        @apply flex items-center justify-between
+    }
     .application .widgets > .widget > header > h3 {
         @apply text-lg font-semibold space-x-2 flex items-center;
     }
@@ -273,7 +276,7 @@
         @apply col-span-1 row-span-2 h-[672px] flex flex-col;
     }
     .application .widgets > .widget.widget-table {
-        @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[672px];
+        @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[700px] flex flex-col;
     }
 
     .application .widgets > .widget > .activities {

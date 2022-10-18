@@ -1303,6 +1303,12 @@ select:focus {
   background-color: rgb(191 219 254 / 0.8);
 }
 
+.application .widgets > .widget > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .application .widgets > .widget > header > h3 {
   display: flex;
   align-items: center;
@@ -1354,7 +1360,9 @@ select:focus {
 .application .widgets > .widget.widget-table {
   grid-column: span 1 / span 1;
   grid-row: span 2 / span 2;
-  height: 672px;
+  display: flex;
+  height: 700px;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -6341,14 +6349,6 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   left: 0px;
 }
 
-.top-2 {
-  top: 0.5rem;
-}
-
-.right-2 {
-  right: 0.5rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -6811,14 +6811,14 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   padding-bottom: 0.5rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pt-2 {
