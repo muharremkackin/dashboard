@@ -233,6 +233,7 @@
     .application .widgets {
         @apply grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8;
     }
+    .application .widget.widget-grid,
     .application .widgets > .widget {
         @apply px-4 py-3 border border-[#EEF0F7] rounded-[10px] bg-white hover:shadow-lg shadow-gray-200/40 transition relative;
     }
@@ -257,9 +258,11 @@
     .application .widgets > .widget .count-body > div.blue:first-child {
         @apply bg-blue-200/80;
     }
+    .application .widget.widget-grid > header,
     .application .widgets > .widget > header {
         @apply flex items-center justify-between
     }
+    .application .widget.widget-grid > header > h3,
     .application .widgets > .widget > header > h3 {
         @apply text-lg font-semibold space-x-2 flex items-center;
     }
@@ -850,6 +853,8 @@
     .modals.is-hidden {
         @apply hidden;
     }
+
+    
 
     .modals > .modals-container {
         @apply flex items-center justify-center w-full h-full p-2 ;
