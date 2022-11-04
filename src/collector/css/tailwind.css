@@ -2,7 +2,7 @@
 
 @layer base {
     body {
-        @apply text-[#181C32];
+        @apply text-[#181C32] overflow-x-hidden;
     }
 
     @font-face {
@@ -1414,10 +1414,10 @@
         @apply w-screen min-h-screen overflow-x-hidden overflow-y-auto space-y-16;
     }
     .landing-page > header {
-        @apply container mx-auto p-8 bg-white;
+        @apply container mx-auto p-8 bg-white flex items-center justify-center;
     }
     .landing-page > main {
-        @apply container mx-auto flex flex-col space-y-16 items-center justify-center px-4 lg:px-0;
+        @apply container mx-auto flex flex-col space-y-16 items-center justify-center px-4 lg:px-0 xl:max-w-[1000px];
     }
     .landing-page > main section.hero {
         @apply py-16 flex items-center px-4 lg:px-8 divide-x bg-gray-100 rounded-[10px] shadow-lg shadow-gray-200/80;
@@ -1440,11 +1440,14 @@
     .landing-page > main section.distributors > a {
         @apply w-full h-[300px] md:w-[200px] md:h-[200px] rounded-[10px] flex flex-col items-center justify-center p-4 shadow-lg shadow-gray-200 hover:shadow-gray-300 transition;
     }
+    .landing-page > main section.distributors > a:hover > div > img {
+        filter: brightness(0) invert(1);
+    }
     .landing-page > main section.distributors > a > div {
         @apply w-48 h-48 md:w-32 md:h-32 flex-shrink-0 rounded-full flex items-center justify-center bg-gray-100  relative z-10;
     }
     .landing-page > main section.distributors > a > div > div:first-child {
-        @apply absolute w-32 h-32  transition z-0 bg-[#5fc6b8]  rounded-full;
+        @apply absolute w-48 h-48 md:w-32 md:h-32  transition z-0 bg-[#5fc6b8]  rounded-full;
     }
     .landing-page > main section.distributors > a > div > img {
         @apply w-36 h-16 md:w-24 md:h-10 object-scale-down  z-10 transition;

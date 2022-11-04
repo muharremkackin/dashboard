@@ -585,8 +585,17 @@ select {
 }
 
 body {
+  overflow-x: hidden;
   --tw-text-opacity: 1;
   color: rgb(24 28 50 / var(--tw-text-opacity));
+}
+
+.scrollbarbody {
+  overflow-x: hidden;
+}
+
+.scrollbar-thinbody {
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -5892,6 +5901,9 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
 .landing-page > header {
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 2rem;
@@ -5961,6 +5973,12 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   .landing-page > main {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .landing-page > main {
+    max-width: 1000px;
   }
 }
 
@@ -6099,6 +6117,10 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   }
 }
 
+.landing-page > main section.distributors > a:hover > div > img {
+  filter: brightness(0) invert(1);
+}
+
 .landing-page > main section.distributors > a > div {
   position: relative;
   z-index: 10;
@@ -6123,8 +6145,8 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
 .landing-page > main section.distributors > a > div > div:first-child {
   position: absolute;
   z-index: 0;
-  height: 8rem;
-  width: 8rem;
+  height: 12rem;
+  width: 12rem;
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(95 198 184 / var(--tw-bg-opacity));
@@ -6133,6 +6155,13 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 768px) {
+  .landing-page > main section.distributors > a > div > div:first-child {
+    height: 8rem;
+    width: 8rem;
+  }
 }
 
 .landing-page > main section.distributors > a > div > img {
