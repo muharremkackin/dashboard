@@ -13,9 +13,14 @@
     html {
         font-family:"Open Sans", system-ui, sans-serif;
     }
+   
+
+    .centered {
+        @apply flex items-center justify-center;
+    }
 
     .btn {
-        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 border w-full justify-center md:justify-start md:w-auto;
+        @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 bg-white border w-full justify-center md:justify-start md:w-auto;
     }
 
     .btn.btn-icon {
@@ -26,7 +31,10 @@
         @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300 ring-gray-200;
     }
     .btn.btn-green {
-        @apply bg-green-500 hover:bg-green-600/80 text-white active:bg-green-600 ring-green-700
+        @apply bg-green-500 hover:bg-green-600/80 text-white active:bg-green-600 ring-green-700 border-green-500
+    }
+    .btn.btn-yellow {
+        @apply bg-yellow-400 hover:bg-yellow-500 text-yellow-800 active:bg-yellow-600 ring-yellow-600 border-yellow-400;
     }
     .btn.btn-gray:disabled {
         @apply bg-gray-100/50 cursor-not-allowed;
@@ -44,7 +52,7 @@
         @apply w-full;
     }
     .btn.btn-outline-primary {
-        @apply text-[#688BE4] bg-transparent hover:text-[#5c80db] ring-[#5476cc]
+        @apply text-[#688BE4] bg-transparent hover:text-[#5c80db] ring-[#5476cc] border-transparent;
     }
     .btn.btn-outline-primary:disabled {
         @apply text-[#688BE4]/50 cursor-not-allowed
@@ -52,12 +60,21 @@
     .btn.btn-primary:disabled {
         @apply bg-[#688BE4]/50 cursor-not-allowed;
     }
+    .btn.btn-rounded {
+        @apply rounded-full;
+    }
 
     .btn.btn-red {
-        @apply bg-red-500 border-red-500 text-white hover:bg-red-500 ring-red-600;
+        @apply bg-red-400 border-red-400 hover:border-red-500 text-white hover:bg-red-500 ring-red-700;
     }
     .btn.btn-red:disabled {
         @apply bg-red-500/50 cursor-not-allowed;
+    }
+    .btn.btn-teal {
+        @apply bg-[#5FC6B8] border-[#5FC6B8] text-white hover:bg-[#53b5a8] ring-[#53b5a8];
+    }
+    .btn.btn-teal:disabled {
+        @apply bg-[#5FC6B8]/50 cursor-not-allowed;
     }
     .btn.btn-default {
         @apply bg-[#FFFFFF] border-[#8B8F9D] text-[#181C32] hover:bg-gray-100 ring-[#bdc3c7]
@@ -84,6 +101,324 @@
     .badge.badge-green {
         @apply bg-green-500 text-white;
     }
+
+    .badge.badge-yellow {
+        @apply bg-yellow-400 text-yellow-800;
+    }
+    .badge.badge-outline-yellow {
+        @apply text-yellow-800;
+    }
+
+    input {
+        @apply focus:outline-none px-3 focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4];
+        height: 50px;
+    }
+    select {
+        @apply focus:outline-none focus-within:ring-2 ring-[#688BE4] transition focus:border-[#688BE4] h-[50px];
+    }
+    .k-input-inner {
+        @apply h-auto;
+    }
+    .alert {
+
+    }
+
+    .alert.alert-red {
+        @apply text-red-500;
+    }
+
+    .alert.alert-icon {
+        @apply flex items-center justify-center;
+    }
+
+    .pagination {
+        @apply p-4;
+    }
+
+    .pagination .pagination-container {
+        @apply flex items-center justify-end space-x-4
+    }
+    .pagination .pagination-container .arrow,
+    .pagination .pagination-container .page {
+        @apply w-8 h-8 inline-flex flex-grow-0 items-center justify-center border rounded-[5px] text-gray-800 transition;
+    }
+
+    .pagination .pagination-container span.arrow,
+    .pagination .pagination-container span.page {
+        
+    }
+    .pagination .pagination-container a.arrow,
+    .pagination .pagination-container a.page {
+        @apply hover:bg-gray-100;
+    }
+
+    .pagination .pagination-container span.page.active {
+        @apply bg-[#688BE4] text-white font-bold;
+    }
+
+    @keyframes spinner-alt {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    .spinner-alt div {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 8px solid #688be4;
+        border-top-color: transparent;
+        border-radius: 50%;
+    }
+
+    .spinner-alt div {
+        animation: spinner-alt 1s linear infinite;
+        top: 30px;
+        left: 30px
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    .spinner-alt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0;
+        /* see note above */
+    }
+
+    .spinner-alt div {
+        box-sizing: content-box;
+    }
+
+    .page-loader {
+        @apply fixed top-0 left-0 w-screen h-screen bg-white/90 z-[200];
+    }
+    .page-loader-container {
+        @apply w-full h-full flex items-center justify-center;
+    }
+    .page-loader-container .content {
+        @apply flex flex-col items-center justify-center space-y-8;
+    }
+    .page-loader-container .content > div:first-child img {
+        @apply h-[58px];
+    }
+    .admin-announcement {
+        @apply p-8 bg-white border border-[#EEF0F7] rounded-lg;
+    }
+    .admin-announcement > div {
+        @apply flex flex-col md:flex-row items-start md:items-center divide-y md:divide-y-0 md:divide-x md:space-x-8;
+    }
+    .admin-announcement > div > div:first-child {
+        @apply text-yellow-500 pb-4 md:pb-0;
+    }
+    .admin-announcement > div > div:nth-child(2) {
+        @apply p-4 md:pl-8 space-y-4 ;
+    }
+    .admin-announcement > div > div:nth-child(2) > div:first-child {
+        @apply font-bold md:text-xl;
+    }
+    .application .widgets {
+        @apply grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8;
+    }
+    .application .widget.widget-grid,
+    .application .widgets > .widget {
+        @apply px-4 py-3 border border-[#EEF0F7] rounded-[10px] bg-white hover:shadow-lg shadow-gray-200/40 transition relative;
+    }
+    .application .widgets > .widget > .actions {
+        @apply absolute top-2 right-2 flex items-center space-x-2;
+    }
+    .application .widgets > .widget .count-body {
+        @apply w-full h-full flex items-center space-x-6 p-4;
+    }
+    .application .widgets > .widget .count-body > div:first-child {
+        @apply w-24 h-24 rounded-full flex items-center justify-center rounded-full;
+    }
+    .application .widgets > .widget .count-body > div:nth-child(2) {
+        @apply pl-6 border-l;
+    }
+    .application .widgets > .widget .count-body > div:nth-child(2) > p {
+        @apply text-4xl;
+    }
+    .application .widgets > .widget .count-body > div.green:first-child {
+        @apply bg-green-200/80;
+    }
+    .application .widgets > .widget .count-body > div.blue:first-child {
+        @apply bg-blue-200/80;
+    }
+    .application .widget.widget-grid > header,
+    .application .widgets > .widget > header {
+        @apply flex items-center justify-between
+    }
+    .application .widget.widget-grid > header > h3,
+    .application .widgets > .widget > header > h3 {
+        @apply text-lg font-semibold space-x-2 flex items-center;
+    }
+    .application .widgets > .widget.widget-base {
+        @apply col-span-1 row-span-1 h-[320px];
+    }
+    .application .widgets > .widget.widget-bar-chart {
+        @apply md:col-span-2 row-span-2 h-[460px];
+    }
+    .application .widgets > .widget.widget-pie-chart {
+        @apply col-span-1 row-span-1 h-[460px];
+    }
+    .application .widgets > .widget.widget-activity {
+        @apply col-span-1 row-span-2 h-[672px] flex flex-col;
+    }
+    .application .widget.widget-grid,
+    .application .widgets > .widget.widget-table {
+        @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[700px] flex flex-col space-y-4;
+    }
+
+    .application .widgets > .widget > .activities {
+        @apply mt-4  h-full relative overflow-y-auto;
+    }
+    .application .widgets > .widget > .activities .activity-container {
+        @apply h-16 flex hover:bg-green-100/50 transition cursor-pointer pr-4;
+    }
+    
+    .application .widgets > .widget > .activities .activity-container > .timeline {
+        @apply flex relative h-full flex-shrink-0 w-16 justify-center items-center;
+    }
+    .application .widgets > .widget > .activities .activity-container > .timeline > span:first-child {
+        @apply w-px h-16 bg-gray-200 absolute;
+    }
+    
+    .application .widgets > .widget > .activities .activity-container > .timeline > span:nth-child(2) {
+        @apply w-4 h-4 rounded-full absolute ;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content {
+        @apply w-full h-full flex flex-col space-y-1 justify-center;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > div:first-child {
+        @apply flex items-center justify-between;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > p {
+        @apply text-sm;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > div:first-child > h4 {
+        @apply text-sm font-semibold;
+    }
+    .application .widgets > .widget > .activities .activity-container > .content > div:first-child > span {
+        @apply text-sm flex items-center space-x-2;
+    }
+    .application .widgets > .widget > .activities .activity-container.green {
+        @apply hover:bg-green-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.green > .timeline > span:nth-child(2) {
+        @apply bg-green-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.green:hover > .timeline > span:first-child {
+        @apply bg-green-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.yellow {
+        @apply hover:bg-yellow-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.yellow > .timeline > span:nth-child(2) {
+        @apply bg-yellow-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.yellow:hover > .timeline > span:first-child {
+        @apply bg-yellow-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.gray {
+        @apply hover:bg-gray-100/90;
+    }
+    .application .widgets > .widget > .activities .activity-container.gray > .timeline > span:nth-child(2) {
+        @apply bg-gray-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.gray:hover > .timeline > span:first-child {
+        @apply bg-gray-300;
+    }
+    .application .widgets > .widget > .activities .activity-container.purple {
+        @apply hover:bg-purple-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.purple > .timeline > span:nth-child(2) {
+        @apply bg-purple-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.purple:hover > .timeline > span:first-child {
+        @apply bg-purple-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.teal {
+        @apply hover:bg-teal-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.teal > .timeline > span:nth-child(2) {
+        @apply bg-teal-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.teal:hover > .timeline > span:first-child {
+        @apply bg-teal-200;
+    }
+    .application .widgets > .widget > .activities .activity-container.red {
+        @apply hover:bg-red-100/50;
+    }
+    .application .widgets > .widget > .activities .activity-container.red > .timeline > span:nth-child(2) {
+        @apply bg-red-500;
+    }
+    .application .widgets > .widget > .activities .activity-container.red:hover > .timeline > span:first-child {
+        @apply bg-red-200;
+    }
+    .application .widgets > .widget > .messages {
+        @apply mt-4 h-full divide-y;
+    }
+    .application .widgets > .widget > .messages > .message {
+        @apply flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer;
+    }
+    .application .widgets > .widget > .messages > .message > div:first-child {
+        @apply w-16 h-16 rounded-full flex-shrink-0;
+    }
+    .application .widgets > .widget > .messages > .message > div:first-child > .avatar {
+        @apply rounded-full h-16 w-16 flex items-center justify-center;
+    }
+    .application .widgets > .widget > .messages > .message > .content {
+        @apply w-full h-full flex flex-col space-y-1 justify-center;
+    }
+    .application .widgets > .widget > .messages > .message > .content > div:first-child {
+        @apply flex items-center justify-between;
+    }
+    .application .widgets > .widget > .messages > .message > .content > div:first-child > h4 {
+        @apply text-sm font-semibold;
+    }
+    .application .widgets > .widget > .messages > .message > .content > div:first-child > span {
+        @apply text-sm flex items-center space-x-2;
+    }
+    .application .widgets > .widget > .messages > .message > .content > p {
+        @apply text-sm;
+    }
+    .application .widgets > .widget > .messages > .message > .support-icon {
+        @apply w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center;
+    }
+    
+
+    input.toggle-card ~ label {
+        @apply flex cursor-pointer items-center justify-between w-full border py-2 px-3 rounded;
+    }
+    input.toggle-card ~ label > span:first-child {
+        @apply flex items-center space-x-2;
+    }
+    input.toggle-card ~ label > span:nth-child(2) {
+        @apply w-14 h-8 rounded-full bg-gray-200 flex items-center px-1 transition;
+    }
+    input.toggle-card:checked ~ label > span:nth-child(2) {
+        @apply bg-[#688BE4];
+    }
+    input.toggle-card ~ label > span:nth-child(2) > span {
+        @apply w-6 h-6 bg-white rounded-full transition;
+    }
+    input.toggle-card:checked ~ label > span:nth-child(2) > span {
+        @apply translate-x-[24px];
+    }
 }
 
 @tailwind components;
@@ -94,12 +429,12 @@
     }
 
     .application>aside {
-        @apply w-[262px] h-screen overflow-x-hidden overflow-y-auto bg-white border-r flex-shrink-0 fixed top-0 left-0 z-10 lg:relative ease-in-out duration-150;
+        @apply w-[262px] h-screen overflow-x-hidden overflow-y-auto bg-white border-r flex-shrink-0 fixed top-0 left-0 z-10 3xl:relative ease-in-out duration-150;
 
     }
 
     .application>aside.closed {
-        @apply hidden lg:block;
+        @apply hidden 3xl:block;
     }
 
     .application>aside.minimized {
@@ -140,12 +475,12 @@
     }
 
     .application>aside .btn-toggle-aside {
-        @apply hidden lg:block;
+        @apply hidden 3xl:block;
     }
 
     .application>main .btn-open-aside,
     .application>aside .btn-close-aside {
-        @apply block lg:hidden;
+        @apply block 3xl:hidden;
     }
 
     .application>aside>section {
@@ -182,7 +517,11 @@
     }
 
     .application>aside>section>footer>div {
+<<<<<<< HEAD
         @apply flex flex-col items-center justify-center space-y-[4px] text-xl pt-4;
+=======
+        @apply flex flex-col items-center justify-center space-y-[12px] text-sm;
+>>>>>>> f4d4e946e8469f11516d0c51f7eb3d34e303fe64
     }
 
     .application>aside.minimized>section>footer>div {
@@ -228,6 +567,9 @@
     .application>aside.minimized>section>footer>div a span.title {
         @apply hidden;
     }
+    .application>aside>section>footer>div a:nth-child(2) span.title {
+        @apply text-xl;
+    }
 
     .application>aside>section>footer>div a span.title {
         @apply block;
@@ -238,15 +580,15 @@
     }
 
     .application>.main-content>header {
-        @apply lg:h-[66px] w-full bg-white border-b;
+        @apply lg:h-[66px] w-full bg-white border-b p-2;
     }
 
     .application>.main-content>header>div {
-        @apply w-full h-full flex flex-col lg:flex-row lg:items-center lg:justify-between py-4 px-4 lg:px-8 space-y-5 lg:space-y-0;
+        @apply w-full h-full flex flex-col md:flex-row md:items-center md:justify-between px-4 lg:px-8 space-y-5 lg:space-y-0;
     }
 
     .application>.main-content>header>h1 {
-        @apply text-lg;
+        @apply text-lg font-bold;
     }
 
     .application>.main-content>header .date-range-picker {
@@ -254,27 +596,35 @@
     }
 
     .application>.main-content>header .date-range-picker input {
-        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none;
+        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none h-[30px];
     }
 
     .application>.main-content>header>div>div:first-child {
-        @apply flex items-center space-x-4 lg:space-x-0;
+        @apply flex items-center space-x-4;
     }
 
     .application>.main-content>header>div>div:nth-child(2) {
-        @apply flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center lg:space-x-6;
+        @apply flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:items-center lg:space-x-6 h-full;
     }
 
     .dropdown {
-        @apply relative;
+        @apply relative h-full flex items-center justify-center;
     }
 
     .dropdown>button {
-        @apply text-[13px] py-2 px-3 space-x-2 rounded-[5px] border border-dashed;
+        @apply text-[13px] py-2 px-3 space-x-2 rounded-[5px] border border-dashed hover:border-gray-300 hover:bg-gray-100 transition max-w-[240px];
+    }
+
+    .dropdown> .dropdown-content > .avatar {
+        @apply flex items-center;
+    }
+
+    .dropdown> .dropdown-content > .avatar img {
+        @apply w-20 h-20 object-cover rounded-lg;
     }
 
     .dropdown>.dropdown-content {
-        @apply absolute top-10 w-full bg-white rounded-[5px] z-10 shadow py-2 px-3 space-y-4 hidden;
+        @apply absolute top-12 xl:right-0 w-full bg-white rounded-[5px] z-10 shadow-lg py-4 px-4 space-y-4 w-[300px];
     }
 
     .dropdown>.dropdown-content .dropdown-link {
@@ -282,58 +632,31 @@
     }
 
     .application .dashboard-content {
-        @apply w-full overflow-y-auto px-4 2xl:px-0 py-8;
+        @apply w-full overflow-y-auto px-8 py-8;
         height:calc(100vh - 66px);
     }
 
+    @media screen and (max-width: 1024px) {
+       .application .dashboard-content {
+        height: calc(100vh - 137px);
+       }
+    }
+
+    @media screen and (max-width: 768px) {
+        .application .dashboard-content {
+         height: calc(100vh - 172px);
+        }
+     }
+    
     .application .dashboard-content-inner {
-        @apply container mx-auto h-10 pb-8 space-y-8;
+        @apply container mx-auto pb-8 space-y-8;
     }
 
-    .application .dashboard-widgets {
-        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-[30px];
-    }
-
-    .application .widget {
-        @apply rounded-[10px] bg-white border border-[#EEF0F7];
-    }
-
-    .application .widget.widget-sm {
-        @apply col-span-1 h-[180px] xl:h-[221px];
-    }
-
-    .application .widget.widget-count {
-        @apply px-8 xl:px-8 py-8 xl:py-12 space-x-4 xl:space-x-6 flex items-center;
-    }
-
-    .application .widget.widget-count .icon {
-        @apply text-2xl xl:text-[36px] h-16 w-16 xl:h-24 xl:w-24 rounded-full bg-[#E5FDDF] flex items-center justify-center flex-shrink-0;
-    }
-
-    .application .widget.widget-count .content {
-        @apply flex flex-col leading-9;
-    }
-
-    .application .widget.widget-count .content>span:first-child {
-        @apply text-[15px];
-    }
-
-    .application .widget.widget-count .content>span:nth-child(2) {
-        @apply text-4xl xl:text-[54px];
-    }
-
-    .application .widget.widget-grid {
-        @apply px-8 py-7;
-    }
-
-    .application .widget.widget-grid > header {
-        @apply flex flex-col md:flex-row items-start md:items-center md:justify-between mb-7;
-    }
-    .application .widget.widget-grid > header h2 {
-        @apply text-lg;
-    }
     .application .grid-container {
-        @apply overflow-x-auto relative sm:rounded-lg;
+        @apply overflow-x-auto relative sm:rounded-lg h-full;
+    }
+    .application .grid-container.kendo {
+        @apply overflow-hidden;
     }
     .application .grid-container table {
         @apply w-full text-sm text-left text-[#4B4B4B] dark:text-gray-400;
@@ -367,14 +690,6 @@
     }
     .application .grid-container table > tbody tr td.actions .action-container {
         @apply flex items-center space-x-2 justify-center w-full;
-    }
-
-    .application .widget.widget-full {
-        @apply col-span-1 md:col-span-2 xl:col-span-3 row-span-4;
-    }
-
-    .application .widget.widget-chart {
-        @apply flex flex-col p-2;
     }
 
     .application .reseller-select {
@@ -465,6 +780,9 @@
     .application .reseller-information .card h2 {
         @apply text-[#181C32] text-lg;
     }
+    .application .card {
+        @apply shadow-sm;
+    }
     .application .reseller-information .card.information-card {
         @apply xl:col-span-2 py-6 px-8 bg-white rounded-[10px] space-y-8;
     }
@@ -508,16 +826,26 @@
         @apply grid grid-cols-1 xl:grid-cols-2 gap-8 w-full;
     }
     .application .reseller-information .card.account-card .content > div {
-        @apply col-span-1 flex;
+        @apply col-span-1 flex w-auto;
     }
     .application .phone-control {
-        @apply flex space-x-3;
+        @apply flex flex-col md:flex-row md:space-x-3  space-y-4 md:space-y-0;
+    }
+    .modal .phone-control {
+        @apply grid grid-cols-3 gap-2;
     }
     .application .phone-control select {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] p-2 w-full;
+        @apply text-[15px] flex-shrink-0 border border-[#E1E3EB] rounded-[5px] p-2 w-full md:w-[100px];
+    }
+    
+    .modal .phone-control select {
+        @apply h-[50px] col-span-1 text-[15px] flex-shrink-0 border border-[#E1E3EB] rounded-[5px] p-2 w-full md:w-[100px];
     }
     .application .phone-control input {
-        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[272px];
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[208px];
+    }
+    .modal .phone-control input {
+        @apply text-[15px] border border-[#E1E3EB] rounded-[5px] h-[50px] col-span-2;
     }
     .application .email-control input {
         @apply text-[15px] border border-[#E1E3EB] rounded-[5px] w-full md:w-[320px];
@@ -531,8 +859,10 @@
         @apply hidden;
     }
 
+    
+
     .modals > .modals-container {
-        @apply flex items-center justify-center w-full h-full p-2;
+        @apply flex items-center justify-center w-full h-full p-2 ;
     }
     .modals > .modals-container > .modal {
         @apply w-full md:w-[459px] bg-white rounded-[10px];
@@ -550,7 +880,7 @@
         @apply text-[#8B8F9E] text-sm;
     }
     .modals > .modals-container > .modal > section {
-        @apply px-8 py-10 space-y-10;
+        @apply px-8 py-8 space-y-10;
     }
     .modals > .modals-container > .modal > section > .actions {
         @apply grid grid-cols-1 md:grid-cols-2 gap-4;
@@ -586,7 +916,7 @@
     }
     .modals > .modals-container > .modal > section > .fail > div:nth-child(2),
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) {
-        @apply text-center pt-7 pb-16 space-y-[12px];
+        @apply text-center pt-7 pb-8 space-y-[12px];
     }
     .modals > .modals-container > .modal > section > .fail > div:nth-child(2) > div:first-child,
     .modals > .modals-container > .modal > section > .approve > div:nth-child(2) > div:first-child {
@@ -631,7 +961,7 @@
 
     .form > .form-control,
     .form > .form-control-phone {
-        @apply flex flex-col space-y-3;
+        @apply flex flex-col space-y-3 relative;
     }
     .form > .form-control > label {
         @apply text-[15px];
@@ -666,15 +996,61 @@
     .application .grid-card > header h2 {
         @apply text-base lg:text-lg;
     }
+    .application .page-card > header p,
+    .application .grid-card > header p {
+        @apply text-[13px] text-[#8B8F9E];
+    }
     .application .page-card > .page-content,
     .application .grid-card > .grid-area {
         @apply px-8 space-y-5 pb-8;
+    }
+    .application .page-card > .page-content .progress {
+        @apply h-5 w-full rounded-full bg-white border border-[#EEF0F7] flex items-center;
+    }
+    .application .page-card > .page-content .progress .progress-bar {
+        @apply h-full bg-[#45DB8A] rounded-full;
+    }
+    .application .page-card > .page-content .component {
+        @apply space-y-8;
+    }
+    .application .page-card > .page-content .component .support-categories {
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-[26px];
+    }
+    .application .page-card > .page-content .component .support-categories .category {
+        @apply col-span-1 flex;
+    }
+    .application .page-card > .page-content .component .actions {
+        @apply flex items-center justify-center lg:justify-end space-x-4;
+    }
+    .application .page-card > .page-content .component .faq {
+        @apply space-y-6;
+    }
+    .application .page-card > .page-content .component .faq article {
+        @apply bg-white border rounded-[10px] border-[#EEF0F7];
+    }
+    .application .page-card > .page-content .component .faq article > header {
+        @apply flex items-center px-6 py-8 justify-between;
+    }
+    .application .page-card > .page-content .component .faq article > header h2 {
+        @apply text-lg font-bold;
+    }
+    .application .page-card > .page-content .component .faq article > section {
+        @apply px-6 py-8;
+    }
+    .application .page-card > .page-content .component .faq article > section > div {
+        @apply prose;
+    }
+    .application .page-card > .page-content .component .message {
+        @apply space-y-6;
+    }
+    .application .page-card > .page-content .component .message > div:first-child {
+        @apply flex flex-col space-y-1;
     }
     .application .grid-counter {
         @apply flex items-center justify-center md:justify-end;
     }
     .application .grid-counter > div {
-        @apply bg-white p-8 divide-y divide-gray-400 text-[15px] min-w-[340px];
+        @apply bg-white p-8 divide-y divide-gray-400 text-[15px] min-w-[340px] shadow-sm;
     }
     .application .grid-counter > div > div {
         @apply flex items-center justify-between space-x-2;
@@ -788,21 +1164,25 @@
     }
 
     .action-form > div {
-        @apply flex flex-col space-y-1;
+        @apply flex flex-col space-y-1 w-full;
     }
     .action-form > div > label {
         @apply text-sm;
     }
     .input-container {
-        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300;
+        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300 w-full;
     }
+    .select-container {
+        @apply flex items-center bg-gray-100 rounded focus-within:ring-2 focus-within:ring-gray-300 flex-shrink-0;
+    }
+    .select-container > span:first-child,
     .input-container > span:first-child {
         @apply px-3 border-r border-gray-300;
     }
     .input-container > input {
         @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
     }
-    .input-container > select {
+    .select-container > select {
         @apply border-0 bg-transparent focus-within:ring-0 pl-2 w-full;
     }
 
@@ -869,6 +1249,257 @@
     .application .support-card > section > .message > .actions {
         @apply flex items-center justify-center md:justify-end space-x-4;
     }
+
+    .grid-container.kendo .action-container {
+        @apply flex space-x-2 items-center justify-center;
+    }
+
+    .support-category-radio ~ label {
+        @apply py-[30px] px-6 rounded-[10px] text-[15px] hover:bg-[#F5F8FA] transition border border-[#EEF0F7] w-full cursor-pointer;
+    }
+    .support-category-radio:checked ~ label {
+        @apply bg-[#F5F8FA] border-[#6A8DDE] select-none;
+    }
+
+    .announcement {
+        @apply fixed top-0 left-0 w-screen h-screen bg-white/90 z-[200] space-y-8;
+    }
+    .announcement > header {
+        @apply flex items-center justify-between py-4 px-8;
+    }
+    .announcement > header img {
+        @apply h-[30px]
+    }
+    .announcement > section {
+        @apply w-full flex items-center justify-center p-4;
+    }
+    .announcement > section > div {
+        @apply p-4 lg:py-8 lg:px-12 bg-white border border-[#EEF0F7] rounded-[10px] w-full md:w-3/4 xl:w-1/2 flex flex-col items-center justify-center space-y-6;
+    }
+    .announcement > section > div > img:first-child {
+        @apply h-[100px] lg:h-[180px];
+    }
+    .announcement > section > div article {
+        @apply space-y-4;
+    }
+    .announcement > section > div article > h3 {
+        @apply text-base lg:text-lg font-bold text-center;
+    }
+    .announcement > section > div article > p {
+        @apply text-[#97A3B4] text-sm text-center;
+    }
+    .announcement > section > div > p {
+        @apply text-sm text-center;
+    }
+    .announcement > section > div > img {
+        @apply h-[42px];
+    }
+
+    .authentication .authentication-slider .splide__track,
+    .authentication .authentication-slider {
+        @apply h-full;
+    }
+    .authentication .authentication-slider .content-slide {
+        @apply w-full h-full bg-gradient-to-tr from-cyan-500 to-blue-500 flex flex-col space-y-4 p-8 justify-center pb-16;
+    }
+    .authentication .authentication-slider .content-slide h3 {
+        @apply text-white text-xl 2xl:text-[26px] font-bold text-center px-8 2xl:px-16;
+    }
+    .authentication .authentication-slider .content-slide p {
+        @apply text-white text-base text-center px-4 2xl:px-6;
+    }
+
+    .authentication .authentication-slider .splide__pagination {
+        @apply absolute bottom-16 w-full space-x-2;
+    }
+    .authentication .authentication-slider .splide__pagination .splide__pagination__page  {
+        @apply w-4 h-4 bg-[#3055B4] rounded-full;
+    }
+    .authentication .authentication-slider .splide__pagination .splide__pagination__page.is-active  {
+        @apply bg-white;
+    }
+
+    .authentication {
+        @apply flex items-center flex-row min-h-screen overflow-x-hidden w-screen;
+    }
+    .authentication aside {
+        @apply hidden xl:block w-1/3 flex-shrink-0 h-screen bg-[#5878C7];
+    }
+    .authentication main {
+        @apply w-full h-screen overflow-y-auto bg-[#FAFBFC] p-4;
+    }
+    .authentication main > div {
+        @apply w-full h-full flex flex-col justify-between items-center pt-14 pb-8 md:px-8 space-y-8;
+    }
+    .authentication main > div > img {
+        @apply h-[30px] lg:h-[59px];
+    }
+    .authentication .authentication-container {
+        @apply p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px];
+    }
+    .authentication .authentication-container form {
+        @apply space-y-[48px];
+    }
+    .authentication .authentication-container header {
+        @apply text-center space-y-2;
+    }
+    .authentication .authentication-container header h2 {
+        @apply text-xl lg:text-[26px];
+    }
+    .authentication .authentication-container header p {
+        @apply text-sm text-[#8B8F9E];
+    }
+    .authentication .authentication-container .login,
+    .authentication .authentication-container .verification {
+        @apply space-y-[28px];
+    }
+    .authentication .authentication-container .verification > div:first-child {
+        @apply text-2xl font-bold text-center;
+    }
+    .authentication .authentication-container .verification > div:first-child {
+        @apply text-2xl font-bold text-center;
+    }
+    .authentication .authentication-container input {
+        @apply w-full border-[#E1E3EB] rounded-[5px];
+    }
+    .authentication .authentication-container .login .options {
+        @apply flex items-center justify-between;
+    }
+    .authentication .authentication-container .login .options label.remember-me {
+        @apply flex items-center space-x-2 cursor-pointer text-[#8B8F9E] hover:text-gray-800 transition text-sm;
+    }
+    .authentication .authentication-container .login .options label.remember-me input {
+        @apply h-5 w-5 rounded border-gray-300 checked:bg-[#688BE4];
+    }
+    .authentication .authentication-container .login .options a.forget-password {
+        @apply text-[#688BE4] hover:text-[#3055B4] transition-all ease-linear duration-100 text-sm;
+    }
+    .authentication .authentication-container .line {
+        @apply h-px w-full bg-gray-100;
+    }
+    .authentication .authentication-container .actions {
+        @apply space-y-4;
+    }
+    .authentication .authentication-container .verify-icon {
+        @apply h-[140px] w-[140px] rounded-full bg-[#edf3fd] relative flex items-center justify-center;
+    }
+    .authentication .authentication-container .verify-icon > span:first-child {
+        @apply text-white;
+    }
+    .authentication .authentication-container .verify-icon > span:nth-child(2) {
+        @apply text-[#45db8a] absolute -bottom-1 -right-3;
+    }
+    .authentication .authentication-container .verify-content {
+        @apply text-center space-y-5;
+    }
+    .authentication .authentication-container .verify-content > div:first-child {
+        @apply font-bold text-lg;
+    }
+    .authentication .authentication-container .verify-content > div:nth-child(2) span {
+        @apply font-bold;
+    }
+    .authentication main footer {
+        @apply centered flex-col text-center space-y-5 pb-8;
+    }
+    .authentication main footer > div:first-child {
+        @apply centered divide-x;
+    }
+    .authentication main footer > div:first-child div {
+        @apply px-8;
+    }
+    .authentication main footer > div:first-child div img {
+        @apply h-[30px] md:h-[58px];
+    }
+    .authentication main footer > div:nth-child(2) {
+        @apply text-[15px];
+    }
+
+    .landing-page {
+        @apply w-screen min-h-screen overflow-x-hidden overflow-y-auto space-y-16;
+    }
+    .landing-page > header {
+        @apply container mx-auto p-8 bg-white;
+    }
+    .landing-page > main {
+        @apply container mx-auto flex flex-col space-y-16 items-center justify-center px-4 lg:px-0;
+    }
+    .landing-page > main section.hero {
+        @apply py-16 flex items-center px-4 lg:px-8 divide-x bg-gray-100 rounded-[10px] shadow-lg shadow-gray-200/80;
+    }
+    .landing-page > main section.hero > div:first-child {
+        @apply px-4 lg:px-8 text-[#5aa4b2];
+    }
+    .landing-page > main section.hero > div:first-child > svg {
+        @apply w-12 h-12 lg:w-24 lg:h-24;
+    }
+    .landing-page > main section.hero > div:nth-child(2) {
+        @apply space-y-2 px-8;
+    }
+    .landing-page > main section.hero > div:nth-child(2) > h1 {
+        @apply text-xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600;
+    }
+    .landing-page > main section.distributors {
+        @apply flex flex-wrap items-center justify-center gap-8 w-full px-8;
+    }
+    .landing-page > main section.distributors > a {
+        @apply w-full h-[300px] md:w-[200px] md:h-[200px] rounded-[10px] flex flex-col items-center justify-center p-4 shadow-lg shadow-gray-200 hover:shadow-gray-300 transition;
+    }
+    .landing-page > main section.distributors > a > div {
+        @apply w-48 h-48 md:w-32 md:h-32 flex-shrink-0 rounded-full flex items-center justify-center bg-gray-100  relative z-10;
+    }
+    .landing-page > main section.distributors > a > div > div:first-child {
+        @apply absolute w-32 h-32  transition z-0 bg-[#5fc6b8]  rounded-full;
+    }
+    .landing-page > main section.distributors > a > div > img {
+        @apply w-36 h-16 md:w-24 md:h-10 object-scale-down  z-10 transition;
+    }
+
+    .alert-container {
+        @apply fixed top-0 right-0 z-[300] bg-transparent w-fit h-fit space-y-4 p-4;
+    }
+    .alert-container .alert-notify {
+        @apply transition rounded border-b-4 border w-full min-w-[300px] md:max-w-[500px] cursor-pointer bg-white;
+    }
+    .alert-container .alert-notify .notify-container {
+        @apply flex items-start;
+    }
+    .alert-container .alert-notify .notify-container .icon {
+        @apply px-4 py-3;
+    }
+    .alert-container .alert-notify .notify-container .content {
+        @apply pr-4 py-3 space-y-2 w-full;
+    }
+    .alert-container .alert-notify .notify-container .content .header {
+        @apply flex items-center justify-between w-full;
+    }
+    .alert-container .alert-notify .notify-container .content .header .title {
+        @apply font-bold text-lg;
+    }
+    .alert-container .alert-notify .notify-container .content .text {
+        @apply text-base;
+    }
+    .alert-container .alert-notify.success {
+        @apply bg-green-600 hover:bg-green-700 border-green-700 text-white;
+    }
+    .alert-container .alert-notify.warning {
+        @apply bg-yellow-300 hover:bg-yellow-400 border-yellow-400 text-yellow-800;
+    }
+    .alert-container .alert-notify.error {
+        @apply bg-red-500 hover:bg-red-600 border-red-600 text-white;
+    }
+    .show-password {
+        @apply absolute top-[30px] right-3;
+    }
+    .show-password .hide {
+        @apply hidden;
+    }
+
+    .show-password.show .hide {
+        @apply block;
+    }
+    .show-password.show .show {
+        @apply hidden;
+    }
 }
 
 
@@ -892,3 +1523,13 @@
 .k-checkbox::before {
     color: #5c80db!important;
 }
+
+.account-information .splide__track {
+    height: 95%;
+}
+
+.k-header .k-grid-filter, .k-header .k-header-column-menu {
+    bottom: 6px!important;
+    right: 4px!important;
+}
+

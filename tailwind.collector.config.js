@@ -12,6 +12,7 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
+      '3xl': '1800px'
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
@@ -953,6 +954,9 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('./plugins/muharrem.kackin/tw-flatui-colors'),
+    require('tailwind-scrollbar')
   ],
 }
