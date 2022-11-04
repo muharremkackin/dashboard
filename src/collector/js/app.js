@@ -61,4 +61,16 @@ $(function () {
             console.log(e);
         }
     });
+
+    $('[data-click="open-sub-menu"]').on('click', function () {
+        if (!$(this).siblings('.dropdown-content').hasClass('is-hidden')) {
+            $(this).find('.icon .right').removeClass('is-hidden');
+            $(this).find('.icon .bottom').addClass('is-hidden');
+        } else {
+            $(this).find('.icon .bottom').removeClass('is-hidden');
+            $(this).find('.icon .right').addClass('is-hidden');
+        }
+        
+        $(this).siblings('.dropdown-content').toggleClass('is-hidden');
+    });
 });

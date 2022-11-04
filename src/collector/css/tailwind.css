@@ -182,7 +182,7 @@
     }
 
     .application>aside>section>footer>div {
-        @apply flex flex-col items-center justify-center space-y-[4px] text-xl;
+        @apply flex flex-col items-center justify-center space-y-[4px] text-xl pt-4;
     }
 
     .application>aside.minimized>section>footer>div {
