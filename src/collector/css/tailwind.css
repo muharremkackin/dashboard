@@ -86,6 +86,18 @@
         @apply md:justify-center;
     }
 
+    .splide .btn-slider.btn-slider-right {
+        top: calc(40% - 24px);
+        right: 0;
+        position: absolute;
+    }
+    .splide .btn-slider.btn-slider-left {
+        top: calc(40% - 24px);
+        left: 0;
+        position: absolute;
+    }
+
+
     .badge {
         @apply py-1 px-2 text-[15px] w-fit rounded-full;
     }
@@ -517,15 +529,7 @@
     }
 
     .application>aside>section>footer>div {
-        @apply flex flex-col items-center justify-center space-y-[4px] text-xl pt-4;
-    }
-
-    .application>aside.minimized>section>footer>div {
-        @apply space-y-[16px];
-    }
-
-    .application>aside.minimized>section>footer>div {
-        @apply text-base;
+        @apply flex flex-col items-center justify-center pt-4 space-y-[16px] text-base;
     }
 
     .application>aside>section>footer>div img {
@@ -534,10 +538,6 @@
 
     .application>aside>section>footer>div a {
         @apply hover:text-[#688BE4] transition active:underline;
-    }
-
-    .application>aside.minimized>section>footer>div a {
-        @apply hover:text-[#688BE4] active:no-underline;
     }
 
     .application>aside>section>footer>div a span.icon {
@@ -563,12 +563,9 @@
     .application>aside.minimized>section>footer>div a span.title {
         @apply hidden;
     }
-    .application>aside>section>footer>div a:nth-child(2) span.title {
-        @apply text-xl;
-    }
 
     .application>aside>section>footer>div a span.title {
-        @apply block;
+        @apply block text-sm;
     }
 
     .application>.main-content {
@@ -592,7 +589,7 @@
     }
 
     .application>.main-content>header .date-range-picker input {
-        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none h-[30px];
+        @apply p-0 bg-[#F5F8FA] text-[13px] border-none focus:ring-0 pointer-events-none h-[30px] min-w-[175px];
     }
 
     .application>.main-content>header>div>div:first-child {
@@ -865,6 +862,9 @@
     }
     .modals > .modals-container > .modal.modal-lg {
         @apply md:w-full lg:w-[760px];
+    }
+    .modals > .modals-container > .modal.modal-xl {
+        @apply md:w-full lg:w-[1000px];
     }
     .modals > .modals-container > .modal > header {
         @apply pl-8 pr-4 py-5 flex items-center justify-between border-b;
@@ -1406,9 +1406,10 @@
     .authentication main footer > div:first-child div img {
         @apply h-[30px] md:h-[58px];
     }
-    .authentication main footer > div:nth-child(2) {
-        @apply text-[15px];
+    .authentication main footer > div:not(:first-child) {
+        @apply text-[12px];
     }
+    
 
     .landing-page {
         @apply w-screen min-h-screen overflow-x-hidden overflow-y-auto space-y-16;
@@ -1499,6 +1500,32 @@
     .show-password.show .show {
         @apply hidden;
     }
+
+    .how-to-apply-progress {
+        @apply flex items-center justify-center relative;
+    }
+    .how-to-apply-progress > .line {
+        @apply w-[256px] md:w-[544px] h-px bg-gray-200 absolute z-50;
+    }
+    .how-to-apply-progress > .progress-container {
+        @apply flex items-center justify-center space-x-24 z-[60];
+    }
+    .how-to-apply-progress > .progress-container .step {
+        @apply w-8 h-8 text-gray-500 rounded-full flex items-center justify-center transition;
+    }
+    .how-to-apply-progress > .progress-container .step {
+        @apply w-8 h-8 text-gray-400 rounded-full flex items-center justify-center bg-white border border-gray-400;
+    }
+    .how-to-apply-progress > .progress-container .step.step-active {
+        @apply text-white bg-website-primary border-website-primary;
+    }
+
+    .how-to-apply-slider .content-slide {
+        @apply text-center space-y-4;
+    }
+    .how-to-apply-slider .content-slide h3 {
+        @apply text-xl font-bold
+    }
 }
 
 
@@ -1510,6 +1537,13 @@
 
 .is-hidden {
     display: none!important;
+}
+
+.is-hidden.k-input.k-combobox {
+    display: inline-flex!important;
+}
+.is-hidden.k-input-inner {
+    display: inline-block!important;
 }
 
 .k-filter-menu .k-action-buttons .k-button.k-button-solid-primary {
