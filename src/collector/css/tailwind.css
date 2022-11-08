@@ -85,7 +85,9 @@
     .btn.btn-center {
         @apply md:justify-center;
     }
-
+    .splide .btn-slider.btn-slider {
+        @apply text-gray-500;
+    }
     .splide .btn-slider.btn-slider-right {
         top: calc(40% - 24px);
         right: 0;
@@ -1508,23 +1510,37 @@
         @apply w-[256px] md:w-[544px] h-px bg-gray-200 absolute z-50;
     }
     .how-to-apply-progress > .progress-container {
-        @apply flex items-center justify-center space-x-24 z-[60];
+        @apply flex items-center justify-center space-x-16 z-[60] pt-4;
     }
     .how-to-apply-progress > .progress-container .step {
-        @apply w-8 h-8 text-gray-500 rounded-full flex items-center justify-center transition;
+        @apply flex flex-col justify-center items-center text-center space-y-2;
     }
-    .how-to-apply-progress > .progress-container .step {
+    .how-to-apply-progress > .progress-container .step span:first-child {
         @apply w-8 h-8 text-gray-400 rounded-full flex items-center justify-center bg-white border border-gray-400;
     }
-    .how-to-apply-progress > .progress-container .step.step-active {
+    .how-to-apply-progress > .progress-container .step span:nth-child(2) {
+        @apply text-[10px];
+    }
+    .how-to-apply-progress > .progress-container .step.step-active span:first-child {
         @apply text-white bg-website-primary border-website-primary;
     }
-
     .how-to-apply-slider .content-slide {
-        @apply text-center space-y-4;
+        @apply text-center space-y-4 flex items-center flex-col justify-center;
+    }
+    .how-to-apply-slider .content-slide img {
+        @apply w-4/5;
     }
     .how-to-apply-slider .content-slide h3 {
         @apply text-xl font-bold
+    }
+    .how-to-apply-slider .splide__pagination {
+        @apply space-x-4 pt-6;
+    }
+    .how-to-apply-slider .splide__pagination .splide__pagination__page {
+        @apply w-4 h-4 rounded-full bg-gray-300/90;
+    }
+    .how-to-apply-slider .splide__pagination .splide__pagination__page.is-active {
+        @apply bg-website-primary;
     }
 }
 

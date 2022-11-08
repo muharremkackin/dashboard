@@ -866,6 +866,11 @@ html {
   }
 }
 
+.splide .btn-slider.btn-slider {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .splide .btn-slider.btn-slider-right {
   top: calc(40% - 24px);
   right: 0;
@@ -6387,17 +6392,32 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
 
 .how-to-apply-progress > .progress-container > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(6rem * var(--tw-space-x-reverse));
-  margin-left: calc(6rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(4rem * var(--tw-space-x-reverse));
+  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.how-to-apply-progress > .progress-container {
+  padding-top: 1rem;
 }
 
 .how-to-apply-progress > .progress-container .step {
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-to-apply-progress > .progress-container .step > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.how-to-apply-progress > .progress-container .step {
+  text-align: center;
+}
+
+.how-to-apply-progress > .progress-container .step span:first-child {
   display: flex;
   height: 2rem;
   width: 2rem;
@@ -6413,13 +6433,24 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.how-to-apply-progress > .progress-container .step.step-active {
+.how-to-apply-progress > .progress-container .step span:nth-child(2) {
+  font-size: 10px;
+}
+
+.how-to-apply-progress > .progress-container .step.step-active span:first-child {
   --tw-border-opacity: 1;
   border-color: rgb(104 139 228 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(104 139 228 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.how-to-apply-slider .content-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .how-to-apply-slider .content-slide > :not([hidden]) ~ :not([hidden]) {
@@ -6432,10 +6463,36 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   text-align: center;
 }
 
+.how-to-apply-slider .content-slide img {
+  width: 80%;
+}
+
 .how-to-apply-slider .content-slide h3 {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
+}
+
+.how-to-apply-slider .splide__pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.how-to-apply-slider .splide__pagination {
+  padding-top: 1.5rem;
+}
+
+.how-to-apply-slider .splide__pagination .splide__pagination__page {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background-color: rgb(209 213 219 / 0.9);
+}
+
+.how-to-apply-slider .splide__pagination .splide__pagination__page.is-active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 139 228 / var(--tw-bg-opacity));
 }
 
 .visible {
