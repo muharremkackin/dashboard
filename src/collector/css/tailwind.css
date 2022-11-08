@@ -23,6 +23,10 @@
         @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 bg-white border w-full justify-center md:justify-start md:w-auto;
     }
 
+    .btn:disabled {
+        @apply cursor-not-allowed;
+    }
+
     .btn.btn-icon {
         @apply p-2 space-x-0 w-auto;
     }
@@ -1541,6 +1545,28 @@
     }
     .how-to-apply-slider .splide__pagination .splide__pagination__page.is-active {
         @apply bg-website-primary;
+    }
+
+    .modals .modal section .modal-icon {
+        @apply flex items-center justify-center relative;
+    }
+    .modals .modal section .modal-icon span:first-child {
+        @apply w-24 h-24 rounded-full flex items-center justify-center  animate-pulse;
+    }
+    .modals .modal section .modal-icon.success span:first-child {
+        @apply bg-green-300;
+    }
+    .modals .modal section .modal-icon span:nth-child(2) {
+        @apply text-gray-800 absolute;
+    }
+    .modals .modal section .modal-icon.success span:nth-child(2) {
+        @apply text-green-800;
+    }
+    .modals .modal section .timer {
+        @apply flex items-center justify-center mt-4;
+    }
+    .modals .modal section .timer span{
+        @apply font-bold text-3xl;
     }
 }
 

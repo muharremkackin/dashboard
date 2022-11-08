@@ -1034,9 +1034,9 @@
 
     <div class="alert-container is-hidden" data-component="alerts"></div>
 
-    <div class="modals is-hidden" data-component="widget-modals">
+    <div class="modals" data-component="widget-modals">
         <div class="modals-container">
-            <div class="modal modal-lg">
+            <div class="modal modal-lg is-hidden">
                 <header>
                     <div>
                         <div>Yönetim Paneli Eklentileri</div>
@@ -1185,6 +1185,46 @@
                             </label>
                         </div>
                     </div>
+                </section>
+            </div>
+            <div class="modal modal">
+                <header>
+                    <div>
+                        <div>SMS Doğrulama</div>
+                        <div>Cep telefonunuza gelen kodu aşağıdaki alana yazarak ilerleyiniz</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-gray btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>                              
+                        </button>
+                    </div>
+                </header>
+                <section>
+                    <div>
+                        <div class="modal-icon success">
+                            <span></span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                  </svg>     
+                            </span>
+                        </div>
+                        <div class="timer">
+                            <span>04:55</span>
+                        </div>
+                    </div>
+                    <form class="form">
+                        <div class="form-control">
+                            <label for="" class="">Sms Kodu</label>
+                            <input type="text" class="" placeholder="Sms Kodu"/>
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-primary btn-md">Gönder</button>
+                            <button class="btn btn-secondary btn-md" disabled>Tekrar Kod Gönder</button>
+                        </div>
+                    </form>
                 </section>
             </div>
         </div>
