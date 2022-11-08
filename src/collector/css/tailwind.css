@@ -1568,6 +1568,18 @@
     .modals .modal section .timer span{
         @apply font-bold text-3xl;
     }
+    .modals .modal section .approve-content {
+        @apply text-center;
+    }
+    .modals .modal section .approve-content h3 {
+        @apply font-bold;
+    }
+    .modals .modal section .approve-content a {
+        @apply text-website-primary;
+    }
+    .modals .modal section .approve-content span {
+        @apply text-sm;
+    }
 }
 
 

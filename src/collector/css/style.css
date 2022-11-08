@@ -6561,6 +6561,24 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   font-weight: 700;
 }
 
+.modals .modal section .approve-content {
+  text-align: center;
+}
+
+.modals .modal section .approve-content h3 {
+  font-weight: 700;
+}
+
+.modals .modal section .approve-content a {
+  --tw-text-opacity: 1;
+  color: rgb(104 139 228 / var(--tw-text-opacity));
+}
+
+.modals .modal section .approve-content span {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .visible {
   visibility: visible;
 }
@@ -6751,6 +6769,10 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   height: 2.25rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -6809,6 +6831,10 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
 
 .w-9 {
   width: 2.25rem;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .w-screen {
