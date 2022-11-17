@@ -84,6 +84,9 @@
     .btn.btn-transparent {
         @apply bg-transparent border-transparent text-white
     }
+    .btn.btn-transparent-dark {
+        @apply bg-transparent border-transparent text-black
+    }
 
     .btn.btn-red {
         @apply bg-red-400 border-red-400 hover:border-red-500 text-white hover:bg-red-500 ring-red-700;
@@ -1596,6 +1599,64 @@
     }
     .modals .modal section .approve-content span {
         @apply text-sm;
+    }
+
+    .advertise .advertise-modal {
+        @apply fixed top-0 left-0 w-screen h-screen bg-black/50 z-[100];
+    }
+    .advertise .advertise-modal > div {
+        @apply w-full h-full flex items-center justify-center p-4;
+    }
+    .advertise .advertise-modal > div > div {
+        @apply w-full md:w-[500px] pt-4 px-4 pb-8 bg-white rounded-[10px];
+    }
+    .advertise .advertise-modal > div > div > header {
+        @apply flex items-center justify-between;
+    }
+    .advertise .advertise-modal > div > div > article {
+        @apply flex flex-col items-center justify-center space-y-8 px-8;
+    }
+    .advertise .advertise-modal > div > div > article > h3 {
+        @apply text-lg font-bold md:text-2xl text-[#181C32] text-center;
+    }
+    .advertise .advertise-modal > div > div > article > p {
+        @apply text-sm text-center;
+    }
+    .advertise .advertise-top-right {
+        @apply fixed top-20 right-10 z-[50] flex items-center justify-center;
+    }
+    .advertise .advertise-top-right > div {
+        @apply w-[360px] sm:w-[400px] md:w-[480px] pt-4 px-4 pb-8 bg-[#9FDFCD] rounded-[10px];
+    }
+    .advertise .advertise-top-right > div > header {
+        @apply flex items-center justify-between;
+    }
+    .advertise .advertise-top-right > div > article {
+        @apply flex flex-col items-center text-center space-y-8;
+    }
+    .advertise .advertise-top-right > div > article > h3 {
+        @apply text-lg md:text-xl font-bold text-white;
+    }
+    .advertise .advertise-bottom {
+        @apply fixed bottom-5 left-0 right-0 flex items-center justify-center z-[50] px-8;
+    }
+    .advertise .advertise-bottom > div {
+        @apply w-full xl:w-2/3 py-4 px-4 bg-[#6EB6FF] rounded-[10px] flex flex-col md:flex-row space-y-8 md:space-y-0 items-center md:space-x-8 relative;
+    }
+    .advertise .advertise-bottom > div > header {
+        @apply absolute top-1 right-1 flex-shrink-0;
+    }
+    .advertise .advertise-bottom > div > footer {
+        @apply flex flex-col md:flex-row  items-center justify-center space-y-4 md:space-y-0 md:space-x-2;
+    }
+    .advertise .advertise-bottom > div > footer button {
+        @apply flex-shrink-0;
+    }
+    .advertise .advertise-bottom > div > article {
+        @apply text-white text-[24px] text-center md:text-left;
+    }
+    .advertise .advertise-bottom > div > div:nth-child(2) > img {
+        @apply scale-x-[-1] w-[84px];
     }
 }
 
