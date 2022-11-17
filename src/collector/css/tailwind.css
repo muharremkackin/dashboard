@@ -30,6 +30,9 @@
     .btn.btn-icon {
         @apply p-2 space-x-0 w-auto;
     }
+    .btn.btn-icon-sm {
+        @apply p-1 space-x-0 w-auto;
+    }
 
     .btn.btn-gray {
         @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300 ring-gray-200;
@@ -66,6 +69,20 @@
     }
     .btn.btn-rounded {
         @apply rounded-full;
+    }
+    .btn.btn-long {
+        @apply px-12;
+    }
+
+    .btn.btn-black {
+        @apply bg-[#181C32] text-white border-white;
+    }
+
+    .btn.btn-transparent-light {
+        @apply bg-white/20 border-white text-white
+    }
+    .btn.btn-transparent {
+        @apply bg-transparent border-transparent text-white
     }
 
     .btn.btn-red {

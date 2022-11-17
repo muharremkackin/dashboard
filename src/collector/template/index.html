@@ -1,1046 +1,1080 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Collector - Dashboard Template</title>
-    <link
-      rel="stylesheet"
-      href="/src/collector/libs/kendo/styles/kendo.common.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css"
-    />
-    
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css" />
+
 
     <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
     <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css" />
     <link rel="stylesheet" href="/src/collector/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-  <body>
+<body>
     <div class="application" data-app="collector">
-      <!-- begin::Navigation -->
-      <aside class="closed">
-        <div>
-          <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik" />
-          <button
-            class="btn btn-icon btn-gray btn-toggle-aside"
-            data-click="toggle-aside"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="maximize-icon w-4 h-4"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                clip-rule="evenodd"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="minimize-icon w-4 h-4"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-          <button
-            class="btn btn-icon btn-gray btn-close-aside"
-            data-click="close-aside"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="w-4 h-4"
-            >
-              <path
-                d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
-              />
-            </svg>
-          </button>
-        </div>
-        <section>
-          <div>
-            <div class="reseller-select">
-              <select name="" id="ChooseResellerId"></select>
-            </div>
-            <nav>
-              <ul>
-                <li>
-                  <a class="active" href="#">
-                    <span class="icon"
-                      ><i class="fas fa-tachometer-alt"></i
-                    ></span>
-                    <span class="title">Dashboard</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon"><i class="fas fa-info-circle"></i></span>
-                    <span class="title">Bayi Bilgileri</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon"><i class="fas fa-wallet"></i></span>
-                    <span class="title">Kredi Ödeme</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon"><i class="fas fa-tasks"></i></span>
-                    <span class="title">Bayi Hareketleri</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon"><i class="fas fa-calculator"></i></span>
-                    <span class="title">Bayi Bakiye</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon"><i class="fas fa-users"></i></span>
-                    <span class="title">Bayi Kullanıcıları</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="icon"><i class="fas fa-comments"></i></span>
-                    <span class="title">Destek</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <footer>
+        <!-- begin::Navigation -->
+        <aside class="closed">
             <div>
-              <span>
-                <img
-                  class="logo-icon"
-                  src="/src/collector/images/icons/payzee.png"
-                  alt=""
-                />
-                <img
-                  class="logo-icon-sm"
-                  src="/src/collector/images/icons/payzee-md.png"
-                  alt=""
-                />
-              </span>
-
-              <span>
-                <a href="tel:+908502230767">
-                  <span class="icon"><i class="fas fa-phone"></i></span>
-                  <span class="title">0850 223 0 767</span>
-                </a>
-              </span>
-
-              <span>
-                <a href="mailto:offlinetahsilat@birlesikodeme.com">
-                  <span class="icon"><i class="fas fa-envelope"></i></span>
-                  <span class="title">offlinetahsilat@birlesikodeme.com</span>
-                </a>
-              </span>
-            </div>
-          </footer>
-        </section>
-      </aside>
-      <!-- end::Navigation -->
-      <!-- begin::MainContent -->
-      <main class="main-content">
-        <!-- begin::Header -->
-        <header>
-          <div>
-            <div>
-              <button
-                class="btn btn-icon btn-gray btn-open-aside"
-                data-click="open-aside"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="w-4 h-4"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-              <h1>Dashboard</h1>
-            </div>
-            <div>
-              <div class="date-range-picker" id="infoDateRangePicker">
-                <span>
-                  <i class="far fa-calendar-alt"></i>
-                </span>
-                <span>
-                  <input type="text" placeholder="date" id="infoDates" />
-                </span>
-                <span>
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </div>
-              <div>
-                <button class="btn btn-default btn-rounded btn-icon" data-click="widget-modals">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z" />
-                    </svg>                      
+                <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik" />
+                <button class="btn btn-icon btn-gray btn-toggle-aside" data-click="toggle-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="maximize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="minimize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
                 </button>
-              </div>
-              <div class="dropdown" data-component="dropdown">
-                <button class="">
-                  <span>ENDER KOC ORT</span>
-                  <span><i class="fas fa-chevron-down"></i></span>
+                <button class="btn btn-icon btn-gray btn-close-aside" data-click="close-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                        <path
+                            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                    </svg>
                 </button>
-                <div class="dropdown-content is-hidden">
-                  <div class="avatar">
-                    <img
-                      src="https://images.unsplash.com/photo-1665586072574-56b4dd11b941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=30"
-                      alt=""
-                    />
-                  </div>
-                  <button class="dropdown-link">
-                    <span>Change Password</span>
-                    <span><i class="fas fa-star-of-life"></i></span>
-                  </button>
-                  <a class="dropdown-link" href="#">
-                    <span>Log out</span>
-                    <span><i class="fas fa-sign-out-alt"></i></span>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
-        </header>
-        <!-- end::Header -->
-        <!-- begin::Content -->
-        <section class="dashboard-content">
-          <div class="dashboard-content-inner">
-            <div class="admin-announcement">
-              <div>
+            <section>
                 <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-12 h-12"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div>Sevgili Yönetici</div>
-                  <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Expedita, quas laboriosam aperiam vero soluta dolore
-                    consequatur error corporis quos impedit ipsam facilis
-                    dolorum vel perspiciatis eligendi non quisquam saepe cum!
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="widgets">
-                <div class="widget widget-base" data-component="widget" data-title="BalanceCountWidget">
-                    <div class="actions">
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                            </svg>                              
-                        </button>
+                    <div class="reseller-select">
+                        <select name="" id="ChooseResellerId"></select>
                     </div>
-                    <div class="count-body">
-                        <div class="green">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                            </svg>                              
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="active" href="#">
+                                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                    <span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                                    <span class="title">Bayi Bilgileri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                                    <span class="title">Kredi Ödeme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                                    <span class="title">Bayi Hareketleri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                                    <span class="title">Bayi Bakiye</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-users"></i></span>
+                                    <span class="title">Bayi Kullanıcıları</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-comments"></i></span>
+                                    <span class="title">Destek</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <div>
+                        <span>
+                            <img class="logo-icon" src="/src/collector/images/icons/payzee.png" alt="" />
+                            <img class="logo-icon-sm" src="/src/collector/images/icons/payzee-md.png" alt="" />
+                        </span>
+
+                        <span>
+                            <a href="tel:+908502230767">
+                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                <span class="title">0850 223 0 767</span>
+                            </a>
+                        </span>
+
+                        <span>
+                            <a href="mailto:offlinetahsilat@birlesikodeme.com">
+                                <span class="icon"><i class="fas fa-envelope"></i></span>
+                                <span class="title">offlinetahsilat@birlesikodeme.com</span>
+                            </a>
+                        </span>
+                    </div>
+                </footer>
+            </section>
+        </aside>
+        <!-- end::Navigation -->
+        <!-- begin::MainContent -->
+        <main class="main-content">
+            <!-- begin::Header -->
+            <header>
+                <div>
+                    <div>
+                        <button class="btn btn-icon btn-gray btn-open-aside" data-click="open-aside">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div>
+                        <div class="date-range-picker" id="infoDateRangePicker">
+                            <span>
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            <span>
+                                <input type="text" placeholder="date" id="infoDates" />
+                            </span>
+                            <span>
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
                         </div>
                         <div>
-                            <h3>Bakiye</h3>
-                            <p>5.000.000,45₺</p>
+                            <button class="btn btn-default btn-rounded btn-icon" data-click="widget-modals">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="dropdown" data-component="dropdown">
+                            <button class="">
+                                <span>ENDER KOC ORT</span>
+                                <span><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-content is-hidden">
+                                <div class="avatar">
+                                    <img src="https://images.unsplash.com/photo-1665586072574-56b4dd11b941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=30"
+                                        alt="" />
+                                </div>
+                                <button class="dropdown-link">
+                                    <span>Change Password</span>
+                                    <span><i class="fas fa-star-of-life"></i></span>
+                                </button>
+                                <a class="dropdown-link" href="#">
+                                    <span>Log out</span>
+                                    <span><i class="fas fa-sign-out-alt"></i></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="widget widget-base" data-component="widget" data-title="ProccessCountWidget">
-                    <div class="actions">
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                            </svg>                              
-                        </button>
-                    </div>
-                    <div class="count-body">
-                        <div class="blue">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
-                            </svg>                                                          
-                        </div>
+            </header>
+            <!-- end::Header -->
+            <!-- begin::Content -->
+            <section class="dashboard-content">
+                <div class="dashboard-content-inner">
+                    <div class="admin-announcement">
                         <div>
-                            <h3>İşlem Adedi</h3>
-                            <p>14.647</p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="widget widget-activity" data-component="widget" data-title="ActivityLogWidget">
-                    <div class="actions">
-                        <a href="#" class="btn btn-rounded btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
-                              </svg>                              
-                        </a>
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                            </svg>                              
-                        </button>
-                    </div>
-                    <header>
-                        <h3>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                                </svg>
-                            </span>
-                            <span>
-                                Activities
-                            </span>
-                        </h3>
-                    </header>
-                    <div class="activities">
-                        <div class="activity-container green">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container yellow">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container gray">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container purple">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container teal">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container red">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container red">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container red">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="activity-container red">
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4>Payment</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget widget-activity" data-component="widget" data-title="MessagesWidget">
-                    <div class="actions">
-                        <a href="#" class="btn btn-rounded btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
-                              </svg>                              
-                        </a>
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                            </svg>                              
-                        </button>
-                    </div>
-                    <header>
-                        <h3>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                                </svg>                                  
-                            </span>
-                            <span>Messages</span>
-                        </h3>
-                    </header>
-                    <div class="messages">
-                        <div class="message" data-component="message-box">
                             <div>
-                                <div class="avatar" data-component="message-avatar"></div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4 data-for="message-avatar">Elon Musk</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="message" data-component="message-box">
-                            <div>
-                                <div class="avatar" data-component="message-avatar"></div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4 data-for="message-avatar">Elon Musk</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="message" data-component="message-box">
-                            <div>
-                                <div class="avatar" data-component="message-avatar"></div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4 data-for="message-avatar">Elon Musk</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="message" data-component="message-box">
-                            <div>
-                                <div class="avatar" data-component="message-avatar"></div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4 data-for="message-avatar">Elon Musk</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="message" data-component="message-box">
-                            <div>
-                                <div class="avatar" data-component="message-avatar"></div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4 data-for="message-avatar">Elon Musk</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-                        <div class="message" data-component="message-box">
-                            <div>
-                                <div class="avatar" data-component="message-avatar"></div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <h4 data-for="message-avatar">Elon Musk</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
-                                </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="widget widget-activity" data-component="widget" data-title="SupportsWidget">
-                    <div class="actions">
-                        <a href="#" class="btn btn-rounded btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
-                              </svg>                              
-                        </a>
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                            </svg>                              
-                        </button>
-                    </div>
-                    <header>
-                        <h3>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
-                                </svg>                                                                   
-                            </span>
-                            <span>Support</span>
-                        </h3>
-                    </header>
-                    <div class="messages">
-                        <div class="message" data-component="support-box">
-                            <div class="support-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
                                 </svg>
                             </div>
-                            <div class="content">
+                            <div>
+                                <div>Sevgili Yönetici</div>
                                 <div>
-                                    <h4 data-for="message-avatar">Support Message</h4>
-                                    <span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>                                              
-                                        </span>
-                                        <span>24/12/2022 16:40:32</span>
-                                    </span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Expedita, quas laboriosam aperiam vero soluta dolore
+                                    consequatur error corporis quos impedit ipsam facilis
+                                    dolorum vel perspiciatis eligendi non quisquam saepe cum!
                                 </div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>
                         </div>
-                        
-                        
                     </div>
-                </div>
-                <div class="widget widget-bar-chart" data-component="widget" data-title="BarChartWidget">
-                    <div class="actions">
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                            </svg>                                                          
-                        </button>
-                    </div>
-                    <header>
-                        <h3>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
-                                </svg>                                                                   
-                            </span>
-                            <span>Proccess</span>
-                        </h3>
-                    </header>
-                    <div class="h-[400px]" id="barChart"></div>
-                </div>
-                <div class="widget widget-bar-chart" data-component="widget" data-title="BarChart2Widget">
-                    <div class="actions">
-                        <button class="btn btn-rounded  btn-icon btn-default">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-                            </svg>                                                        
-                        </button>
-                    </div>
-                    <header>
-                        <h3>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
-                                </svg>                                                                   
-                            </span>
-                            <span>Support</span>
-                        </h3>
-                    </header>
-                    <div id="barChart2"></div>
-                </div>
-                <div class="widget widget-table" data-component="widget" data-title="UserGridWidget">
-                    <header>
-                        <h3>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                                </svg>                                                                                                     
-                            </span>
-                            <span>Users</span>
-                        </h3>
-                        <button class="btn btn-md btn-default">+ Add User</button>
-                    </header>
-                    <div class="grid-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">
-                                        ADI SOYADI
-                                    </th>
-                                    <th scope="col">
-                                        TC KİMLİK NO
-                                    </th>
-                                    <th scope="col">
-                                        TELEFON NUMARASI
-                                    </th>
-                                    <th scope="col">
-                                        ÜNVAN
-                                    </th>
-                                    <th scope="col">
-                                        DURUM
-                                    </th>
-                                    <th scope="col" class="actions">
-                                        İŞLEM
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">
-                                        Murphy Murdock
-                                    </td>
-                                    <td>
-                                        16489876532
-                                    </td>
-                                    <td>
-                                        +905432189431
-                                    </td>
-                                    <td>
-                                        Kullanıcı
-                                    </td>
-                                    <td>
-                                        Aktif
-                                    </td>
-                                    <td class="actions">
-                                        <div class="action-container">
-                                            <button class="btn btn-gray btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                    fill="currentColor" class="w-4 h-4">
-                                                    <path
-                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
-                                                </svg>
-                                            </button>
-                                            <button class="btn btn-gray btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                    fill="currentColor" class="w-4 h-4">
-                                                    <path fill-rule="evenodd"
-                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="w-full py-2 px-3 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center md:justify-between text-sm">
-                        <div class="space-x-4 flex items-center">
-                            <div>
-                                <select class="text-sm h-[30px] py-1 border-gray-200 rounded-lg" name="" id="">
-                                    <option value="">10</option>
-                                    <option value="">20</option>
-                                    <option value="">30</option>
-                                    <option value="">40</option>
-                                    <option value="">50</option>
-                                </select>
-                            </div>
-                            <div>
-                                Total users: 38
-                            </div>
-                            <div>
+                    <div class="widgets">
+                        <div class="widget widget-base" data-component="widget" data-title="BalanceCountWidget">
+                            <div class="actions">
                                 <button class="btn btn-rounded  btn-icon btn-default">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                                    </svg>                              
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
                                 </button>
                             </div>
+                            <div class="count-body">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>Bakiye</h3>
+                                    <p>5.000.000,45₺</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                    <path fill-rule="evenodd" d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z" clip-rule="evenodd" />
-                                </svg>                                                           
-                            </a>
-                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                    <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                                </svg>                                                                                          
-                            </a>
-                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                1                                                                                        
-                            </a>
-                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                2                                                                                   
-                            </a>
-                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                3                                                                                   
-                            </a>
-                            <span class="font-bold text-xs ">...</span>
-                            <a  class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                20                                                                                   
-                            </a>
-                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                </svg>                                                                                           
-                            </a>
-                            <a  class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                                    <path fill-rule="evenodd" d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                    <path fill-rule="evenodd" d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                </svg>                                                                                                                                                         
-                            </a>
+                        <div class="widget widget-base" data-component="widget" data-title="ProccessCountWidget">
+                            <div class="actions">
+                                <button class="btn btn-rounded  btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="count-body">
+                                <div class="blue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3>İşlem Adedi</h3>
+                                    <p>14.647</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="widget widget-activity" data-component="widget" data-title="ActivityLogWidget">
+                            <div class="actions">
+                                <a href="#" class="btn btn-rounded btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                                    </svg>
+                                </a>
+                                <button class="btn btn-rounded  btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <header>
+                                <h3>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        Activities
+                                    </span>
+                                </h3>
+                            </header>
+                            <div class="activities">
+                                <div class="activity-container green">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container yellow">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container gray">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container purple">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container teal">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container red">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container red">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container red">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="activity-container red">
+                                    <div class="timeline">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4>Payment</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-activity" data-component="widget" data-title="MessagesWidget">
+                            <div class="actions">
+                                <a href="#" class="btn btn-rounded btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                                    </svg>
+                                </a>
+                                <button class="btn btn-rounded  btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <header>
+                                <h3>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                        </svg>
+                                    </span>
+                                    <span>Messages</span>
+                                </h3>
+                            </header>
+                            <div class="messages">
+                                <div class="message" data-component="message-box">
+                                    <div>
+                                        <div class="avatar" data-component="message-avatar"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Elon Musk</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="message" data-component="message-box">
+                                    <div>
+                                        <div class="avatar" data-component="message-avatar"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Elon Musk</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="message" data-component="message-box">
+                                    <div>
+                                        <div class="avatar" data-component="message-avatar"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Elon Musk</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="message" data-component="message-box">
+                                    <div>
+                                        <div class="avatar" data-component="message-avatar"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Elon Musk</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="message" data-component="message-box">
+                                    <div>
+                                        <div class="avatar" data-component="message-avatar"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Elon Musk</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="message" data-component="message-box">
+                                    <div>
+                                        <div class="avatar" data-component="message-avatar"></div>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Elon Musk</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="widget widget-activity" data-component="widget" data-title="SupportsWidget">
+                            <div class="actions">
+                                <a href="#" class="btn btn-rounded btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                                    </svg>
+                                </a>
+                                <button class="btn btn-rounded  btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <header>
+                                <h3>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                        </svg>
+                                    </span>
+                                    <span>Support</span>
+                                </h3>
+                            </header>
+                            <div class="messages">
+                                <div class="message" data-component="support-box">
+                                    <div class="support-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                        </svg>
+                                    </div>
+                                    <div class="content">
+                                        <div>
+                                            <h4 data-for="message-avatar">Support Message</h4>
+                                            <span>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </span>
+                                                <span>24/12/2022 16:40:32</span>
+                                            </span>
+                                        </div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="widget widget-bar-chart" data-component="widget" data-title="BarChartWidget">
+                            <div class="actions">
+                                <button class="btn btn-rounded  btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <header>
+                                <h3>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                        </svg>
+                                    </span>
+                                    <span>Proccess</span>
+                                </h3>
+                            </header>
+                            <div class="h-[400px]" id="barChart"></div>
+                        </div>
+                        <div class="widget widget-bar-chart" data-component="widget" data-title="BarChart2Widget">
+                            <div class="actions">
+                                <button class="btn btn-rounded  btn-icon btn-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <header>
+                                <h3>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                        </svg>
+                                    </span>
+                                    <span>Support</span>
+                                </h3>
+                            </header>
+                            <div id="barChart2"></div>
+                        </div>
+                        <div class="widget widget-table" data-component="widget" data-title="UserGridWidget">
+                            <header>
+                                <h3>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                        </svg>
+                                    </span>
+                                    <span>Users</span>
+                                </h3>
+                                <button class="btn btn-md btn-default">+ Add User</button>
+                            </header>
+                            <div class="grid-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">
+                                                ADI SOYADI
+                                            </th>
+                                            <th scope="col">
+                                                TC KİMLİK NO
+                                            </th>
+                                            <th scope="col">
+                                                TELEFON NUMARASI
+                                            </th>
+                                            <th scope="col">
+                                                ÜNVAN
+                                            </th>
+                                            <th scope="col">
+                                                DURUM
+                                            </th>
+                                            <th scope="col" class="actions">
+                                                İŞLEM
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row">
+                                                Murphy Murdock
+                                            </td>
+                                            <td>
+                                                16489876532
+                                            </td>
+                                            <td>
+                                                +905432189431
+                                            </td>
+                                            <td>
+                                                Kullanıcı
+                                            </td>
+                                            <td>
+                                                Aktif
+                                            </td>
+                                            <td class="actions">
+                                                <div class="action-container">
+                                                    <button class="btn btn-gray btn-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor" class="w-4 h-4">
+                                                            <path
+                                                                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn btn-gray btn-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor" class="w-4 h-4">
+                                                            <path fill-rule="evenodd"
+                                                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div
+                                class="w-full py-2 px-3 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center justify-center md:justify-between text-sm">
+                                <div class="space-x-4 flex items-center">
+                                    <div>
+                                        <select class="text-sm h-[30px] py-1 border-gray-200 rounded-lg" name="" id="">
+                                            <option value="">10</option>
+                                            <option value="">20</option>
+                                            <option value="">30</option>
+                                            <option value="">40</option>
+                                            <option value="">50</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        Total users: 38
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-rounded  btn-icon btn-default">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <a class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                    <a class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                    <a class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        1
+                                    </a>
+                                    <a class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        2
+                                    </a>
+                                    <a class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        3
+                                    </a>
+                                    <span class="font-bold text-xs ">...</span>
+                                    <a class="text-xs w-9 h-9 font-semibold flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        20
+                                    </a>
+                                    <a class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                    <a class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full border hover:bg-gray-200 transition ring-2 ring-transparent active:ring-gray-300"
+                                        href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                                clip-rule="evenodd" />
+                                            <path fill-rule="evenodd"
+                                                d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-          </div>
-        </section>
-        <!-- end::Content -->
-      </main>
-      <!-- end::MainContent -->
+            </section>
+            <!-- end::Content -->
+        </main>
+        <!-- end::MainContent -->
     </div>
 
     <style type="text/css">
-      .customer-photo {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-size: 32px 35px;
-        background-position: center center;
-        vertical-align: middle;
-        line-height: 32px;
-        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
-        margin-left: 5px;
-      }
+        .customer-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: 32px 35px;
+            background-position: center center;
+            vertical-align: middle;
+            line-height: 32px;
+            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-left: 5px;
+        }
 
-      .customer-name {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 32px;
-        padding-left: 3px;
-      }
+        .customer-name {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 32px;
+            padding-left: 3px;
+        }
 
-      .k-grid tr .checkbox-align {
-        text-align: center;
-        vertical-align: middle;
-      }
+        .k-grid tr .checkbox-align {
+            text-align: center;
+            vertical-align: middle;
+        }
 
-      .product-photo {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-size: 32px 35px;
-        background-position: center center;
-        vertical-align: middle;
-        line-height: 32px;
-        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
-        margin-right: 5px;
-      }
+        .product-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: 32px 35px;
+            background-position: center center;
+            vertical-align: middle;
+            line-height: 32px;
+            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-right: 5px;
+        }
 
-      .product-name {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 32px;
-        padding-left: 3px;
-      }
+        .product-name {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 32px;
+            padding-left: 3px;
+        }
 
-      .k-rating-container .k-rating-item {
-        padding: 4px 0;
-      }
+        .k-rating-container .k-rating-item {
+            padding: 4px 0;
+        }
 
-      .k-rating-container .k-rating-item .k-icon {
-        font-size: 16px;
-      }
+        .k-rating-container .k-rating-item .k-icon {
+            font-size: 16px;
+        }
 
-      .dropdown-country-wrap {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        white-space: nowrap;
-      }
+        .dropdown-country-wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            white-space: nowrap;
+        }
 
-      .dropdown-country-wrap img {
-        margin-right: 10px;
-      }
+        .dropdown-country-wrap img {
+            margin-right: 10px;
+        }
 
-      #grid .k-grid-edit-row > td > .k-rating {
-        margin-left: 0;
-        width: 100%;
-      }
+        #grid .k-grid-edit-row>td>.k-rating {
+            margin-left: 0;
+            width: 100%;
+        }
     </style>
 
     <div class="announcement is-hidden">
-      <header>
-        <img src="/src/collector/images/icons/arcelik.png" alt="" />
-        <button class="btn btn-secondary btn-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-5 h-5"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </header>
-      <section>
-        <div>
-          <img src="/src/collector/images/icons/announcement.svg" alt="" />
-          <article>
-            <h3>Onaylanma Süreciniz devam etmektedir.</h3>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry’s standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book
-            </p>
-          </article>
-          <p>
-            Soru ve sorunlarınız için Bilgi ve Destek Hattı
-            <a href="tel:+908502230767">0850 223 0 767</a>
-          </p>
-          <img src="/src/collector/images/icons/payzee.png" alt="" />
-        </div>
-      </section>
+        <header>
+            <img src="/src/collector/images/icons/arcelik.png" alt="" />
+            <button class="btn btn-secondary btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </header>
+        <section>
+            <div>
+                <img src="/src/collector/images/icons/announcement.svg" alt="" />
+                <article>
+                    <h3>Onaylanma Süreciniz devam etmektedir.</h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry’s standard dummy text
+                        ever since the 1500s, when an unknown printer took a galley of
+                        type and scrambled it to make a type specimen book
+                    </p>
+                </article>
+                <p>
+                    Soru ve sorunlarınız için Bilgi ve Destek Hattı
+                    <a href="tel:+908502230767">0850 223 0 767</a>
+                </p>
+                <img src="/src/collector/images/icons/payzee.png" alt="" />
+            </div>
+        </section>
     </div>
 
     <div class="page-loader is-hidden">
-      <div class="page-loader-container">
-        <div class="content">
-          <div>
-            <img
-              src="/src/collector/images/icons/unitedpayment.png"
-              alt="Birleşik Ödeme"
-            />
-          </div>
-          <div class="spinner">
-            <div class="spinner-alt">
-              <div></div>
+        <div class="page-loader-container">
+            <div class="content">
+                <div>
+                    <img src="/src/collector/images/icons/unitedpayment.png" alt="Birleşik Ödeme" />
+                </div>
+                <div class="spinner">
+                    <div class="spinner-alt">
+                        <div></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
     <div class="alert-container is-hidden" data-component="alerts"></div>
 
-    <div class="modals" data-component="widget-modals">
+    <div class="modals is-hidden data-component=" widget-modals">
         <div class="modals-container">
             <div class="modal modal-lg is-hidden">
                 <header>
                     <div>
                         <div>Yönetim Paneli Eklentileri</div>
-                        <div>Panelde ekli olan eklentilerden istediğiniz eklentiyi gizleyebilir ya da gösterebilirsiniz. </div>
+                        <div>Panelde ekli olan eklentilerden istediğiniz eklentiyi gizleyebilir ya da gösterebilirsiniz.
+                        </div>
                     </div>
                     <div>
                         <button class="btn btn-gray btn-icon" data-click="close-modal">
@@ -1054,13 +1088,16 @@
                 <section>
                     <div class="widget-toggle grid grid-cols-1 xl:grid-cols-2 gap-4" data-component="widget-toggles">
                         <div>
-                            <input type="checkbox" id="BalanceCountWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="BalanceCountWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="BalanceCountWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                                        </svg>                                          
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                        </svg>
                                     </span>
                                     <span>Bakiye Eklentisi</span>
                                 </span>
@@ -1070,13 +1107,16 @@
                             </label>
                         </div>
                         <div>
-                            <input type="checkbox" id="ProccessCountWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="ProccessCountWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="ProccessCountWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
-                                        </svg>                                         
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                                        </svg>
                                     </span>
                                     <span>İşlem Addedi Eklentisi</span>
                                 </span>
@@ -1086,13 +1126,16 @@
                             </label>
                         </div>
                         <div>
-                            <input type="checkbox" id="ActivityLogWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="ActivityLogWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="ActivityLogWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                                        </svg>                                                                                   
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                                        </svg>
                                     </span>
                                     <span>Aktivite Eklentisi</span>
                                 </span>
@@ -1101,15 +1144,18 @@
                                 </span>
                             </label>
                         </div>
-                       
+
                         <div>
-                            <input type="checkbox" id="MessagesWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="MessagesWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="MessagesWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                                        </svg>                                                                                  
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                        </svg>
                                     </span>
                                     <span>Mesajlar Eklentisi</span>
                                 </span>
@@ -1119,14 +1165,17 @@
                             </label>
                         </div>
                         <div>
-                            <input type="checkbox" id="SupportsWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="SupportsWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="SupportsWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
-                                          </svg>
-                                                                                       
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                        </svg>
+
                                     </span>
                                     <span>Destek Eklentisi</span>
                                 </span>
@@ -1136,13 +1185,16 @@
                             </label>
                         </div>
                         <div>
-                            <input type="checkbox" id="BarChartWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="BarChartWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="BarChartWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                                        </svg>                                                                               
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                        </svg>
                                     </span>
                                     <span>BarChartWidget Eklentisi</span>
                                 </span>
@@ -1152,14 +1204,18 @@
                             </label>
                         </div>
                         <div>
-                            <input type="checkbox" id="PieChartWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="PieChartWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="PieChartWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-                                        </svg>                                         
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                        </svg>
                                     </span>
                                     <span>PieChartWidget Eklentisi</span>
                                 </span>
@@ -1169,13 +1225,16 @@
                             </label>
                         </div>
                         <div>
-                            <input type="checkbox" id="UserGridWidget" class="hidden toggle-card" name="WidgetCheckbox" />
+                            <input type="checkbox" id="UserGridWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
                             <label for="UserGridWidget">
                                 <span>
                                     <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                                        </svg>                                         
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                        </svg>
                                     </span>
                                     <span>Kullanıcılar Eklentisi</span>
                                 </span>
@@ -1195,9 +1254,10 @@
                     </div>
                     <div>
                         <button class="btn btn-gray btn-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                              </svg>                              
+                            </svg>
                         </button>
                     </div>
                 </header>
@@ -1206,9 +1266,11 @@
                         <div class="modal-icon success">
                             <span></span>
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                                  </svg>     
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
                             </span>
                         </div>
                         <div class="timer">
@@ -1218,7 +1280,7 @@
                     <form class="form">
                         <div class="form-control">
                             <label for="" class="">Sms Kodu</label>
-                            <input type="text" class="" placeholder="Sms Kodu"/>
+                            <input type="text" class="" placeholder="Sms Kodu" />
                         </div>
                         <div class="actions">
                             <button class="btn btn-primary btn-md">Gönder</button>
@@ -1235,9 +1297,10 @@
                     </div>
                     <div>
                         <button class="btn btn-gray btn-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                              </svg>                              
+                            </svg>
                         </button>
                     </div>
                 </header>
@@ -1246,16 +1309,18 @@
                         <div class="modal-icon">
                             <span></span>
                             <span>
-                                <img class="w-28 h-28" src="/src/collector/images/icons/announcement.svg" />    
+                                <img class="w-28 h-28" src="/src/collector/images/icons/announcement.svg" />
                             </span>
                         </div>
                     </div>
                     <div class="approve-content">
                         <h3>Onaylanma Süreciniz devam etmektedir.</h3>
-                        <p>Bayi Bilgileriniz Kaydedilmiştir. Onay beklemektedir. Onay geldikten sonra kayıt işlemine devam edebilirsiniz.</p>
+                        <p>Bayi Bilgileriniz Kaydedilmiştir. Onay beklemektedir. Onay geldikten sonra kayıt işlemine
+                            devam edebilirsiniz.</p>
                     </div>
                     <div class="approve-content">
-                        <span>Soru ve sorunlarınız için Bilgi ve Destek Hattı <a href="tel:+908502230767">0850 223 0 767</a></span>
+                        <span>Soru ve sorunlarınız için Bilgi ve Destek Hattı <a href="tel:+908502230767">0850 223 0
+                                767</a></span>
                     </div>
                     <div class="marks">
                         <img src="/src/collector/images/icons/payzee.png" />
@@ -1265,9 +1330,36 @@
         </div>
     </div>
 
-    <div class="addvertise-modal fixed top-0 left-0 w-screen h-screen bg-black/50 z-[100] is-hidden"></div>
-    <div class="addvertise-top-right fixed top-10 right-8 p-8 bg-black z-[50] is-hidden"></div>
-    <div class="addvertise-bottom fixed bottom-5 left-0 right-0 p-8 bg-black z-[50] is-hidden"></div>
+    <div class="advertise">
+        <div class="addvertise-modal fixed top-0 left-0 w-screen h-screen bg-black/50 z-[100] is-hidden"></div>
+        <div class="addvertise-top-right fixed top-10 right-8 p-8 bg-black z-[50] is-hidden"></div>
+        <div class="addvertise-bottom fixed bottom-5 left-0 right-0 flex items-center justify-center z-[50] ">
+            <div class="w-full xl:w-2/3 py-4 px-4 bg-[#6EB6FF] rounded-[10px] flex items-center space-x-8 relative">
+                <div class="absolute top-1 right-1 flex-shrink-0">
+                    <button class="btn btn-icon-sm btn-transparent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="">
+                    <img class="scale-x-[-1] w-[84px]" src="/src/collector/images/icons/announcement.svg" alt="">
+                </div>
+                <!-- begin::HtmlArea -->
+                <div class="text-white text-[24px]">
+                    <p>Ödeme işlemleri hiç <strong>bu kadar kolay olmamıştı</strong></p>
+                </div>
+                <!-- end::HtmlArea -->
+                <!-- begin::ActionArea -->
+                <div class="flex items-center justify-center space-x-2">
+                    <button class="btn btn-md btn-transparent-light btn-long">Bilgi Al</button>
+                    <button class="btn btn-md btn-black btn-long">Başvur</button>
+                </div>
+                <!-- end::ActionArea -->
+            </div>
+        </div>
+    </div>
 
     <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
     <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
@@ -1281,7 +1373,7 @@
     <script src="/src/collector/libs/notify.js"></script>
     <script>
         function createBarChart() {
-            
+
             $("#barChart").kendoChart({
                 title: {
                     text: "Gross domestic product growth /GDP annual %/"
@@ -1302,7 +1394,7 @@
                 }, {
                     name: "Germany",
                     data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
-                },{
+                }, {
                     name: "World",
                     data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
                 }],
@@ -1321,7 +1413,7 @@
                         visible: false
                     },
                     labels: {
-                        padding: {top: 135}
+                        padding: { top: 135 }
                     }
                 },
                 tooltip: {
@@ -1334,7 +1426,7 @@
         $(document).ready(createBarChart);
         $(document).bind("kendo:skinChange", createBarChart);
         function createBarChart2() {
-            
+
             $("#barChart2").kendoChart({
                 title: {
                     text: "Gross domestic product growth /GDP annual %/"
@@ -1355,7 +1447,7 @@
                 }, {
                     name: "Germany",
                     data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
-                },{
+                }, {
                     name: "World",
                     data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
                 }],
@@ -1374,7 +1466,7 @@
                         visible: false
                     },
                     labels: {
-                        padding: {top: 135}
+                        padding: { top: 135 }
                     }
                 },
                 tooltip: {
@@ -1413,19 +1505,19 @@
                     data: [{
                         category: "Asia",
                         value: 53.8,
-                    },{
+                    }, {
                         category: "Europe",
                         value: 16.1,
-                    },{
+                    }, {
                         category: "Latin America",
                         value: 11.3,
-                    },{
+                    }, {
                         category: "Africa",
                         value: 9.6,
-                    },{
+                    }, {
                         category: "Middle East",
                         value: 5.2,
-                    },{
+                    }, {
                         category: "North America",
                         value: 3.6,
                     }]
@@ -1459,7 +1551,7 @@
             widgetInitiator.get = function () {
                 return localStorage.getItem(widgetInitiator.storageKey);
             }
-            widgetInitiator.set = function(widgetObject) {
+            widgetInitiator.set = function (widgetObject) {
                 localStorage.setItem(widgetInitiator.storageKey, JSON.stringify(widgetObject));
             }
 
@@ -1500,10 +1592,10 @@
                 widgetInitiator.set(widgetObject);
                 widgetInitiator.structure();
             }
-            
+
             return widgetInitiator;
         }
-        
+
         $(function () {
             const widgets = dashboardWidgets();
             widgets.initialize();
@@ -1530,5 +1622,6 @@
             })
         })
     </script>
-  </body>
+</body>
+
 </html>
