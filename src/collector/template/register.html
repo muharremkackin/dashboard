@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collector - Dashboard Template</title>
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css" />
+    <link rel="stylesheet" href="/src/collector/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="registeration">
+        <div class="register-container">
+            <header>
+                <div>
+                    <h1>ÖN KAYIT BAŞVURU FORMU</h1>
+                    <p>Formu Tamamlayarak Ön Kaydınızı Oluşturabilirsiniz.</p>
+                </div>
+                <div>
+                    <button class="btn btn-gray btn-md">Çıkış Yap</button>
+                </div>
+            </header>
+            <main>
+                <div class="navigation-container ">
+                    <div class="progress-line"></div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <button class="active" data-component="navigation" data-step="1">
+                                    <span>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <span>Ön Kayıt Bilgileri</span>
+                                            <span>Firma Bilgileri</span>
+                                        </span>
+                                    </span>
+                                    <span>
+                                        <span class="progress-number">01</span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-component="navigation" data-step="2">
+                                    <span>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <span>Bayi Bilgileri</span>
+                                            <span>Gerekli Bayi Bilgileri</span>
+                                        </span>
+                                    </span>
+                                    <span>
+                                        <span class="progress-number">02</span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-component="navigation" data-step="3">
+                                    <span>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <span>Belge yükleme</span>
+                                            <span>Bayilerin Belgelerinin Yüklenmesi</span>
+                                        </span>
+                                    </span>
+                                    <span>
+                                        <span class="progress-number">03</span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button data-component="navigation" data-step="4">
+                                    <span>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <span>Banka Hesap bilgileri</span>
+                                            <span>Kredilerin Yatırılması İçin Hesap Bilgileri</span>
+                                        </span>
+                                    </span>
+                                    <span>
+                                        <span class="progress-number">04</span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="form-container is-hidden" data-component="navigation" data-step="1">
+                    <header>
+                        <h2>Ön Kayıt Bilgileri</h2>
+                        <p>Başvuru Sahibinin Bilgileri Gerekmektedir.</p>
+                    </header>
+                    <main>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="Name">Ad</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Soyad</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Soyad</label>
+                                <div class="phone-control">
+                                    <select name="" id="">
+                                        <option value="90">90</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">TC Kimlik Numarası</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">E-posta Adresi</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Doğum Tarihi</label>
+                                <input type="date" />
+                            </div>
+                            <div class="form-grid col-span-3">
+                                <div class="form-group">
+                                    <label for="Name">Şifre</label>
+                                    <input type="password" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Name">Şifre ( Tekrar )</label>
+                                    <input type="password" />
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <footer>
+                        <div>
+                            <div>
+                                <button class="btn btn-gray btn-md">Başvuruyu İptal Et</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-md">Devam Et</button>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <div class="form-container is-hidden" data-component="navigation" data-step="2">
+                    <header>
+                        <h2>Bayi Bilgileri</h2>
+                        <p>Bayi Bilgileri Gerekmektedir.</p>
+                    </header>
+                    <main>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="Name">Bayi Adı*</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Bayi Vergi Kimlik Numarası*</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Gsm Numarası*</label>
+                                <div class="phone-control">
+                                    <select name="" id="">
+                                        <option value="90">90</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">İl</label>
+                                <select name="" id="">
+                                    <option value="">İl Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">İlçe</label>
+                                <select name="" id="">
+                                    <option value="">İlçe Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Telefon Numarası*</label>
+                                <div class="phone-control">
+                                    <select name="" id="">
+                                        <option value="90">90</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Mahalle</label>
+                                <select name="" id="">
+                                    <option value="">Mahalle Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-span-2">
+                                <label for="Name">Adres</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Enlem</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Boylam</label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                    </main>
+                    <footer>
+                        <div>
+                            <div>
+                                <button class="btn btn-gray btn-md">Başvuruyu İptal Et</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-md">Devam Et</button>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <div class="form-container" data-component="navigation" data-step="3">
+                    <header>
+                        <h2>Belge Yükleme</h2>
+                        <p>Ön kaydınızın tamamlanması için yüklemeniz gereken gerekli belgeler.</p>
+                    </header>
+                    <main>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="ApplicationForm"
+                                    class="file-group w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative">
+                                    <input type="file" class="hidden" id="ApplicationForm" name="ApplicationForm" />
+                                    <span class="absolute right-3 top-3 text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Bayi Vergi Kimlik Numarası*</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Gsm Numarası*</label>
+                                <div class="phone-control">
+                                    <select name="" id="">
+                                        <option value="90">90</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">İl</label>
+                                <select name="" id="">
+                                    <option value="">İl Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">İlçe</label>
+                                <select name="" id="">
+                                    <option value="">İlçe Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Telefon Numarası*</label>
+                                <div class="phone-control">
+                                    <select name="" id="">
+                                        <option value="90">90</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Mahalle</label>
+                                <select name="" id="">
+                                    <option value="">Mahalle Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-span-2">
+                                <label for="Name">Adres</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Enlem</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Boylam</label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                    </main>
+                    <footer>
+                        <div>
+                            <div>
+                                <button class="btn btn-gray btn-md">Başvuruyu İptal Et</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-md">Devam Et</button>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </main>
+            <footer>
+                <div>
+                    <img src="/src/collector/images/icons/arcelik.png" alt="">
+                    <div></div>
+                    <img src="/src/collector/images/icons/payzee.png" alt="">
+                </div>
+            </footer>
+        </div>
+        <div class="register-bg">
+        </div>
+    </div>
+
+
+    <div class="modals is-hidden" data-component="widget-modals">
+        <div class="modals-container">
+            <div class="modal is-hidden">
+                <header>
+                    <div>
+                        <div>SMS Doğrulama</div>
+                        <div>Cep telefonunuza gelen kodu aşağıdaki alana yazarak ilerleyiniz</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-gray btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <section>
+                    <div>
+                        <div class="modal-icon success">
+                            <span></span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="timer">
+                            <span>04:55</span>
+                        </div>
+                    </div>
+                    <form class="form">
+                        <div class="form-control">
+                            <label for="" class="">Sms Kodu</label>
+                            <input type="text" class="" placeholder="Sms Kodu" />
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-primary btn-md">Gönder</button>
+                            <button class="btn btn-secondary btn-md" disabled>Tekrar Kod Gönder</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="modal is-hidden">
+                <header>
+                    <div>
+                        <div>Başvuruyu iptal etmek istediğinize emin misiniz?</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-gray btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <section>
+                    <div class="space-y-8">
+                        <div class="modal-icon error">
+                            <span></span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="text-center text-sm">Başvuruyu iptal ettiğiniz takdirde daha önce kaydetmiş
+                            olduğunuz bilgiler ile beraber kullanıcı girişini de sileceğiz.</div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-red btn-md btn-center">İptal et</button>
+                        <button class="btn btn-gray btn-md btn-center">Vazgeç</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="/src/collector/libs/moment.min.js"></script>
+    <script src="/src/collector/libs/daterangepicker.min.js"></script>
+    <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
+    <script src="/src/collector/js/avatar-generator.js"></script>
+    <script src="/src/collector/js/app.js"></script>
+    <script src="/src/collector/js/web-dashboard.js"></script>
+    <script src="/src/collector/libs/notify.js"></script>
+    <script>
+        function navigation(step = 1) {
+            $('div[data-component="navigation"]').addClass('is-hidden');
+            $('div[data-component="navigation"][data-step="' + step + '"]').removeClass("is-hidden");
+        }
+
+        $('button[data-component="navigation"]').on('click', function () {
+            navigation($(this).attr('data-step'));
+            $('button[data-component="navigation"]').removeClass('active');
+            $('button[data-component="navigation"][data-step="' + $(this).attr('data-step') + '"]').addClass('active');
+        });
+    </script>
+</body>
+
+</html>

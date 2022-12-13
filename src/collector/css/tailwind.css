@@ -14,7 +14,7 @@
         font-family:"Open Sans", system-ui, sans-serif;
     }
    
-
+    
     .centered {
         @apply flex items-center justify-center;
     }
@@ -1359,6 +1359,18 @@
     .authentication .authentication-container {
         @apply p-12  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[48px];
     }
+    .authentication .security-image-container {
+        @apply p-6  bg-white shadow-lg shadow-gray-400/20 rounded-[10px] w-full lg:max-w-[530px] space-y-[24px];
+    }
+    .authentication .security-image-container > div:nth-child(2) {
+        @apply text-sm text-center;
+    }
+    .authentication .security-image-container .sc-avatar {
+        @apply w-36 h-36 shadow-lg rounded-[5px];
+    }
+    .authentication .security-image-container .sc-avatar img {
+        @apply w-32 h-32 object-cover;
+    }
     .authentication .authentication-container form {
         @apply space-y-[48px];
     }
@@ -1576,11 +1588,17 @@
     .modals .modal section .modal-icon.success span:first-child {
         @apply bg-green-300;
     }
+    .modals .modal section .modal-icon.error span:first-child {
+        @apply bg-red-500 ;
+    }
     .modals .modal section .modal-icon span:nth-child(2) {
         @apply text-gray-800 absolute;
     }
     .modals .modal section .modal-icon.success span:nth-child(2) {
         @apply text-green-800;
+    }
+    .modals .modal section .modal-icon.error span:nth-child(2) {
+        @apply text-red-800;
     }
     .modals .modal section .timer {
         @apply flex items-center justify-center mt-4;
@@ -1657,6 +1675,114 @@
     }
     .advertise .advertise-bottom > div > div:nth-child(2) > img {
         @apply scale-x-[-1] w-[84px];
+    }
+
+    .registeration {
+        @apply w-screen min-h-screen overflow-x-hidden overflow-y-auto bg-[#FAFBFC] flex;
+    }
+    .registeration .register-container {
+        @apply container z-10 mx-auto py-12 xl:py-[94px] space-y-12 px-4 xl:px-0;
+    }
+    .registeration .register-container > header {
+        @apply flex items-end justify-between w-full
+    }
+    .registeration .register-container > header > div:first-child {
+        @apply flex flex-col text-blue-800 xl:text-[#FFFFFF] space-y-4 leading-none;
+    }
+    .registeration .register-container > header > div:first-child h1 {
+        @apply text-[26px];
+    }
+    .registeration .register-container > header > div:first-child p {
+        @apply text-[14px];
+    }
+    .registeration .register-container > main {
+        @apply w-full bg-white rounded-[10px] shadow-lg flex relative;
+    }
+    .registeration .register-container > main .navigation-container {
+        @apply w-full sm:w-[400px] xl:w-1/4 flex absolute top-0 left-0 bottom-0 bg-white rounded-l-[10px] xl:relative h-full border-r border-r-[#EEF0F7] z-20;
+    }
+    .registeration .register-container > main .navigation-container .progress-line {
+        @apply w-px h-full bg-gray-300 absolute top-0 bottom-0 left-10;
+    }
+    .registeration .register-container > main .navigation-container > nav {
+        @apply z-20 py-8 w-full;
+    }
+    .registeration .register-container > main .navigation-container > nav button {
+        @apply flex items-center space-y-1 leading-tight justify-between px-4 py-8 w-full text-[#181C32] hover:bg-gray-100/80 transition;
+    }
+    .registeration .register-container > main .navigation-container > nav button > span:first-child {
+        @apply flex items-center space-x-4 2xl:space-x-8;
+    }
+    .registeration .register-container > main .navigation-container > nav button > span:first-child > span:first-child {
+        @apply flex items-center justify-center w-12 h-12 rounded-full bg-[#F5F8FA] text-gray-600;
+    }
+    .registeration .register-container > main .navigation-container > nav button.active > span:first-child > span:first-child {
+        @apply bg-[#688BE4] text-white;
+    }
+    .registeration .register-container > main .navigation-container > nav button > span:first-child > span:nth-child(2) {
+        @apply flex flex-col items-start justify-center space-y-2;
+    }
+    .registeration .register-container > main .navigation-container > nav button > span:first-child > span:nth-child(2) > span:first-child {
+        @apply text-[18px] text-left;
+    }
+    .registeration .register-container > main .navigation-container > nav button > span:first-child > span:nth-child(2) > span:nth-child(2) {
+        @apply text-[13px] text-left;
+    }
+    .registeration .register-container > main .navigation-container > nav button .progress-number {
+        @apply font-bold text-gray-300 tracking-wide text-xl;
+    }
+    .registeration .register-container > main .navigation-container > nav button.active .progress-number {
+        @apply text-[#688BE4];
+    }
+    .registeration .register-container > main .form-container {
+        @apply w-full xl:w-3/4 flex flex-col p-10 text-[#181C32] space-y-6 justify-between z-10;
+    }
+    .registeration .register-container > main .form-container > header h2 {
+        @apply text-[26px];
+    }
+    .registeration .register-container > main .form-container > header p {
+        @apply text-sm text-[#8B8F9E];
+    }
+    .registeration .register-container > main .form-container > footer > div {
+        @apply w-full flex items-center justify-between;
+    }
+    .registeration .register-container > main .form-container > footer > div > div {
+        @apply flex items-center space-x-2;
+    }
+    .form-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6;
+    }
+    .form-grid .form-group {
+        @apply flex flex-col leading-none space-y-2;
+    }
+    .form-grid .form-group > label {
+        @apply text-[15px];
+    }
+    .form-grid .form-group input[type=text], 
+    .form-grid .form-group input[type=email], 
+    .form-grid .form-group input[type=date], 
+    .form-grid .form-group select, 
+    .form-grid .form-group input[type=password] {
+        @apply rounded-[5px] border-[#E1E3EB];
+    }
+    .form-grid .form-group > .phone-control {
+        @apply grid grid-cols-4 gap-2;
+    }
+    .form-grid .form-group > .phone-control input {
+        @apply col-span-3;
+    }
+    .registeration .register-container > footer > div {
+        @apply flex items-center justify-center space-x-4 xl:space-x-8;
+    }
+    .registeration .register-container > footer > div > img {
+        @apply h-6 xl:h-12;
+    }
+    .registeration .register-container > footer > div > div {
+        @apply w-px h-6 xl:h-12 bg-gray-400;
+    }
+
+    .registeration .register-bg {
+        @apply w-full xl:w-1/2 fixed xl:-top-72 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
     }
 }
 
