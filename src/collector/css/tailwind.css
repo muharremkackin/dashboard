@@ -1664,16 +1664,22 @@
     .advertise .advertise-bottom > div > header {
         @apply absolute top-1 right-1 flex-shrink-0;
     }
-    .advertise .advertise-bottom > div > footer {
+    .advertise .advertise-bottom > div > div > footer {
         @apply flex flex-col md:flex-row  items-center justify-center space-y-4 md:space-y-0 md:space-x-2;
     }
-    .advertise .advertise-bottom > div > footer button {
+    .advertise .advertise-bottom > div > div {
+        @apply w-full;
+    }
+    .advertise .advertise-bottom > div > div > div {
+        @apply space-x-4 flex items-center;
+    }
+    .advertise .advertise-bottom > div > div > footer button {
         @apply flex-shrink-0;
     }
-    .advertise .advertise-bottom > div > article {
+    .advertise .advertise-bottom > div  article {
         @apply text-white text-[24px] text-center md:text-left;
     }
-    .advertise .advertise-bottom > div > div:nth-child(2) > img {
+    .advertise .advertise-bottom > div img {
         @apply scale-x-[-1] w-[84px];
     }
 
@@ -1783,6 +1789,42 @@
 
     .registeration .register-bg {
         @apply w-full xl:w-1/2 fixed xl:-top-72 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
+    }
+
+    .error-page {
+        @apply w-screen h-screen bg-[#FAFBFC] overflow-hidden p-4 md:p-8 xl:p-[50px] 2xl:p-[100px] flex items-start justify-center;
+    }
+
+    .error-page .page-content {
+        @apply bg-white border border-[#EEF0F7] rounded-[10px] p-9 xl:w-[800px] 2xl:w-[948px] text-[#181C32];
+    }
+    .error-page .page-content > main {
+        @apply flex items-center justify-between;
+    }
+    .error-page .page-content > main > div:first-child {
+        @apply text-[#181C32] w-1/2;
+    }
+    .error-page .page-content > main > div:first-child h2 {
+        @apply text-lg font-extrabold leading-tight;
+    }
+    .error-page .page-content > main > div:first-child h1 {
+        @apply text-[42px] font-bold leading-tight;
+    }
+    .error-page .page-content > main > div:first-child p {
+        @apply mt-5 text-sm text-[#97A3B4];
+    }
+    .error-page .page-content > main > div:first-child footer {
+        @apply mt-10;
+    }
+    .error-page .page-content > main > div.logo,
+    .error-page .page-content > main > div.logo img {
+        @apply xl:w-[280px] 2xl:w-[392px];
+    }
+    .error-page .page-content > footer {
+        @apply flex flex-col items-center justify-center mt-14 space-y-3 text-sm;
+    }
+    .error-page .page-content > footer a {
+        @apply hover:underline;
     }
 }
 
