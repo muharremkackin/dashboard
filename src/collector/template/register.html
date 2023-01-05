@@ -29,10 +29,21 @@
                 </div>
                 <div>
                     <button class="btn btn-gray btn-md">Çıkış Yap</button>
+                    <button class="btn btn-gray btn-icon navigation-btn" data-click="navigation-component">
+                        <svg data-active="open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5 open">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg data-active="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5 close">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </header>
             <main>
-                <div class="navigation-container ">
+                <div class="navigation-container mobile-hidden" data-component="navigation-container">
                     <div class="progress-line"></div>
                     <nav>
                         <ul>
@@ -456,6 +467,16 @@
             navigation($(this).attr('data-step'));
             $('button[data-component="navigation"]').removeClass('active');
             $('button[data-component="navigation"][data-step="' + $(this).attr('data-step') + '"]').addClass('active');
+        });
+
+        $('button[data-click="navigation-component"]').on('click', function() {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active')
+                $('[data-component="navigation-container"]').addClass('mobile-hidden')
+            } else {
+                $(this).addClass('active');
+                $('[data-component="navigation-container"]').removeClass('mobile-hidden');
+            }
         });
     </script>
 </body>

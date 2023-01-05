@@ -123,7 +123,21 @@
         position: absolute;
     }
 
-
+    .navigation-btn {
+        @apply xl:hidden;
+    }
+    .navigation-btn .open {
+        @apply block;
+    }
+    .navigation-btn .close {
+        @apply hidden;
+    }
+    .navigation-btn.active .open {
+        @apply hidden;
+    }
+    .navigation-btn.active .close {
+        @apply block;
+    }
     .badge {
         @apply py-1 px-2 text-[15px] w-fit rounded-full;
     }
@@ -1687,16 +1701,19 @@
         @apply w-screen min-h-screen overflow-x-hidden overflow-y-auto bg-[#FAFBFC] flex;
     }
     .registeration .register-container {
-        @apply container z-10 mx-auto py-12 xl:py-[94px] space-y-12 px-4 xl:px-0;
+        @apply container z-10 mx-auto py-12 xl:py-[94px] space-y-8 xl:space-y-12 px-4 xl:px-0;
     }
     .registeration .register-container > header {
         @apply flex items-end justify-between w-full
     }
     .registeration .register-container > header > div:first-child {
-        @apply flex flex-col text-blue-800 xl:text-[#FFFFFF] space-y-4 leading-none;
+        @apply flex flex-col text-black xl:text-[#FFFFFF] space-y-4 leading-none;
+    }
+    .registeration .register-container > header > div:nth-child(2)  {
+        @apply flex-shrink-0 flex items-center space-x-4;
     }
     .registeration .register-container > header > div:first-child h1 {
-        @apply text-[26px];
+        @apply text-lg font-bold xl:font-normal xl:text-[26px];
     }
     .registeration .register-container > header > div:first-child p {
         @apply text-[14px];
@@ -1706,6 +1723,9 @@
     }
     .registeration .register-container > main .navigation-container {
         @apply w-full sm:w-[400px] xl:w-1/4 flex absolute top-0 left-0 bottom-0 bg-white rounded-l-[10px] xl:relative h-full border-r border-r-[#EEF0F7] z-20;
+    }
+    .registeration .register-container > main .navigation-container.mobile-hidden {
+        @apply hidden xl:flex;
     }
     .registeration .register-container > main .navigation-container .progress-line {
         @apply w-px h-full bg-gray-300 absolute top-0 bottom-0 left-10;
@@ -1759,7 +1779,7 @@
         @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6;
     }
     .form-grid .form-group {
-        @apply flex flex-col leading-none space-y-2;
+        @apply flex flex-col leading-none space-y-2 col-span-3 md:col-span-2 xl:col-span-1;
     }
     .form-grid .form-group > label {
         @apply text-[15px];
@@ -1788,7 +1808,7 @@
     }
 
     .registeration .register-bg {
-        @apply w-full xl:w-1/2 fixed xl:-top-72 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
+        @apply w-full xl:w-1/2 fixed -top-36 -left-64 xl:-top-72 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
     }
 
     .error-page {
