@@ -30,13 +30,13 @@
                 <div>
                     <button class="btn btn-gray btn-md">Çıkış Yap</button>
                     <button class="btn btn-gray btn-icon navigation-btn" data-click="navigation-component">
-                        <svg data-active="open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-5 h-5 open">
+                        <svg data-active="open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 open">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
-                        <svg data-active="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-5 h-5 close">
+                        <svg data-active="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-5 h-5 close">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -130,7 +130,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="form-container" data-component="navigation" data-step="1">
+                <div class="form-container is-hidden" data-component="navigation" data-step="1">
                     <header>
                         <h2>Ön Kayıt Bilgileri</h2>
                         <p>Başvuru Sahibinin Bilgileri Gerekmektedir.</p>
@@ -166,15 +166,15 @@
                                 <label for="Name">Doğum Tarihi</label>
                                 <input type="date" />
                             </div>
-                            <div class="form-grid col-span-3">
-                                <div class="form-group">
-                                    <label for="Name">Şifre</label>
-                                    <input type="password" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Name">Şifre ( Tekrar )</label>
-                                    <input type="password" />
-                                </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="Name">Şifre</label>
+                                <input type="password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Şifre ( Tekrar )</label>
+                                <input type="password" />
                             </div>
                         </div>
                     </main>
@@ -265,13 +265,99 @@
                         </div>
                     </footer>
                 </div>
-                <div class="form-container is-hidden" data-component="navigation" data-step="3">
-                    <header>
-                        <h2>Belge Yükleme</h2>
-                        <p>Ön kaydınızın tamamlanması için yüklemeniz gereken gerekli belgeler.</p>
-                    </header>
+                <div class="form-container" data-component="navigation" data-step="3">
+                    <div class="flex items-center justify-between w-full">
+                        <header>
+                            <h2>Belge Yükleme</h2>
+                            <p>Ön kaydınızın tamamlanması için yüklemeniz gereken gerekli belgeler.</p>
+                        </header>
+                        <div>
+                            <label for="SendFile" class="cursor-pointer custom-checkbox">
+                                <input type="checkbox" class="hidden " id="SendFile" name="SendFile" />
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="4" stroke="currentColor" class="w-[14px] h-[14px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                    <span>Belgelerimi Kargo ile Göndereceğim*</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
                     <main>
                         <div class="form-grid">
+                            <div class="file-from-cargo is-hidden">
+                                <div>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                        </svg>
+                                    </span>
+                                    <span>İlgili dökümanları kargo ile göndermeyi tercih ettiniz.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ApplicationForm" class="file-group success">
+                                    <input type="file" class="hidden" id="ApplicationForm" name="ApplicationForm" />
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="file-content">
+                                        <span
+                                            class="header">
+                                            <span>Başvuru Formu</span>
+                                            <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
+                                        </span>
+
+                                        <span>
+                                            <span class="file-name">
+                                                <span>Arçelik Merkez Bayi Başvuru</span>
+                                                <span class="file-actions">
+                                                    <button class="text-red-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="text-blue-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="span-upload">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                                                </svg>
+                                            </span>
+                                            <span>Dosya Yükle</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
                             <div class="form-group">
                                 <label for="ApplicationForm"
                                     class="file-group w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative">
@@ -283,59 +369,452 @@
                                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </span>
+
+                                    <span class="h-full flex flex-col justify-between">
+                                        <span
+                                            class="text-[#4D4D4D] flex flex-col text-center text-[13px] space-y-1 py-2">
+                                            <span class="font-bold">Başvuru Formu</span>
+                                            <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
+                                        </span>
+
+                                        <span>
+                                            <span class="text-[13px] flex items-center space-x-1 justify-center">
+                                                <span>Arçelik Merkez Bayi Başvuru</span>
+                                                <span class="flex items-center space-x-1">
+                                                    <button class="text-red-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="text-blue-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="text-[#688BE4] flex items-center justify-center space-x-2 text-[13px] py-2 px-4 border border-dashed rounded-lg border-[#688BE4] bg-[#F4F7FF]">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                                                </svg>
+                                            </span>
+                                            <span>Dosya Yükle</span>
+                                        </span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="form-group">
-                                <label for="Name">Bayi Vergi Kimlik Numarası*</label>
+                                <label for="ApplicationForm"
+                                    class="file-group w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative">
+                                    <input type="file" class="hidden" id="ApplicationForm" name="ApplicationForm" />
+                                    <span class="absolute right-3 top-3 text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="h-full flex flex-col justify-between">
+                                        <span
+                                            class="text-[#4D4D4D] flex flex-col text-center text-[13px] space-y-1 py-2">
+                                            <span class="font-bold">Başvuru Formu</span>
+                                            <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
+                                        </span>
+
+                                        <span>
+                                            <span class="text-[13px] flex items-center space-x-1 justify-center">
+                                                <span>Arçelik Merkez Bayi Başvuru</span>
+                                                <span class="flex items-center space-x-1">
+                                                    <button class="text-red-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="text-blue-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="text-[#688BE4] flex items-center justify-center space-x-2 text-[13px] py-2 px-4 border border-dashed rounded-lg border-[#688BE4] bg-[#F4F7FF]">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                                                </svg>
+                                            </span>
+                                            <span>Dosya Yükle</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="ApplicationForm"
+                                    class="file-group w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative">
+                                    <input type="file" class="hidden" id="ApplicationForm" name="ApplicationForm" />
+                                    <span class="absolute right-3 top-3 text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="h-full flex flex-col justify-between">
+                                        <span
+                                            class="text-[#4D4D4D] flex flex-col text-center text-[13px] space-y-1 py-2">
+                                            <span class="font-bold">Başvuru Formu</span>
+                                            <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
+                                        </span>
+
+                                        <span>
+                                            <span class="text-[13px] flex items-center space-x-1 justify-center">
+                                                <span>Arçelik Merkez Bayi Başvuru</span>
+                                                <span class="flex items-center space-x-1">
+                                                    <button class="text-red-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="text-blue-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="text-[#688BE4] flex items-center justify-center space-x-2 text-[13px] py-2 px-4 border border-dashed rounded-lg border-[#688BE4] bg-[#F4F7FF]">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                                                </svg>
+                                            </span>
+                                            <span>Dosya Yükle</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="ApplicationForm"
+                                    class="file-group w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative">
+                                    <input type="file" class="hidden" id="ApplicationForm" name="ApplicationForm" />
+                                    <span class="absolute right-3 top-3 text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="h-full flex flex-col justify-between">
+                                        <span
+                                            class="text-[#4D4D4D] flex flex-col text-center text-[13px] space-y-1 py-2">
+                                            <span class="font-bold">Başvuru Formu</span>
+                                            <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
+                                        </span>
+
+                                        <span>
+                                            <span class="text-[13px] flex items-center space-x-1 justify-center">
+                                                <span>Arçelik Merkez Bayi Başvuru</span>
+                                                <span class="flex items-center space-x-1">
+                                                    <button class="text-red-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="text-blue-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="text-[#688BE4] flex items-center justify-center space-x-2 text-[13px] py-2 px-4 border border-dashed rounded-lg border-[#688BE4] bg-[#F4F7FF]">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                                                </svg>
+                                            </span>
+                                            <span>Dosya Yükle</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="ApplicationForm"
+                                    class="file-group w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative">
+                                    <input type="file" class="hidden" id="ApplicationForm" name="ApplicationForm" />
+                                    <span class="absolute right-3 top-3 text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span class="h-full flex flex-col justify-between">
+                                        <span
+                                            class="text-[#4D4D4D] flex flex-col text-center text-[13px] space-y-1 py-2">
+                                            <span class="font-bold">Başvuru Formu</span>
+                                            <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
+                                        </span>
+
+                                        <span>
+                                            <span class="text-[13px] flex items-center space-x-1 justify-center">
+                                                <span>Arçelik Merkez Bayi Başvuru</span>
+                                                <span class="flex items-center space-x-1">
+                                                    <button class="text-red-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path fill-rule="evenodd"
+                                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="text-blue-600">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor" class="w-[18px] h-[18px]">
+                                                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                clip-rule="evenodd" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="text-[#688BE4] flex items-center justify-center space-x-2 text-[13px] py-2 px-4 border border-dashed rounded-lg border-[#688BE4] bg-[#F4F7FF]">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15" />
+                                                </svg>
+                                            </span>
+                                            <span>Dosya Yükle</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </main>
+                    <footer>
+                        <div>
+                            <div>
+                                <button class="btn btn-gray btn-md">Başvuruyu İptal Et</button>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-md">Devam Et</button>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <div class="form-container is-hidden" data-component="navigation" data-step="4">
+                    <header>
+                        <h2>Banka Hesap Bilgileri</h2>
+                        <p>Banka Hesap Bilgileri</p>
+                    </header>
+                    <main>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="Name">Ad Soyad</label>
                                 <input type="text" />
                             </div>
                             <div class="form-group">
-                                <label for="Name">Gsm Numarası*</label>
-                                <div class="phone-control">
-                                    <select name="" id="">
-                                        <option value="90">90</option>
-                                    </select>
-                                    <input type="text" />
+                                <label for="Name">Banka Adı</label>
+                                <select name="" id="">
+                                    <option value="">Banka Seçiniz</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">IBan Numarası</label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end w-full">
+                            <button class="btn btn-md btn-long btn-primary">+Ekle</button>
+                        </div>
+                        <div class="w-full h-px border-b"></div>
+                        <div class="space-y-4 w-full">
+                            <h3 class="text-[18px] text-[#181C32]">Banka Hesap Bilgileri</h3>
+                            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                                <div class="col-span-1 flex">
+                                    <label for="bankAccount_1" class="cursor-pointer p-5 border w-full rounded-lg">
+                                        <input type="radio" id="bankAccount_1" name="bankAccount_1" class="hidden" />
+                                        <span class="flex space-x-3 items-start">
+                                            <span class="flex flex-shrink-0">
+                                                <span
+                                                    class="w-6 h-6 rounded-full border flex items-center justify-center">
+                                                    <span class="w-4 h-4 rounded-full bg-gray-200"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex flex-col space-y-2 w-full text-sm">
+                                                <span class="flex items-center justify-between">
+                                                    <span>Volkan Dinç Demir</span>
+                                                    <span class="flex items-start space-x-2">
+                                                        <button class="btn btn-icon-sm btn-gray">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-4 h-4">
+                                                                <path
+                                                                    d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn-icon-sm btn-gray ">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-4 h-4">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                                <span>Garanti BBVA</span>
+                                                <span class="flex items-end justify-between">
+                                                    <span>TR 2000 1234 5678 9101 1121 3141 55</span>
+                                                    <span>
+                                                        <img src="/src/collector/images/icons/garanti.png"
+                                                            class="h-[24px] w-[134px] object-contain" alt="">
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Name">İl</label>
-                                <select name="" id="">
-                                    <option value="">İl Seçiniz</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="Name">İlçe</label>
-                                <select name="" id="">
-                                    <option value="">İlçe Seçiniz</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="Name">Telefon Numarası*</label>
-                                <div class="phone-control">
-                                    <select name="" id="">
-                                        <option value="90">90</option>
-                                    </select>
-                                    <input type="text" />
+                                <div class="col-span-1 flex">
+                                    <label for="bankAccount_1" class="cursor-pointer p-5 border w-full rounded-lg">
+                                        <input type="radio" id="bankAccount_1" name="bankAccount_1" class="hidden" />
+                                        <span class="flex space-x-3 items-start">
+                                            <span class="flex flex-shrink-0">
+                                                <span
+                                                    class="w-6 h-6 rounded-full border flex items-center justify-center">
+                                                    <span class="w-4 h-4 rounded-full bg-gray-200"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex flex-col space-y-2 w-full text-sm">
+                                                <span class="flex items-center justify-between">
+                                                    <span>Volkan Dinç Demir</span>
+                                                    <span class="flex items-start space-x-2">
+                                                        <button class="btn btn-icon-sm btn-gray">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-4 h-4">
+                                                                <path
+                                                                    d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn-icon-sm btn-gray ">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-4 h-4">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                                <span>Garanti BBVA</span>
+                                                <span class="flex items-end justify-between">
+                                                    <span>TR 2000 1234 5678 9101 1121 3141 55</span>
+                                                    <span>
+                                                        <img src="/src/collector/images/icons/garanti.png"
+                                                            class="h-[24px] w-[134px] object-contain" alt="">
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Name">Mahalle</label>
-                                <select name="" id="">
-                                    <option value="">Mahalle Seçiniz</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-span-2">
-                                <label for="Name">Adres</label>
-                                <input type="text" />
-                            </div>
-                            <div class="form-group">
-                                <label for="Name">Enlem</label>
-                                <input type="text" />
-                            </div>
-                            <div class="form-group">
-                                <label for="Name">Boylam</label>
-                                <input type="text" />
+                                <div class="col-span-1 flex">
+                                    <label for="bankAccount_1" class="cursor-pointer p-5 border w-full rounded-lg">
+                                        <input type="radio" id="bankAccount_1" name="bankAccount_1" class="hidden" />
+                                        <span class="flex space-x-3 items-start">
+                                            <span class="flex flex-shrink-0">
+                                                <span
+                                                    class="w-6 h-6 rounded-full border flex items-center justify-center">
+                                                    <span class="w-4 h-4 rounded-full bg-gray-200"></span>
+                                                </span>
+                                            </span>
+                                            <span class="flex flex-col space-y-2 w-full text-sm">
+                                                <span class="flex items-center justify-between">
+                                                    <span>Volkan Dinç Demir</span>
+                                                    <span class="flex items-start space-x-2">
+                                                        <button class="btn btn-icon-sm btn-gray">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-4 h-4">
+                                                                <path
+                                                                    d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                                                            </svg>
+                                                        </button>
+                                                        <button class="btn btn-icon-sm btn-gray ">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                                fill="currentColor" class="w-4 h-4">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                                <span>Garanti BBVA</span>
+                                                <span class="flex items-end justify-between">
+                                                    <span>TR 2000 1234 5678 9101 1121 3141 55</span>
+                                                    <span>
+                                                        <img src="/src/collector/images/icons/garanti.png"
+                                                            class="h-[24px] w-[134px] object-contain" alt="">
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </main>
@@ -469,7 +948,7 @@
             $('button[data-component="navigation"][data-step="' + $(this).attr('data-step') + '"]').addClass('active');
         });
 
-        $('button[data-click="navigation-component"]').on('click', function() {
+        $('button[data-click="navigation-component"]').on('click', function () {
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active')
                 $('[data-component="navigation-container"]').addClass('mobile-hidden')

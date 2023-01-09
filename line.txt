@@ -1,0 +1,66 @@
+USE [HQCollector]
+GO
+/****** Object:  StoredProcedure [dbo].[spGetListTransactionAndTransactionLogByFilter]    Script Date: 1/5/2023 6:01:41 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- =============================================
+-- Author:		Şafak Temel
+-- Create date: 
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[spGetListTransactionAndTransactionLogByFilter]
+	-- Add the parameters for the stored procedure here
+	@Offset VARCHAR(10) = '0',
+	@Count VARCHAR(10) = '50',
+	@OrderBy VARCHAR(MAX) = 'Order By TransactionId Desc', 
+	@Where VARCHAR(MAX) = ''
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	DECLARE @sql VARCHAR(MAX)
+
+    -- Insert statements for procedure here
+	SET @sql = '
+	Select * From (
+		SELECT
+	t0.[TransactionId],
+	t0.[UniqueId] [ProcessId],
+	t0.[InstitutionId],
+	ISNULL(t0.[OperationId], '') [OperationId],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.creditOid''), '') [CreditOid],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.ReferenceNumber''), '') [ReferenceNumber],
+	ISNULL(JSON_VALUE(t1.RequestJson, ''$.CompanyName''), '') [CompanyName],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.CreditType''), '') [CreditType],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.installmentNumber''), NULL) [InstallmentNumber],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.TotalInstallmentNumber''), NULL) [TotalInstallmentNumber],
+	ISNULL(t0.Amount, 0) [InstallmentAmount],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.CreditAmount''), NULL) [CreditAmount],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.FullName''), '') [FullName],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.PaymentDate''), '') [PaymentDate],
+	ISNULL(JSON_VALUE(t1.RequestJson, ''$.IssuanceDate''), '') [IssuanceDate],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.ProductType''), NULL) [ProductType],
+	COALESCE(JSON_VALUE(t1.RequestJson, ''$.paymentType''), '') [PaymentType],
+	t0.[ResellerId],
+	t0.[DistributorId],
+	t0.[CreatedUserId],
+	t0.[CreatedDate] ,
+	t0.[ModifiedUserId],
+	t0.[ModifiedDate],
+	t1.[TransactionLogId],
+	t0.[Amount],
+	t1.[ResponseCode],
+	t1.[ResponseMessage],
+	t0.[StatusId]
+FROM [dbo].[Transaction] t0 (nolock)
+Inner Join [dbo].[TransactionLog] t1 (nolock) On t0.[TransactionId] = t1.[TransactionId]
+	) t ' + @Where + ' ' + @OrderBy + ' OFFSET ' + @Offset +' ROWS FETCH NEXT '+ @Count +' ROWS ONLY;'
+
+	EXEC (@sql);
+END

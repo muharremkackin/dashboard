@@ -1722,7 +1722,7 @@
         @apply w-full bg-white rounded-[10px] shadow-lg flex relative;
     }
     .registeration .register-container > main .navigation-container {
-        @apply w-full sm:w-[400px] xl:w-1/4 flex absolute top-0 left-0 bottom-0 bg-white rounded-l-[10px] xl:relative h-full border-r border-r-[#EEF0F7] z-20;
+        @apply w-full sm:w-[400px] xl:w-1/4 flex absolute top-0 left-0 bottom-0 bg-white rounded-l-[10px] xl:relative h-full xl:h-auto border-r border-r-[#EEF0F7] z-20;
     }
     .registeration .register-container > main .navigation-container.mobile-hidden {
         @apply hidden xl:flex;
@@ -1763,9 +1763,11 @@
     .registeration .register-container > main .form-container {
         @apply w-full xl:w-3/4 flex flex-col p-10 text-[#181C32] space-y-6 justify-between z-10;
     }
+    .registeration .register-container > main .form-container > div:first-child > header h2,
     .registeration .register-container > main .form-container > header h2 {
         @apply text-[26px];
     }
+    .registeration .register-container > main .form-container > div:first-child > header p,
     .registeration .register-container > main .form-container > header p {
         @apply text-sm text-[#8B8F9E];
     }
@@ -1775,14 +1777,24 @@
     .registeration .register-container > main .form-container > footer > div > div {
         @apply flex items-center space-x-2;
     }
+    .registeration .register-container > main .form-container main {
+        @apply space-y-6 flex flex-col justify-start items-start h-full;
+    }
     .form-grid {
-        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6;
+        @apply grid grid-cols-1 md:grid-cols-4 xl:grid-cols-3 gap-x-8 gap-y-6 w-full relative;
     }
     .form-grid .form-group {
-        @apply flex flex-col leading-none space-y-2 col-span-3 md:col-span-2 xl:col-span-1;
+        @apply flex flex-col leading-none space-y-2 col-span-1 md:col-span-2 xl:col-span-1;
     }
     .form-grid .form-group > label {
         @apply text-[15px];
+    }
+
+    .registeration .file-from-cargo {
+        @apply absolute top-0 left-0 w-full h-full bg-white/90 z-20 flex items-start lg:items-center justify-center;
+    }
+    .registeration .file-from-cargo  > div{
+        @apply flex flex-col items-center text-center space-y-6;
     }
     .form-grid .form-group input[type=text], 
     .form-grid .form-group input[type=email], 
@@ -1809,6 +1821,37 @@
 
     .registeration .register-bg {
         @apply w-full xl:w-1/2 fixed -top-36 -left-64 xl:-top-72 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
+    }
+
+    .registeration .file-group {
+        @apply w-full h-[180px] border rounded-lg cursor-pointer hover:shadow-md bg-white transition py-5 px-7 relative;
+    }
+    .registeration .file-group.success {
+        @apply border-green-500;
+    }
+    .registeration .file-group > span:nth-child(2) {
+        @apply absolute right-3 top-3 text-gray-400;
+    }
+    .registeration .file-group.success > span:nth-child(2) {
+        @apply text-green-500;
+    }
+    .registeration .file-group .file-content {
+        @apply h-full flex flex-col justify-between;
+    }
+    .registeration .file-group .file-content .header {
+        @apply text-[#4D4D4D] flex flex-col text-center text-[13px] space-y-1 py-2;
+    }
+    .registeration .file-group .file-content .header > span:first-child {
+        @apply font-bold;
+    }
+    .registeration .file-group .file-content .file-name {
+        @apply text-[13px] flex items-center space-x-1 justify-center;
+    }
+    .registeration .file-group .file-content .file-actions {
+        @apply flex items-center space-x-1;
+    }
+    .registeration .file-group .span-upload {
+        @apply text-[#688BE4] flex items-center justify-center space-x-2 text-[13px] py-2 px-4 border border-dashed rounded-lg border-[#688BE4] bg-[#F4F7FF];
     }
 
     .error-page {
@@ -1845,6 +1888,14 @@
     }
     .error-page .page-content > footer a {
         @apply hover:underline;
+    }
+
+    .custom-checkbox > span {
+        @apply inline-flex items-center space-x-2 tracking-wide flex-grow-0 text-[15px] text-[#97A3B4];
+    }
+
+    .custom-checkbox > span > span:first-child {
+        @apply w-5 h-5 border  rounded flex items-center justify-center transition;
     }
 }
 
@@ -1886,3 +1937,20 @@
     right: 4px!important;
 }
 
+.custom-checkbox input[type=checkbox]~span>span>svg {
+    display: none;
+    color: white;
+}
+
+.custom-checkbox input[type=checkbox]:checked~span>span:first-child {
+    background-color: #688BE4;
+}
+
+.custom-checkbox input[type=checkbox]:checked~span>span>svg {
+    display: block;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+}
