@@ -1786,6 +1786,9 @@
     .form-grid .form-group {
         @apply flex flex-col leading-none space-y-2 col-span-1 md:col-span-2 xl:col-span-1;
     }
+    .form-grid .form-group.form-group-2 {
+        @apply xl:col-span-2;
+    }
     .form-grid .form-group > label {
         @apply text-[15px];
     }

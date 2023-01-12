@@ -7425,6 +7425,10 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   .form-grid .form-group {
     grid-column: span 1 / span 1;
   }
+
+  .form-grid .form-group.form-group-2 {
+    grid-column: span 2 / span 2;
+  }
 }
 
 .form-grid .form-group > label {
