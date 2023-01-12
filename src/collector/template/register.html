@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -130,11 +131,28 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="form-container is-hidden" data-component="navigation" data-step="1">
-                    <header>
-                        <h2>Ön Kayıt Bilgileri</h2>
-                        <p>Başvuru Sahibinin Bilgileri Gerekmektedir.</p>
-                    </header>
+                <div class="form-container" data-component="navigation" data-step="1">
+                    <div class="flex items-center justify-between w-full">
+                        <header>
+                            <h2>Ön Kayıt Bilgileri</h2>
+                            <p>Başvuru Sahibinin Bilgileri Gerekmektedir.</p>
+                        </header>
+                        <div class="flex items-center space-x-2 is-hidden">
+                            <div class="w-16 h-16 border cursor-pointer rounded bg-white">
+                                <img class="w-16 h-16 object-cover object-center rounded"
+                                    src="/src/collector/images/security/1.png" alt="">
+                            </div>
+                            <div data-tooltip="Güvenlik resminiz gösterilmektedir. Kayıt esnasında otomatik oluşturulmaktadır. Lütfen giriş yaparken bu güvenlik resmine dikkat ediniz."
+                                class="font-bold text-gray-500 text-xs cursor-pointer w-5 h-5 rounded-full border text-center flex-shrink-0 bg-gray-100 flex items-center justify-center">
+                                ?</div>
+                        </div>
+                        <div>
+                            <button
+                                class="py-3 px-8 text-sm border border-dashed border-[#688BE4] text-[#688BE4] bg-[#F4F7FF] rounded-[5px]">Güvenlik
+                                resmi seçiniz</button>
+                        </div>
+                    </div>
+
                     <main>
                         <div class="form-grid">
                             <div class="form-group">
@@ -265,7 +283,7 @@
                         </div>
                     </footer>
                 </div>
-                <div class="form-container" data-component="navigation" data-step="3">
+                <div class="form-container is-hidden" data-component="navigation" data-step="3">
                     <div class="flex items-center justify-between w-full">
                         <header>
                             <h2>Belge Yükleme</h2>
@@ -314,8 +332,7 @@
                                     </span>
 
                                     <span class="file-content">
-                                        <span
-                                            class="header">
+                                        <span class="header">
                                             <span>Başvuru Formu</span>
                                             <span>(Tüm Alanlar Doldurulmuş Kaşe ve İmzalı )</span>
                                         </span>
@@ -344,8 +361,7 @@
                                                 </span>
                                             </span>
                                         </span>
-                                        <span
-                                            class="span-upload">
+                                        <span class="span-upload">
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -843,13 +859,14 @@
     </div>
 
 
-    <div class="modals is-hidden" data-component="widget-modals">
+    <div class="modals " data-component="widget-modals">
         <div class="modals-container">
-            <div class="modal is-hidden">
+            <div class="modal">
                 <header>
                     <div>
-                        <div>SMS Doğrulama</div>
-                        <div>Cep telefonunuza gelen kodu aşağıdaki alana yazarak ilerleyiniz</div>
+                        <div>Güvenlik Resmi</div>
+                        <div>Seçeceğiniz güvenlik resmi giriş işlemlerinde, giriş yaptığınız kullanıcının size ait
+                            olduğunu kesinleştirmek için kullanılacaktır.</div>
                     </div>
                     <div>
                         <button class="btn btn-gray btn-icon">
@@ -860,70 +877,102 @@
                         </button>
                     </div>
                 </header>
+                <style>
+                    .security-check:checked ~ img {
+                        border-color: red;
+                    }
+                </style>
                 <section>
-                    <div>
-                        <div class="modal-icon success">
-                            <span></span>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="timer">
-                            <span>04:55</span>
+             
+                    <div class="h-[400px] overflow-x-hidden overflow-y-auto">
+                        <div class="grid grid-cols-4 gap-4 h-full ">
+                            <label for="security_1" class="h-[80px] bg-cover bg-center" style="background-image: url(/src/collector/images/security/1.png);">
+                                <input type="radio" name="security" id="security_1">
+                            </label>
                         </div>
                     </div>
-                    <form class="form">
-                        <div class="form-control">
-                            <label for="" class="">Sms Kodu</label>
-                            <input type="text" class="" placeholder="Sms Kodu" />
-                        </div>
-                        <div class="actions">
-                            <button class="btn btn-primary btn-md">Gönder</button>
-                            <button class="btn btn-secondary btn-md" disabled>Tekrar Kod Gönder</button>
-                        </div>
-                    </form>
-                </section>
             </div>
-            <div class="modal is-hidden">
-                <header>
-                    <div>
-                        <div>Başvuruyu iptal etmek istediğinize emin misiniz?</div>
-                    </div>
-                    <div>
-                        <button class="btn btn-gray btn-icon">
+            </section>
+        </div>
+        <div class="modal is-hidden">
+            <header>
+                <div>
+                    <div>SMS Doğrulama</div>
+                    <div>Cep telefonunuza gelen kodu aşağıdaki alana yazarak ilerleyiniz</div>
+                </div>
+                <div>
+                    <button class="btn btn-gray btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+            <section>
+                <div>
+                    <div class="modal-icon success">
+                        <span></span>
+                        <span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                stroke="currentColor" class="w-12 h-12">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                             </svg>
-                        </button>
+                        </span>
                     </div>
-                </header>
-                <section>
-                    <div class="space-y-8">
-                        <div class="modal-icon error">
-                            <span></span>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="text-center text-sm">Başvuruyu iptal ettiğiniz takdirde daha önce kaydetmiş
-                            olduğunuz bilgiler ile beraber kullanıcı girişini de sileceğiz.</div>
+                    <div class="timer">
+                        <span>04:55</span>
+                    </div>
+                </div>
+                <form class="form">
+                    <div class="form-control">
+                        <label for="" class="">Sms Kodu</label>
+                        <input type="text" class="" placeholder="Sms Kodu" />
                     </div>
                     <div class="actions">
-                        <button class="btn btn-red btn-md btn-center">İptal et</button>
-                        <button class="btn btn-gray btn-md btn-center">Vazgeç</button>
+                        <button class="btn btn-primary btn-md">Gönder</button>
+                        <button class="btn btn-secondary btn-md" disabled>Tekrar Kod Gönder</button>
                     </div>
-                </section>
-            </div>
+                </form>
+            </section>
         </div>
+        <div class="modal is-hidden">
+            <header>
+                <div>
+                    <div>Başvuruyu iptal etmek istediğinize emin misiniz?</div>
+                </div>
+                <div>
+                    <button class="btn btn-gray btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+            <section>
+                <div class="space-y-8">
+                    <div class="modal-icon error">
+                        <span></span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-12 h-12">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="text-center text-sm">Başvuruyu iptal ettiğiniz takdirde daha önce kaydetmiş
+                        olduğunuz bilgiler ile beraber kullanıcı girişini de sileceğiz.</div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-red btn-md btn-center">İptal et</button>
+                    <button class="btn btn-gray btn-md btn-center">Vazgeç</button>
+                </div>
+            </section>
+        </div>
+    </div>
     </div>
 
     <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
@@ -936,6 +985,8 @@
     <script src="/src/collector/js/app.js"></script>
     <script src="/src/collector/js/web-dashboard.js"></script>
     <script src="/src/collector/libs/notify.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script>
         function navigation(step = 1) {
             $('div[data-component="navigation"]').addClass('is-hidden');
@@ -957,6 +1008,8 @@
                 $('[data-component="navigation-container"]').removeClass('mobile-hidden');
             }
         });
+
+        tippy('[data-tooltip]');
     </script>
 </body>
 
