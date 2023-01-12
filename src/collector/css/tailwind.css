@@ -1897,6 +1897,45 @@
     .custom-checkbox > span > span:first-child {
         @apply w-5 h-5 border  rounded flex items-center justify-center transition;
     }
+
+    .security-image-show {
+        @apply flex items-center justify-center space-x-2;
+    }
+    .btn-security-set {
+        @apply py-3 px-8 text-sm border border-dashed border-[#688BE4] text-[#688BE4] bg-[#F4F7FF] rounded-[5px];
+    }
+
+    .security-avatar {
+        @apply w-[75px] h-[75px] rounded-lg border-4 border-[#E1E3EB];
+    }
+
+    .security-avatar img {
+        @apply w-[67px] h-[67px] rounded-[5px] object-cover object-center;
+    }
+
+    .security-image-list {
+        @apply h-[400px] xl:h-[250px] overflow-x-hidden overflow-y-auto;
+    }
+    .security-image-list > div{
+        @apply grid grid-cols-3 xl:grid-cols-4 gap-4 h-full;
+    }
+    .security-image-list > div > .image-container{
+        @apply w-full h-full col-span-1;
+    }
+    .security-image-list > div > .image-container label{
+        @apply cursor-pointer flex flex-col-reverse items-center space-y-reverse space-y-2;
+    }
+    .security-image-list > div > .image-container label span{
+        @apply rounded-xl border-[3px] border-transparent;
+    }
+
+    .security-image-list > div > .image-container label .security-check:checked~span {
+        border-color: #688BE4;
+    }
+
+    .security-image-list > div > .image-container label span img{
+        @apply h-[75px] w-[75px] object-cover rounded-lg;
+    }
 }
 
 

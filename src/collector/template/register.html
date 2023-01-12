@@ -137,19 +137,13 @@
                             <h2>Ön Kayıt Bilgileri</h2>
                             <p>Başvuru Sahibinin Bilgileri Gerekmektedir.</p>
                         </header>
-                        <div class="flex items-center space-x-2 is-hidden">
-                            <div class="w-16 h-16 border cursor-pointer rounded bg-white">
-                                <img class="w-16 h-16 object-cover object-center rounded"
-                                    src="/src/collector/images/security/1.png" alt="">
-                            </div>
-                            <div data-tooltip="Güvenlik resminiz gösterilmektedir. Kayıt esnasında otomatik oluşturulmaktadır. Lütfen giriş yaparken bu güvenlik resmine dikkat ediniz."
-                                class="font-bold text-gray-500 text-xs cursor-pointer w-5 h-5 rounded-full border text-center flex-shrink-0 bg-gray-100 flex items-center justify-center">
-                                ?</div>
-                        </div>
-                        <div>
+                        <div class="security-image-show">
                             <button
-                                class="py-3 px-8 text-sm border border-dashed border-[#688BE4] text-[#688BE4] bg-[#F4F7FF] rounded-[5px]">Güvenlik
+                                class="btn-security-set">Güvenlik
                                 resmi seçiniz</button>
+                                <div class="security-avatar">
+                                    <img src="/src/collector/images/security/1.png" alt="">
+                                </div>
                         </div>
                     </div>
 
@@ -859,7 +853,7 @@
     </div>
 
 
-    <div class="modals " data-component="widget-modals">
+    <div class="modals" data-component="widget-modals">
         <div class="modals-container">
             <div class="modal">
                 <header>
@@ -877,19 +871,79 @@
                         </button>
                     </div>
                 </header>
-                <style>
-                    .security-check:checked ~ img {
-                        border-color: red;
-                    }
-                </style>
                 <section>
-             
-                    <div class="h-[400px] overflow-x-hidden overflow-y-auto">
-                        <div class="grid grid-cols-4 gap-4 h-full ">
-                            <label for="security_1" class="h-[80px] bg-cover bg-center" style="background-image: url(/src/collector/images/security/1.png);">
-                                <input type="radio" name="security" id="security_1">
-                            </label>
+
+                    <div class="security-image-list">
+                        <div>
+                            <div class="image-container">
+                                <label for="security_1" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_1">
+                                    <span>
+                                        <img src="/src/collector/images/security/1.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="image-container">
+                                <label for="security_2" class="">
+                                    <input type="radio" name="security" class="security-check" id="security_2">
+                                    <span>
+                                        <img src="/src/collector/images/security/2.png" class="" alt="">
+                                    </span>
+                                </label>
+                            </div>
+
                         </div>
+                    </div>
+                    <div class="actions justify-center">
+                        <button class="btn btn-primary btn-md btn-center col-span-2">Kaydet</button>
                     </div>
             </div>
             </section>
