@@ -7332,12 +7332,19 @@ input.toggle-card:checked ~ label > span:nth-child(2) > span {
   }
 }
 
-.registeration .register-container > main .form-container > div:first-child > header h2, 
+.registeration .register-container > main .form-container > .header-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.registeration .register-container > main .form-container > .header-container > header h2, 
     .registeration .register-container > main .form-container > header h2 {
   font-size: 26px;
 }
 
-.registeration .register-container > main .form-container > div:first-child > header p, 
+.registeration .register-container > main .form-container > .header-container  > header p, 
     .registeration .register-container > main .form-container > header p {
   font-size: 0.875rem;
   line-height: 1.25rem;

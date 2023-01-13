@@ -23,6 +23,10 @@
         @apply transition rounded focus:ring-2 inline-flex items-center space-x-2 bg-white border w-full justify-center md:justify-start md:w-auto;
     }
 
+    .red-text {
+        @apply text-red-500;
+    }
+
     .btn:disabled {
         @apply cursor-not-allowed;
     }
@@ -1763,11 +1767,14 @@
     .registeration .register-container > main .form-container {
         @apply w-full xl:w-3/4 flex flex-col p-10 text-[#181C32] space-y-6 justify-between z-10;
     }
-    .registeration .register-container > main .form-container > div:first-child > header h2,
+    .registeration .register-container > main .form-container > .header-container {
+        @apply flex items-center justify-between w-full;
+    }
+    .registeration .register-container > main .form-container > .header-container > header h2,
     .registeration .register-container > main .form-container > header h2 {
         @apply text-[26px];
     }
-    .registeration .register-container > main .form-container > div:first-child > header p,
+    .registeration .register-container > main .form-container > .header-container  > header p,
     .registeration .register-container > main .form-container > header p {
         @apply text-sm text-[#8B8F9E];
     }
