@@ -37,7 +37,9 @@
     .btn.btn-icon-sm {
         @apply p-1 space-x-0 w-auto;
     }
-
+    .btn.btn-white {
+        @apply border-[#B5B5C2] text-[13px] hover:bg-gray-100/80 active:outline-gray-300; 
+    }
     .btn.btn-gray {
         @apply bg-gray-100 hover:bg-gray-200 active:bg-gray-300 ring-gray-200;
     }
@@ -286,177 +288,8 @@
     .admin-announcement > div > div:nth-child(2) > div:first-child {
         @apply font-bold md:text-xl;
     }
-    .application .widgets {
-        @apply grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8;
-    }
-    .application .widget.widget-grid,
-    .application .widgets > .widget {
-        @apply px-4 py-3 border border-[#EEF0F7] rounded-[10px] bg-white hover:shadow-lg shadow-gray-200/40 transition relative;
-    }
-    .application .widgets > .widget > .actions {
-        @apply absolute top-2 right-2 flex items-center space-x-2;
-    }
-    .application .widgets > .widget .count-body {
-        @apply w-full h-full flex items-center space-x-6 p-4;
-    }
-    .application .widgets > .widget .count-body > div:first-child {
-        @apply w-24 h-24 rounded-full flex items-center justify-center rounded-full;
-    }
-    .application .widgets > .widget .count-body > div:nth-child(2) {
-        @apply pl-6 border-l;
-    }
-    .application .widgets > .widget .count-body > div:nth-child(2) > p {
-        @apply text-4xl;
-    }
-    .application .widgets > .widget .count-body > div.green:first-child {
-        @apply bg-green-200/80;
-    }
-    .application .widgets > .widget .count-body > div.blue:first-child {
-        @apply bg-blue-200/80;
-    }
-    .application .widget.widget-grid > header,
-    .application .widgets > .widget > header {
-        @apply flex items-center justify-between
-    }
-    .application .widget.widget-grid > header > h3,
-    .application .widgets > .widget > header > h3 {
-        @apply text-lg font-semibold space-x-2 flex items-center;
-    }
-    .application .widgets > .widget.widget-base {
-        @apply col-span-1 row-span-1 h-[320px];
-    }
-    .application .widgets > .widget.widget-bar-chart {
-        @apply md:col-span-2 row-span-2 h-[460px];
-    }
-    .application .widgets > .widget.widget-pie-chart {
-        @apply col-span-1 row-span-1 h-[460px];
-    }
-    .application .widgets > .widget.widget-activity {
-        @apply col-span-1 row-span-2 h-[672px] flex flex-col;
-    }
-    .application .widget.widget-grid,
-    .application .widgets > .widget.widget-table {
-        @apply col-span-1 md:col-span-2 2xl:col-span-3 row-span-2 h-[700px] flex flex-col space-y-4;
-    }
-
-    .application .widgets > .widget > .activities {
-        @apply mt-4  h-full relative overflow-y-auto;
-    }
-    .application .widgets > .widget > .activities .activity-container {
-        @apply h-16 flex hover:bg-green-100/50 transition cursor-pointer pr-4;
-    }
     
-    .application .widgets > .widget > .activities .activity-container > .timeline {
-        @apply flex relative h-full flex-shrink-0 w-16 justify-center items-center;
-    }
-    .application .widgets > .widget > .activities .activity-container > .timeline > span:first-child {
-        @apply w-px h-16 bg-gray-200 absolute;
-    }
     
-    .application .widgets > .widget > .activities .activity-container > .timeline > span:nth-child(2) {
-        @apply w-4 h-4 rounded-full absolute ;
-    }
-    .application .widgets > .widget > .activities .activity-container > .content {
-        @apply w-full h-full flex flex-col space-y-1 justify-center;
-    }
-    .application .widgets > .widget > .activities .activity-container > .content > div:first-child {
-        @apply flex items-center justify-between;
-    }
-    .application .widgets > .widget > .activities .activity-container > .content > p {
-        @apply text-sm;
-    }
-    .application .widgets > .widget > .activities .activity-container > .content > div:first-child > h4 {
-        @apply text-sm font-semibold;
-    }
-    .application .widgets > .widget > .activities .activity-container > .content > div:first-child > span {
-        @apply text-sm flex items-center space-x-2;
-    }
-    .application .widgets > .widget > .activities .activity-container.green {
-        @apply hover:bg-green-100/50;
-    }
-    .application .widgets > .widget > .activities .activity-container.green > .timeline > span:nth-child(2) {
-        @apply bg-green-500;
-    }
-    .application .widgets > .widget > .activities .activity-container.green:hover > .timeline > span:first-child {
-        @apply bg-green-200;
-    }
-    .application .widgets > .widget > .activities .activity-container.yellow {
-        @apply hover:bg-yellow-100/50;
-    }
-    .application .widgets > .widget > .activities .activity-container.yellow > .timeline > span:nth-child(2) {
-        @apply bg-yellow-500;
-    }
-    .application .widgets > .widget > .activities .activity-container.yellow:hover > .timeline > span:first-child {
-        @apply bg-yellow-200;
-    }
-    .application .widgets > .widget > .activities .activity-container.gray {
-        @apply hover:bg-gray-100/90;
-    }
-    .application .widgets > .widget > .activities .activity-container.gray > .timeline > span:nth-child(2) {
-        @apply bg-gray-500;
-    }
-    .application .widgets > .widget > .activities .activity-container.gray:hover > .timeline > span:first-child {
-        @apply bg-gray-300;
-    }
-    .application .widgets > .widget > .activities .activity-container.purple {
-        @apply hover:bg-purple-100/50;
-    }
-    .application .widgets > .widget > .activities .activity-container.purple > .timeline > span:nth-child(2) {
-        @apply bg-purple-500;
-    }
-    .application .widgets > .widget > .activities .activity-container.purple:hover > .timeline > span:first-child {
-        @apply bg-purple-200;
-    }
-    .application .widgets > .widget > .activities .activity-container.teal {
-        @apply hover:bg-teal-100/50;
-    }
-    .application .widgets > .widget > .activities .activity-container.teal > .timeline > span:nth-child(2) {
-        @apply bg-teal-500;
-    }
-    .application .widgets > .widget > .activities .activity-container.teal:hover > .timeline > span:first-child {
-        @apply bg-teal-200;
-    }
-    .application .widgets > .widget > .activities .activity-container.red {
-        @apply hover:bg-red-100/50;
-    }
-    .application .widgets > .widget > .activities .activity-container.red > .timeline > span:nth-child(2) {
-        @apply bg-red-500;
-    }
-    .application .widgets > .widget > .activities .activity-container.red:hover > .timeline > span:first-child {
-        @apply bg-red-200;
-    }
-    .application .widgets > .widget > .messages {
-        @apply mt-4 h-full divide-y;
-    }
-    .application .widgets > .widget > .messages > .message {
-        @apply flex items-center space-x-4 p-4 hover:bg-gray-100 transition cursor-pointer;
-    }
-    .application .widgets > .widget > .messages > .message > div:first-child {
-        @apply w-16 h-16 rounded-full flex-shrink-0;
-    }
-    .application .widgets > .widget > .messages > .message > div:first-child > .avatar {
-        @apply rounded-full h-16 w-16 flex items-center justify-center;
-    }
-    .application .widgets > .widget > .messages > .message > .content {
-        @apply w-full h-full flex flex-col space-y-1 justify-center;
-    }
-    .application .widgets > .widget > .messages > .message > .content > div:first-child {
-        @apply flex items-center justify-between;
-    }
-    .application .widgets > .widget > .messages > .message > .content > div:first-child > h4 {
-        @apply text-sm font-semibold;
-    }
-    .application .widgets > .widget > .messages > .message > .content > div:first-child > span {
-        @apply text-sm flex items-center space-x-2;
-    }
-    .application .widgets > .widget > .messages > .message > .content > p {
-        @apply text-sm;
-    }
-    .application .widgets > .widget > .messages > .message > .support-icon {
-        @apply w-16 h-16 rounded-full bg-blue-200 text-blue-800 flex-shrink-0 flex items-center justify-center;
-    }
-    
-
     input.toggle-card ~ label {
         @apply flex cursor-pointer items-center justify-between w-full border py-2 px-3 rounded;
     }
@@ -1467,48 +1300,6 @@
     }
     
 
-    .landing-page {
-        @apply w-screen min-h-screen overflow-x-hidden overflow-y-auto space-y-16;
-    }
-    .landing-page > header {
-        @apply container mx-auto p-8 bg-white flex items-center justify-center;
-    }
-    .landing-page > main {
-        @apply container mx-auto flex flex-col space-y-16 items-center justify-center px-4 lg:px-0 xl:max-w-[1000px];
-    }
-    .landing-page > main section.hero {
-        @apply py-16 flex items-center px-4 lg:px-8 divide-x bg-gray-100 rounded-[10px] shadow-lg shadow-gray-200/80;
-    }
-    .landing-page > main section.hero > div:first-child {
-        @apply px-4 lg:px-8 text-[#5aa4b2];
-    }
-    .landing-page > main section.hero > div:first-child > svg {
-        @apply w-12 h-12 lg:w-24 lg:h-24;
-    }
-    .landing-page > main section.hero > div:nth-child(2) {
-        @apply space-y-2 px-8;
-    }
-    .landing-page > main section.hero > div:nth-child(2) > h1 {
-        @apply text-xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600;
-    }
-    .landing-page > main section.distributors {
-        @apply flex flex-wrap items-center justify-center gap-8 w-full px-8;
-    }
-    .landing-page > main section.distributors > a {
-        @apply w-full h-[300px] md:w-[200px] md:h-[200px] rounded-[10px] flex flex-col items-center justify-center p-4 shadow-lg shadow-gray-200 hover:shadow-gray-300 transition;
-    }
-    .landing-page > main section.distributors > a:hover > div > img {
-        filter: brightness(0) invert(1);
-    }
-    .landing-page > main section.distributors > a > div {
-        @apply w-48 h-48 md:w-32 md:h-32 flex-shrink-0 rounded-full flex items-center justify-center bg-gray-100  relative z-10;
-    }
-    .landing-page > main section.distributors > a > div > div:first-child {
-        @apply absolute w-48 h-48 md:w-32 md:h-32  transition z-0 bg-[#5fc6b8]  rounded-full;
-    }
-    .landing-page > main section.distributors > a > div > img {
-        @apply w-36 h-16 md:w-24 md:h-10 object-scale-down  z-10 transition;
-    }
 
     .alert-container {
         @apply fixed top-0 right-0 z-[300] bg-transparent w-fit h-fit space-y-4 p-4;
@@ -1830,7 +1621,7 @@
     }
 
     .registeration .register-bg {
-        @apply w-full xl:w-1/2 fixed -top-36 -left-64 xl:-top-72 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
+        @apply w-full hidden lg:block xl:w-1/2 fixed -top-36 -left-64 xl:-top-72 2xl:-top-96 xl:-left-96 h-[200%] bg-gradient-to-tr from-[#688be4] to-[#3a9bd9] rotate-[24deg] z-0;
     }
 
     .registeration .file-group {
@@ -1946,10 +1737,133 @@
     .security-image-list > div > .image-container label span img{
         @apply h-[75px] w-[75px] object-cover rounded-lg;
     }
+    .widget .widget-container {
+        @apply h-full w-full rounded-[10px] bg-white shadow transition hover:shadow-lg;
+    }
+    
+    .landing-page {
+        @apply w-screen overflow-x-hidden min-h-screen overflow-y-auto bg-[#F8F8F8];
+    }
+
+    .landing-page > header {
+        @apply h-[400px] w-full bg-gradient-to-tr from-[#5878C7] to-[#3857A2] flex flex-col lg:flex-row items-center justify-center;
+    }
+
+    .landing-page > header img {
+        @apply h-[300px] lg:h-[400px];
+    }
+    .landing-page > header h1 {
+        @apply text-base lg:text-[24px] xl:text-[48px] text-white font-bold  xl:leading-[3.5rem] text-center lg:text-left;
+    }
+    .landing-page > main {
+        @apply p-8 space-y-12 flex flex-col justify-center items-center;
+    }
+    .landing-page > main h2 {
+        @apply text-center;
+    }
+    .landing-page > main .distributors {
+        @apply max-w-[640px] w-full;
+    }
+    .landing-page > main .distributors-container {
+        @apply flex items-center justify-center gap-[50px] flex-wrap;
+    }
+    .landing-page > main .distributors .distributor {
+        @apply w-[180px] h-[180px] bg-white shadow-lg shadow-gray-200 hover:shadow-gray-300 transition rounded-[10px] flex flex-col;
+    }
+    .landing-page > main .distributors .distributor div:first-child {
+        @apply h-full flex items-center justify-center;
+    }
+    .landing-page > main .distributors .distributor div:first-child img {
+        @apply w-[120px] h-[120px] object-contain;
+    }
+    .landing-page > main .distributors .distributor div:nth-child(2) {
+        @apply h-10 w-full border-t font-light text-[#1F1F1F] text-xs flex items-center justify-center text-center;
+    }
+    .landing-page > main .distributors .distributor div:nth-child(2) {
+        @apply h-10 w-full border-t font-light text-[#1F1F1F] text-xs flex items-center justify-center text-center;
+    }
+    .landing-page > main .footer {
+        @apply space-y-8;
+    }
+    .landing-page > main .footer .application-logos {
+        @apply divide-x flex items-center;
+    }
+    .landing-page > main .footer .application-logos > div {
+        @apply p-4;
+    }
+    .landing-page > main .footer .application-logos > div > img {
+        @apply w-[140px] h-[40px] object-contain;
+    }
+    .landing-page > main .footer .description {
+        @apply text-center text-[13px];
+    }
 }
 
 
 @tailwind utilities;
+
+@layer utilities {
+    .widgets {
+        @apply grid grid-cols-12 grid-rows-none;
+      }
+      .widget {
+        @apply p-4;
+      }
+      .widget-row-1 {
+        @apply row-span-1 h-[110px];
+      }
+      .widget-row-2 {
+        @apply row-span-2 h-[220px];
+      }
+      .widget-row-3 {
+        @apply row-span-3 h-[330px];
+      }
+      .widget-row-4 {
+        @apply row-span-4 h-[440px];
+      }
+      .widget-row-5 {
+        @apply row-span-5 h-[550px];
+      }
+      .widget-row-6 {
+        @apply row-span-6 h-[660px];
+      }
+      .widget-col-1 {
+        @apply col-span-1;
+      }
+      .widget-col-2 {
+        @apply col-span-2;
+      }
+      .widget-col-3 {
+        @apply col-span-3;
+      }
+      .widget-col-4 {
+        @apply col-span-4;
+      }
+      .widget-col-5 {
+        @apply col-span-5;
+      }
+      .widget-col-6 {
+        @apply col-span-6;
+      }
+      .widget-col-7 {
+        @apply col-span-7;
+      }
+      .widget-col-8 {
+        @apply col-span-8;
+      }
+      .widget-col-9 {
+        @apply col-span-9;
+      }
+      .widget-col-10 {
+        @apply col-span-10;
+      }
+      .widget-col-11 {
+        @apply col-span-11;
+      }
+      .widget-col-12 {
+        @apply col-span-12;
+      }
+}
 
 .k-input-inner {
     outline:none;

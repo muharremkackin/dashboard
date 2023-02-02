@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collector - Dashboard Template</title>
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.default-ocean-blue.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/kendo/styles/kendo.dataviz.bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="/src/collector/libs/animate.min.css" />
+    <link rel="stylesheet" href="/src/collector/libs/daterangepicker.css" />
+    <link rel="stylesheet" href="/src/collector/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div class="application" data-app="collector">
+        <!-- begin::Navigation -->
+        <aside class="closed">
+            <div>
+                <img src="/src/collector/images/icons/arcelik.png" alt="Arçelik" />
+                <button class="btn btn-icon btn-gray btn-toggle-aside" data-click="toggle-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="maximize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd"
+                            d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="minimize-icon w-4 h-4">
+                        <path fill-rule="evenodd"
+                            d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="btn btn-icon btn-gray btn-close-aside" data-click="close-aside">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                        <path
+                            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                    </svg>
+                </button>
+            </div>
+            <section>
+                <div>
+                    <div class="reseller-select">
+                        <select name="" id="ChooseResellerId"></select>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="active" href="#">
+                                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                    <span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                                    <span class="title">Bayi Bilgileri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                                    <span class="title">Kredi Ödeme</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                                    <span class="title">Bayi Hareketleri</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                                    <span class="title">Bayi Bakiye</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-users"></i></span>
+                                    <span class="title">Bayi Kullanıcıları</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fas fa-comments"></i></span>
+                                    <span class="title">Destek</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <div>
+                        <span>
+                            <img class="logo-icon" src="/src/collector/images/icons/payzee.png" alt="" />
+                            <img class="logo-icon-sm" src="/src/collector/images/icons/payzee-md.png" alt="" />
+                        </span>
+
+                        <span>
+                            <a href="tel:+908502230767">
+                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                <span class="title">0850 223 0 767</span>
+                            </a>
+                        </span>
+
+                        <span>
+                            <a href="mailto:offlinetahsilat@birlesikodeme.com">
+                                <span class="icon"><i class="fas fa-envelope"></i></span>
+                                <span class="title">offlinetahsilat@birlesikodeme.com</span>
+                            </a>
+                        </span>
+                    </div>
+                </footer>
+            </section>
+        </aside>
+        <!-- end::Navigation -->
+        <!-- begin::MainContent -->
+        <main class="main-content">
+            <!-- begin::Header -->
+            <header>
+                <div>
+                    <div>
+                        <button class="btn btn-icon btn-gray btn-open-aside" data-click="open-aside">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div>
+                        <div class="date-range-picker" id="infoDateRangePicker">
+                            <span>
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            <span>
+                                <input type="text" placeholder="date" id="infoDates" />
+                            </span>
+                            <span>
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div>
+                            <button class="btn btn-default btn-rounded btn-icon" data-click="widget-modals">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="dropdown" data-component="dropdown">
+                            <button class="">
+                                <span>ENDER KOC ORT</span>
+                                <span><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-content is-hidden">
+                                <div class="avatar">
+                                    <img src="https://images.unsplash.com/photo-1665586072574-56b4dd11b941?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=30"
+                                        alt="" />
+                                </div>
+                                <button class="dropdown-link">
+                                    <span>Change Password</span>
+                                    <span><i class="fas fa-star-of-life"></i></span>
+                                </button>
+                                <a class="dropdown-link" href="#">
+                                    <span>Log out</span>
+                                    <span><i class="fas fa-sign-out-alt"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end::Header -->
+            <!-- begin::Content -->
+            <section class="dashboard-content">
+                <div class="dashboard-content-inner">
+                    <div class="admin-announcement">
+                        <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div>Sevgili Yönetici</div>
+                                <div>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Expedita, quas laboriosam aperiam vero soluta dolore
+                                    consequatur error corporis quos impedit ipsam facilis
+                                    dolorum vel perspiciatis eligendi non quisquam saepe cum!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widgets">
+                        <div class="widget widget-col-12 md:widget-col-6 2xl:widget-col-4 widget-row-2">
+                            <div class="widget-container">
+                                <div
+                                    class="w-full h-full flex items-center justify-start space-x-4 py-8 px-10 relative">
+                                    <div>
+                                        <div
+                                            class="w-14 h-14 lg:w-20 lg:h-20 rounded-full bg-[#E5FDDF] flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="w-8 h-8 lg:w-10 lg:h-10">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs lg:text-sm">Güncel Bakiye</div>
+                                        <div class="text-xl lg:text-4xl">2.850.000,00₺</div>
+                                    </div>
+                                    <div class="absolute bottom-2 right-3 ">
+                                        <span class="text-[#8B8F9E] text-xs">Dünkü Son Bakiye:
+                                            <strong>2500</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-col-12 md:widget-col-6 2xl:widget-col-4 widget-row-2">
+                            <div class="widget-container">
+                                <div
+                                    class="w-full h-full flex items-center justify-start space-x-4 py-8 px-10 relative">
+                                    <div>
+                                        <div
+                                            class="w-14 h-14 lg:w-20 lg:h-20 rounded-full bg-[#E0F2FF] flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="w-8 h-8 lg:w-10 lg:h-10">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs lg:text-sm">Toplam İşlem Adedi</div>
+                                        <div class="text-xl lg:text-4xl">13850</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-col-12 md:widget-col-6 2xl:widget-col-4 widget-row-4">
+                            <div class="widget-container">
+                                <div class="w-full h-full p-8 flex flex-col space-y-4">
+                                    <header>
+                                        <h2 class="text-lg">Günlük İşlemler</h2>
+                                        <p class="text-[#8B8F9E] text-xs leading-5">362354 Adet İşlem</p>
+                                    </header>
+                                    <div class="relative w-full h-full flex flex-col">
+                                        <div
+                                            class="border-r-2 border-dashed border-gray-300 w-px h-full absolute top-0 left-[57px] z-0">
+                                        </div>
+                                        <div class="z-20 flex flex-col justify-between h-full">
+                                            <div class="flex space-x-[10px] ">
+                                                <div class="flex flex-col text-right justify-end">
+                                                    <span class="text-[10px] text-[#8B8F9E]">12.01.22</span>
+                                                    <span class="text-[10px] text-[#8B8F9E]">18:00</span>
+                                                </div>
+                                                <div class="w-4 h-4 rounded-full bg-white border-2 border-[#7686FF]">
+                                                </div>
+                                                <div class="text-[13px]">Bakiye yüklendi</div>
+                                            </div>
+                                            <div class="flex space-x-[10px]">
+                                                <div class="flex flex-col text-right justify-end">
+                                                    <span class="text-[10px] text-[#8B8F9E]">12.01.22</span>
+                                                    <span class="text-[10px] text-[#8B8F9E]">18:00</span>
+                                                </div>
+                                                <div class="w-4 h-4 rounded-full bg-white border-2 border-[#7686FF]">
+                                                </div>
+                                                <div class="text-[13px]">Bakiye yüklendi</div>
+                                            </div>
+                                            <div class="flex space-x-[10px]">
+                                                <div class="flex flex-col text-right justify-end">
+                                                    <span class="text-[10px] text-[#8B8F9E]">12.01.22</span>
+                                                    <span class="text-[10px] text-[#8B8F9E]">18:00</span>
+                                                </div>
+                                                <div class="w-4 h-4 rounded-full bg-white border-2 border-[#7686FF]">
+                                                </div>
+                                                <div class="text-[13px]">Bakiye yüklendi</div>
+                                            </div>
+                                            <div class="flex space-x-[10px]">
+                                                <div class="flex flex-col text-right justify-end">
+                                                    <span class="text-[10px] text-[#8B8F9E]">12.01.22</span>
+                                                    <span class="text-[10px] text-[#8B8F9E]">18:00</span>
+                                                </div>
+                                                <div class="w-4 h-4 rounded-full bg-white border-2 border-[#7686FF]">
+                                                </div>
+                                                <div class="text-[13px]">Bakiye yüklendi</div>
+                                            </div>
+                                            <div class="flex space-x-[10px]">
+                                                <div class="flex flex-col text-right justify-end">
+                                                    <span class="text-[10px] text-[#8B8F9E]">12.01.22</span>
+                                                    <span class="text-[10px] text-[#8B8F9E]">18:00</span>
+                                                </div>
+                                                <div class="w-4 h-4 rounded-full bg-white border-2 border-[#7686FF]">
+                                                </div>
+                                                <div class="text-[13px]">Bakiye yüklendi</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-col-12 md:widget-col-6 2xl:widget-col-4 widget-row-2">
+                            <div class="widget-container">
+                                <div class="flex flex-col items-center justify-center space-y-4">
+                                    <div class="w-full flex items-center justify-start space-x-4 pt-8 px-10 relative">
+                                        <div>
+                                            <div
+                                                class="w-14 h-14 lg:w-20 lg:h-20 rounded-full bg-[#FCF2DF] flex items-center justify-center flex-shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="w-8 h-8 lg:w-10 lg:h-10">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs lg:text-sm">Günlük İşlem Tutarı</div>
+                                            <div class="text-xl lg:text-4xl">15.500,00₺</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap space-x-4">
+                                        <div class="flex flex-col items-center text-center text-xs space-y-1">
+                                            <span>Günlük İşlem Tutarı</span>
+                                            <span><strong>-2500</strong></span>
+                                        </div>
+                                        <div class="flex flex-col items-center text-center text-xs space-y-1">
+                                            <span>Günlük Bakiye Yüklemesi</span>
+                                            <span><strong>+3500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-col-12 md:widget-col-6 2xl:widget-col-4 widget-row-2">
+                            <div class="widget-container">
+                                <div class="w-full h-full inline-block relative p-4">
+                                    <canvas id="proccessTypeChart" class="h-full w-[300px]"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="widget widget-col-12 lg:widget-col-6 2xl:widget-col-8 widget-row-4 md:widget-row-4 lg:widget-row-3">
+                            <div class="widget-container">
+                                <div class="w-full h-full p-4 flex flex-col space-y-4">
+                                    <header>
+                                        <h2 class="text-lg">Destek Taleplerim</h2>
+                                    </header>
+                                    <div class="flex flex-col divide-y">
+                                        <a class="flex flex-col lg:flex-row lg:items-center justify-between p-3 space-y-1 lg:space-y-0 hover:bg-gray-100/80 transition "
+                                            href="#">
+                                            <span class="flex items-center space-x-4">
+                                                <span
+                                                    class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-[#D2DEFD] flex items-center justify-center flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="h-4 w-4 lg:w-6 lg:h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                                    </svg>
+                                                </span>
+                                                <span class="flex flex-col space-y-[2px]">
+                                                    <span class="font-semibold text-xs xl:text-[15px]">Destek Mesajı
+                                                        1</span>
+                                                    <span class="text-xs xl:text-[15px]">Benim bir sorunum var. Bakiye
+                                                        Bilgim
+                                                        yanlış gözüküyor. Bunu düzeltir misiniz lüt…</span>
+                                                </span>
+                                            </span>
+                                            <span
+                                                class="text-xs xl:text-[15px] flex flex-row w-full lg:w-auto lg:flex-col justify-between lg:text-right lg:justify-end">
+                                                <span class="text-[#8B8F9E]">12.12.2023 10:11</span>
+                                                <span class="text-[#45DB8A]">Çözüldü.</span>
+                                            </span>
+                                        </a>
+                                        <a class="flex flex-col lg:flex-row lg:items-center justify-between p-3 space-y-1 lg:space-y-0 hover:bg-gray-100/80 transition "
+                                            href="#">
+                                            <span class="flex items-center space-x-4">
+                                                <span
+                                                    class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-[#D2DEFD] flex items-center justify-center flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="h-4 w-4 lg:w-6 lg:h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                                    </svg>
+                                                </span>
+                                                <span class="flex flex-col space-y-[2px]">
+                                                    <span class="font-semibold text-xs xl:text-[15px]">Destek Mesajı
+                                                        1</span>
+                                                    <span class="text-xs xl:text-[15px]">Benim bir sorunum var. Bakiye
+                                                        Bilgim
+                                                        yanlış gözüküyor. Bunu düzeltir misiniz lüt…</span>
+                                                </span>
+                                            </span>
+                                            <span
+                                                class="text-xs xl:text-[15px] flex flex-row w-full lg:w-auto lg:flex-col justify-between lg:text-right lg:justify-end">
+                                                <span class="text-[#8B8F9E]">12.12.2023 10:11</span>
+                                                <span class="text-[#45DB8A]">Çözüldü.</span>
+                                            </span>
+                                        </a>
+                                        <a class="flex flex-col lg:flex-row lg:items-center justify-between p-3 space-y-1 lg:space-y-0 hover:bg-gray-100/80 transition "
+                                            href="#">
+                                            <span class="flex items-center space-x-4">
+                                                <span
+                                                    class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-[#D2DEFD] flex items-center justify-center flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="h-4 w-4 lg:w-6 lg:h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                                    </svg>
+                                                </span>
+                                                <span class="flex flex-col space-y-[2px]">
+                                                    <span class="font-semibold text-xs xl:text-[15px]">Destek Mesajı
+                                                        1</span>
+                                                    <span class="text-xs xl:text-[15px]">Benim bir sorunum var. Bakiye
+                                                        Bilgim
+                                                        yanlış gözüküyor. Bunu düzeltir misiniz lüt…</span>
+                                                </span>
+                                            </span>
+                                            <span
+                                                class="text-xs xl:text-[15px] flex flex-row w-full lg:w-auto lg:flex-col justify-between lg:text-right lg:justify-end">
+                                                <span class="text-[#8B8F9E]">12.12.2023 10:11</span>
+                                                <span class="text-[#45DB8A]">Çözüldü.</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="widget widget-col-12 lg:widget-col-6 2xl:widget-col-4 widget-row-4 md:widget-row-4 lg:widget-row-3">
+                            <div class="widget-container">
+                                <div class="w-full h-full p-4 flex flex-col space-y-2">
+                                    <header>
+                                        <h2 class="text-lg">Mesajlar</h2>
+                                    </header>
+                                    <div class="flex flex-col divide-y">
+                                        <a href="#"
+                                            class="p-4 flex flex-col space-y-[2px] hover:bg-gray-100/80 transition">
+                                            <span class="flex items-center justify-between">
+                                                <span class="font-semibold text-[15px]">Adı Soyadı</span>
+                                                <span class="text-[#8B8F9E] text-[15px]">12.12.2023 10:11</span>
+                                            </span>
+                                            <span class="text-[15px]">Merhaba. Nasılsın iyi misin? Zaman geçti.</span>
+                                        </a>
+                                        <a href="#"
+                                            class="p-4 flex flex-col space-y-[2px] hover:bg-gray-100/80 transition">
+                                            <span class="flex items-center justify-between">
+                                                <span class="font-semibold text-[15px]">Adı Soyadı</span>
+                                                <span class="text-[#8B8F9E] text-[15px]">12.12.2023 10:11</span>
+                                            </span>
+                                            <span class="text-[15px]">Merhaba. Nasılsın iyi misin? Zaman geçti.</span>
+                                        </a>
+                                        <a href="#"
+                                            class="p-4 flex flex-col space-y-[2px] hover:bg-gray-100/80 transition">
+                                            <span class="flex items-center justify-between">
+                                                <span class="font-semibold text-[15px]">Adı Soyadı</span>
+                                                <span class="text-[#8B8F9E] text-[15px]">12.12.2023 10:11</span>
+                                            </span>
+                                            <span class="text-[15px]">Merhaba. Nasılsın iyi misin? Zaman geçti.</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-col-12 widget-row-5">
+                            <div class="widget-container">
+                                <div class="p-4 space-y-4 flex flex-col h-full">
+                                    <header class="flex items-center justify-between">
+                                        <h2 class="text-lg">Bayi Kullanıcıları</h2>
+                                        <div class="flex items-center space-x-2">
+                                            <button class="btn btn-white btn-md">+ Kullanıcı Ekle</button>
+                                        </div>
+                                    </header>
+                                    <div class="grid-container h-full">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        ADI SOYADI
+                                                    </th>
+                                                    <th scope="col">
+                                                        TC KİMLİK NO
+                                                    </th>
+                                                    <th scope="col">
+                                                        TELEFON NUMARASI
+                                                    </th>
+                                                    <th scope="col">
+                                                        ÜNVAN
+                                                    </th>
+                                                    <th scope="col">
+                                                        DURUM
+                                                    </th>
+                                                    <th scope="col" class="actions">
+                                                        İŞLEM
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">
+                                                        Murphy Murdock
+                                                    </td>
+                                                    <td>
+                                                        16489876532
+                                                    </td>
+                                                    <td>
+                                                        +905432189431
+                                                    </td>
+                                                    <td>
+                                                        Kullanıcı
+                                                    </td>
+                                                    <td>
+                                                        Aktif
+                                                    </td>
+                                                    <td class="actions">
+                                                        <div class="action-container">
+                                                            <button class="btn btn-gray btn-icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24" fill="currentColor"
+                                                                    class="w-4 h-4">
+                                                                    <path
+                                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                                </svg>
+                                                            </button>
+                                                            <button class="btn btn-gray btn-icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24" fill="currentColor"
+                                                                    class="w-4 h-4">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">
+                                                        Murphy Murdock
+                                                    </td>
+                                                    <td>
+                                                        16489876532
+                                                    </td>
+                                                    <td>
+                                                        +905432189431
+                                                    </td>
+                                                    <td>
+                                                        Kullanıcı
+                                                    </td>
+                                                    <td>
+                                                        Aktif
+                                                    </td>
+                                                    <td class="actions">
+                                                        <div class="action-container">
+                                                            <button class="btn btn-gray btn-icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24" fill="currentColor"
+                                                                    class="w-4 h-4">
+                                                                    <path
+                                                                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+                                                                </svg>
+                                                            </button>
+                                                            <button class="btn btn-gray btn-icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24" fill="currentColor"
+                                                                    class="w-4 h-4">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end::Content -->
+        </main>
+        <!-- end::MainContent -->
+    </div>
+
+    <style type="text/css">
+        .customer-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: 32px 35px;
+            background-position: center center;
+            vertical-align: middle;
+            line-height: 32px;
+            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-left: 5px;
+        }
+
+        .customer-name {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 32px;
+            padding-left: 3px;
+        }
+
+        .k-grid tr .checkbox-align {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .product-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: 32px 35px;
+            background-position: center center;
+            vertical-align: middle;
+            line-height: 32px;
+            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-right: 5px;
+        }
+
+        .product-name {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 32px;
+            padding-left: 3px;
+        }
+
+        .k-rating-container .k-rating-item {
+            padding: 4px 0;
+        }
+
+        .k-rating-container .k-rating-item .k-icon {
+            font-size: 16px;
+        }
+
+        .dropdown-country-wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .dropdown-country-wrap img {
+            margin-right: 10px;
+        }
+
+        #grid .k-grid-edit-row>td>.k-rating {
+            margin-left: 0;
+            width: 100%;
+        }
+    </style>
+
+    <div class="announcement is-hidden">
+        <header>
+            <img src="/src/collector/images/icons/arcelik.png" alt="" />
+            <button class="btn btn-secondary btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </header>
+        <section>
+            <div>
+                <img src="/src/collector/images/icons/announcement.svg" alt="" />
+                <article>
+                    <h3>Onaylanma Süreciniz devam etmektedir.</h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry’s standard dummy text
+                        ever since the 1500s, when an unknown printer took a galley of
+                        type and scrambled it to make a type specimen book
+                    </p>
+                </article>
+                <p>
+                    Soru ve sorunlarınız için Bilgi ve Destek Hattı
+                    <a href="tel:+908502230767">0850 223 0 767</a>
+                </p>
+                <img src="/src/collector/images/icons/payzee.png" alt="" />
+            </div>
+        </section>
+    </div>
+
+    <div class="page-loader is-hidden">
+        <div class="page-loader-container">
+            <div class="content">
+                <div>
+                    <img src="/src/collector/images/icons/unitedpayment.png" alt="Birleşik Ödeme" />
+                </div>
+                <div class="spinner">
+                    <div class="spinner-alt">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert-container is-hidden" data-component="alerts"></div>
+
+    <div class="modals is-hidden" data-component="widget-modals">
+        <div class="modals-container">
+            <div class="modal modal-lg is-hidden">
+                <header>
+                    <div>
+                        <div>Yönetim Paneli Eklentileri</div>
+                        <div>Panelde ekli olan eklentilerden istediğiniz eklentiyi gizleyebilir ya da gösterebilirsiniz.
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-gray btn-icon" data-click="close-modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <section>
+                    <div class="widget-toggle grid grid-cols-1 xl:grid-cols-2 gap-4" data-component="widget-toggles">
+                        <div>
+                            <input type="checkbox" id="BalanceCountWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="BalanceCountWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                        </svg>
+                                    </span>
+                                    <span>Bakiye Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ProccessCountWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="ProccessCountWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+                                        </svg>
+                                    </span>
+                                    <span>İşlem Addedi Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ActivityLogWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="ActivityLogWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                                        </svg>
+                                    </span>
+                                    <span>Aktivite Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="MessagesWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="MessagesWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                        </svg>
+                                    </span>
+                                    <span>Mesajlar Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="SupportsWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="SupportsWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                        </svg>
+
+                                    </span>
+                                    <span>Destek Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="BarChartWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="BarChartWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                        </svg>
+                                    </span>
+                                    <span>BarChartWidget Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="PieChartWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="PieChartWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                        </svg>
+                                    </span>
+                                    <span>PieChartWidget Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="UserGridWidget" class="hidden toggle-card"
+                                name="WidgetCheckbox" />
+                            <label for="UserGridWidget">
+                                <span>
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                        </svg>
+                                    </span>
+                                    <span>Kullanıcılar Eklentisi</span>
+                                </span>
+                                <span>
+                                    <span></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal is-hidden">
+                <header>
+                    <div>
+                        <div>SMS Doğrulama</div>
+                        <div>Cep telefonunuza gelen kodu aşağıdaki alana yazarak ilerleyiniz</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-gray btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <section>
+                    <div>
+                        <div class="modal-icon success">
+                            <span></span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="timer">
+                            <span>04:55</span>
+                        </div>
+                    </div>
+                    <form class="form">
+                        <div class="form-control">
+                            <label for="" class="">Sms Kodu</label>
+                            <input type="text" class="" placeholder="Sms Kodu" />
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-primary btn-md">Gönder</button>
+                            <button class="btn btn-secondary btn-md" disabled>Tekrar Kod Gönder</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="modal modal-lg">
+                <header>
+                    <div>
+                        <div>Onaylanma Süreciniz devam etmektedir.</div>
+
+                    </div>
+                    <div>
+                        <button class="btn btn-gray btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <section>
+                    <div>
+                        <div class="modal-icon">
+                            <span></span>
+                            <span>
+                                <img class="w-28 h-28" src="/src/collector/images/icons/announcement.svg" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="approve-content">
+                        <h3>Onaylanma Süreciniz devam etmektedir.</h3>
+                        <p>Bayi Bilgileriniz Kaydedilmiştir. Onay beklemektedir. Onay geldikten sonra kayıt işlemine
+                            devam edebilirsiniz.</p>
+                    </div>
+                    <div class="approve-content">
+                        <span>Soru ve sorunlarınız için Bilgi ve Destek Hattı <a href="tel:+908502230767">0850 223 0
+                                767</a></span>
+                    </div>
+                    <div class="marks">
+                        <img src="/src/collector/images/icons/payzee.png" />
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="advertise is-hidden">
+        <div class="advertise-modal is-hidden">
+            <div>
+                <div>
+                    <header>
+                        <div></div>
+                        <div>
+                            <button class="btn  btn-icon-sm btn-transparent-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </header>
+                    <article>
+                        <div>
+                            <img src="/src/collector/images/icons/announcement.svg" alt="">
+                        </div>
+                        <h3>KOLAY, HIZLI KULLANIM</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo Lorem ipsum dolor sit ametLorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusa
+                        </p>
+                        <div>
+                            <button class="btn btn-primary btn-md btn-long">Tamam</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="advertise-top-right">
+            <div>
+                <header>
+                    <div></div>
+                    <div>
+                        <button class="btn btn-transparent btn-icon-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <article>
+                    <h3>KOLAY, HIZLI KULLANIM</h3>
+                    <div>
+                        <img src="/src/collector/images/icons/announcement.svg" alt="">
+                    </div>
+                    <div class="text-sm">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium expedita veniam nostrum
+                        blanditiis quo quas et nam, ea nobis animi odit totam quam sapiente reiciendis ipsa pariatur
+                        sunt obcaecati. Perferendis.
+                    </div>
+                    <div>
+                        <button class="btn btn-md btn-secondary btn-long">Tamam</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="advertise-bottom">
+            <div>
+                <header>
+                    <button class="btn btn-icon-sm btn-transparent">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </header>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div>
+                            <img src="/src/collector/images/icons/announcement.svg" alt="">
+                        </div>
+                        <!-- begin::HtmlArea -->
+                        <article>
+                            <p>Ödeme işlemleri hiç <strong>bu kadar kolay olmamıştı</strong></p>
+                        </article>
+                        <!-- end::HtmlArea -->
+                    </div>
+                    <!-- begin::ActionArea -->
+                    <footer>
+                        <button class="btn btn-md btn-transparent-light btn-long">Bilgi Al</button>
+                        <button class="btn btn-md btn-black btn-long">Başvur</button>
+                    </footer>
+                    <!-- end::ActionArea -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/collector/libs/jquery-3.6.1.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/jszip.min.js"></script>
+    <script src="/src/collector/libs/kendo/js/kendo.all.min.js"></script>
+    <script src="/src/collector/libs/moment.min.js"></script>
+    <script src="/src/collector/libs/daterangepicker.min.js"></script>
+    <script src="/src/collector/libs/jquery.inputmask.bundle.js"></script>
+    <script src="/src/collector/js/avatar-generator.js"></script>
+    <script src="/src/collector/js/app.js"></script>
+    <script src="/src/collector/js/web-dashboard.js"></script>
+    <script src="/src/collector/libs/notify.js"></script>
+    <script>
+        const ctx = document.getElementById("proccessTypeChart");
+        new Chart(ctx, {
+            type: "doughnut",
+            data: {
+                'labels': [
+                    'Erken Kapama', 'Kredi Ödeme', 'KMH'
+                ],
+                datasets: [{
+                    label: 'İşlem sayısı',
+                    data: [300, 500, 600],
+                    backgroundColor: [
+                        '#9fdfcd',
+                        '#a0a2ff',
+                        '#d79ad7'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: "right",
+                        align: "center"
+                    },
+                }
+            }
+        })
+        function createBarChart() {
+
+            $("#barChart").kendoChart({
+                title: {
+                    text: "Gross domestic product growth /GDP annual %/"
+                },
+                legend: {
+                    position: "top"
+                },
+                seriesDefaults: {
+                    type: "column"
+                },
+                seriesColors: ['#9b59b6', '#3498db', '#34495e', '#16a085', '#f1c40f', '#e74c3c'],
+                series: [{
+                    name: "India",
+                    data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
+                }, {
+                    name: "Russian Federation",
+                    data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3]
+                }, {
+                    name: "Germany",
+                    data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
+                }, {
+                    name: "World",
+                    data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
+                }],
+                valueAxis: {
+                    labels: {
+                        format: "{0}%"
+                    },
+                    line: {
+                        visible: false
+                    },
+                    axisCrossingValue: 0
+                },
+                categoryAxis: {
+                    categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                    line: {
+                        visible: false
+                    },
+                    labels: {
+                        padding: { top: 135 }
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "{0}%",
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+        $(document).ready(createBarChart);
+        $(document).bind("kendo:skinChange", createBarChart);
+        function createBarChart2() {
+
+            $("#barChart2").kendoChart({
+                title: {
+                    text: "Gross domestic product growth /GDP annual %/"
+                },
+                legend: {
+                    position: "top"
+                },
+                seriesDefaults: {
+                    type: "column"
+                },
+                seriesColors: ['#9b59b6', '#3498db', '#34495e', '#16a085', '#f1c40f', '#e74c3c'],
+                series: [{
+                    name: "India",
+                    data: [3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855]
+                }, {
+                    name: "Russian Federation",
+                    data: [4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, -7.832, 4.3, 4.3]
+                }, {
+                    name: "Germany",
+                    data: [0.010, -0.375, 1.161, 0.684, 3.7, 3.269, 1.083, -5.127, 3.690, 2.995]
+                }, {
+                    name: "World",
+                    data: [1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, -2.245, 4.339, 2.727]
+                }],
+                valueAxis: {
+                    labels: {
+                        format: "{0}%"
+                    },
+                    line: {
+                        visible: false
+                    },
+                    axisCrossingValue: 0
+                },
+                categoryAxis: {
+                    categories: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011],
+                    line: {
+                        visible: false
+                    },
+                    labels: {
+                        padding: { top: 135 }
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "{0}%",
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+        $(document).ready(createBarChart2);
+        $(document).bind("kendo:skinChange", createBarChart2);
+
+        function createPieChart() {
+            $("#pieChart").kendoChart({
+                title: {
+                    position: "bottom",
+                    text: "Share of Internet Population Growth, 2007 - 2012"
+                },
+                legend: {
+                    visible: false
+                },
+                chartArea: {
+                    background: ""
+                },
+                seriesDefaults: {
+                    labels: {
+                        visible: true,
+                        background: "transparent",
+                        template: "#= category #: \n #= value#%"
+                    }
+                },
+                seriesColors: ['#9b59b6', '#3498db', '#34495e', '#16a085', '#f1c40f', '#e74c3c'],
+                series: [{
+                    type: "pie",
+                    startAngle: 150,
+                    data: [{
+                        category: "Asia",
+                        value: 53.8,
+                    }, {
+                        category: "Europe",
+                        value: 16.1,
+                    }, {
+                        category: "Latin America",
+                        value: 11.3,
+                    }, {
+                        category: "Africa",
+                        value: 9.6,
+                    }, {
+                        category: "Middle East",
+                        value: 5.2,
+                    }, {
+                        category: "North America",
+                        value: 3.6,
+                    }]
+                }],
+                tooltip: {
+                    visible: true,
+                    format: "{0}%"
+                }
+            });
+        }
+
+        $(document).ready(createPieChart);
+        $(document).bind("kendo:skinChange", createPieChart);
+    </script>
+
+    <script>
+        function dashboardWidgets() {
+            const widgetInitiator = {};
+
+            widgetInitiator.storageKey = 'LOCAL_WIDGET_OBJECT';
+            widgetInitiator.hiddenClass = 'is-hidden';
+            widgetInitiator.widgets = [];
+
+            $('[data-component="widget"]').each(function (index, widget) {
+                widgetInitiator.widgets.push({
+                    title: $(widget).attr('data-title'),
+                    isHidden: false
+                });
+            });
+
+            widgetInitiator.get = function () {
+                return localStorage.getItem(widgetInitiator.storageKey);
+            }
+            widgetInitiator.set = function (widgetObject) {
+                localStorage.setItem(widgetInitiator.storageKey, JSON.stringify(widgetObject));
+            }
+
+            widgetInitiator.structure = function () {
+                const widgetObject = JSON.parse(widgetInitiator.get());
+
+                widgetObject.forEach(function (widget) {
+                    if (widget.isHidden) {
+                        $(`[data-component="widget"][data-title="${widget.title}"]`).addClass(widgetInitiator.hiddenClass);
+                        $('[data-component="widget-toggles"]').find(`input[name="WidgetCheckbox"]#${widget.title}`).removeAttr('checked');
+                    } else {
+                        $(`[data-component="widget"][data-title="${widget.title}"]`).removeClass(widgetInitiator.hiddenClass);
+                        $('[data-component="widget-toggles"]').find(`input[name="WidgetCheckbox"]#${widget.title}`).attr('checked', 'checked');
+                    }
+                });
+            }
+
+            widgetInitiator.initialize = function () {
+                let widgetObject = widgetInitiator.get();
+
+                if (widgetObject) {
+                    widgetInitiator.widgets = JSON.parse(widgetObject);
+                } else {
+                    localStorage.setItem(widgetInitiator.storageKey, JSON.stringify(widgetInitiator.widgets));
+                }
+
+                widgetInitiator.structure();
+            }
+
+            widgetInitiator.setWidget = function (title, isHidden = false) {
+                let widgetObject = JSON.parse(widgetInitiator.get());
+                widgetObject = widgetObject.map(function (widget) {
+                    if (widget.title === title) {
+                        widget.isHidden = isHidden;
+                    }
+                    return widget;
+                });
+                widgetInitiator.set(widgetObject);
+                widgetInitiator.structure();
+            }
+
+            return widgetInitiator;
+        }
+
+        $(function () {
+            const widgets = dashboardWidgets();
+            widgets.initialize();
+
+            $('[name="WidgetCheckbox"]').on('change', function () {
+                widgets.setWidget($(this).attr('id'), !$(this).is(':checked'));
+            });
+
+            $('.modals').on('click', '[data-click="close-modal"]', function () {
+                $(this).closest('.modal').addClass('is-hidden');
+                if ($(this).closest('.modals-container').children(':not(.is-hidden)').length == 0) {
+                    $(this).closest('.modals').addClass('is-hidden');
+                }
+            });
+
+            $('[data-click="widget-modals"]').on('click', function () {
+                $(`[data-component="${$(this).attr('data-click')}"]`).removeClass('is-hidden');
+                $(`[data-component="${$(this).attr('data-click')}"]`).find('.modal').removeClass('is-hidden');
+            });
+
+
+            $('[data-component="message-avatar"]').each(function () {
+                generateAvatar(this, $(this).closest('[data-component="message-box"]').find('[data-for="message-avatar"]').text());
+            })
+        })
+    </script>
+</body>
+
+</html>
