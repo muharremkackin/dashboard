@@ -1797,6 +1797,13 @@
     .landing-page > main .footer .description {
         @apply text-center text-[13px];
     }
+
+    .no-content-component {
+        @apply flex items-center justify-center h-full pb-3;
+    }
+    .no-content-component > div {
+        @apply flex flex-col items-center justify-between h-full text-center space-y-2 text-sm font-semibold text-[#8B8F9E];
+    }
 }
 
 
